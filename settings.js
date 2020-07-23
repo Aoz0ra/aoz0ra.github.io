@@ -2,6 +2,9 @@ function changeAccent(newColor) {
 	if (newColor == `DEFAULT_ACCENT`) {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--DEFAULT_ACCENT_HILIGHT)`);
 	}
+	else if (newColor.startsWith(`#`)) {
+		document.documentElement.style.setProperty(`--accentHilight`, `newColor`);
+	}
 	else {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--${newColor}Hilight)`);
 	}
