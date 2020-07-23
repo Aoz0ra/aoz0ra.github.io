@@ -18,6 +18,23 @@ function saveAccent(newColor) {
 	localStorage.setItem(`accentColor`, newColor);
 }
 
+function setTheme(theme) {
+	if (theme == `default`) {
+		localStorage.setItem(`themeToLoad`, ``)
+	}
+	
+	else if (theme == `Solarized`) {
+		localStorage.setItem(`themeToLoad`, `/hydrogen-framework/themes/aoz0ras-solarized-dark.css`)
+	}
+}
+
+function loadTheme() {
+	$(`head`).append(`<link rel="stylesheet" href="${localStorage.themeToLoad}">`)
+}
+
+
+
+
 if (!localStorage.accentColor) {
 	saveAccent(`DEFAULT_ACCENT`);
 }
