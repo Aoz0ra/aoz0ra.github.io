@@ -38,31 +38,37 @@ drop-content drop-navbar
 		<div class="page">
 			<div class="row">
 	  			<div class="col-xs-12">
-		  		
-			  	<h1 style="color: var(--accentColor)">Accent colour</h1>
-				<button class="block" onclick="saveAccent('DEFAULT_ACCENT')" style="color: var(--DEFAULT_ACCENT)">default — open for change</button>
-				<div class="btn-group btn-group-justified">
-					<button onclick="saveAccent('red')" style="color: var(--red)">red</button>
-					<button onclick="saveAccent('orange')" style="color: var(--orange)">orange</button>
-					<button onclick="saveAccent('yellow')" style="color: var(--yellow)">yellow</button>
-					<button onclick="saveAccent('lime')" style="color: var(--lime)">lime green</button>
-				</div>
-				<div class="btn-group btn-group-justified">
-					<button onclick="saveAccent('green')" style="color: var(--green)">green</button>
-					<button onclick="saveAccent('aquagreen')" style="color: var(--aquagreen)">aqua green</button>
-					<button onclick="saveAccent('cyan')" style="color: var(--cyan)">cyan</button>
-					<button onclick="saveAccent('skyblue')" style="color: var(--skyblue)">sky blue</button>
-				</div>
-				<div class="btn-group btn-group-justified">
-					<button onclick="saveAccent('blue')" style="color: var(--blue)">blue</button>
-					<button onclick="saveAccent('purple')" style="color: var(--purple)">purple</button>
-					<button onclick="saveAccent('pink')" style="color: var(--pink)">pink</button>
-					<button onclick="saveAccent('hotpink')" style="color: var(--hotpink)">hot pink</button>
-				</div>
 					
+					<h1>Colour scheme</h1>
+					<button class="block" onclick="saveTheme(`default`)">Default</button>
+					<button class="block" onclick="saveTheme(`Solarized`)">Solarized</button>
+		  			
+					<br>
+					
+				  	<h1 style="color: var(--accent)">Accent colour</h1>
+					<button class="block" onclick="saveAccent('DEFAULT_ACCENT')" style="color: var(--DEFAULT_ACCENT)">default — open for change</button>
+					<div class="btn-group btn-group-justified">
+						<button onclick="saveAccent('red')" style="color: var(--red)">red</button>
+						<button onclick="saveAccent('orange')" style="color: var(--orange)">orange</button>
+						<button onclick="saveAccent('yellow')" style="color: var(--yellow)">yellow</button>
+						<button onclick="saveAccent('lime')" style="color: var(--lime)">lime green</button>
+					</div>
+					<div class="btn-group btn-group-justified">
+						<button onclick="saveAccent('green')" style="color: var(--green)">green</button>
+						<button onclick="saveAccent('aquagreen')" style="color: var(--aquagreen)">aqua green</button>
+						<button onclick="saveAccent('cyan')" style="color: var(--cyan)">cyan</button>
+						<button onclick="saveAccent('skyblue')" style="color: var(--skyblue)">sky blue</button>
+					</div>
+					<div class="btn-group btn-group-justified">
+						<button onclick="saveAccent('blue')" style="color: var(--blue)">blue</button>
+						<button onclick="saveAccent('purple')" style="color: var(--purple)">purple</button>
+						<button onclick="saveAccent('pink')" style="color: var(--pink)">pink</button>
+						<button onclick="saveAccent('hotpink')" style="color: var(--hotpink)">hot pink</button>
+					</div>
+						
+				</div>
 			</div>
 		</div>
-	</div>
-    
+	
 	</body>
 </html>
