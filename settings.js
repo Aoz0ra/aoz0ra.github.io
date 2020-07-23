@@ -3,13 +3,13 @@ function changeAccent(newColor) {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--DEFAULT_ACCENT_HILIGHT)`);
 	}
 	else if (newColor.startsWith(`#`)) {
-		document.documentElement.style.setProperty(`--accentHilight`, `newColor`);
+		document.documentElement.style.setProperty(`--accentHilight`, newColor);
 	}
 	else {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--${newColor}Hilight)`);
 	}
-	document.documentElement.style.setProperty(`--accent`, `var(--${newColor})`);
-	document.documentElement.style.setProperty(`--hilight`, `var(--${newColor})`);
+	document.documentElement.style.setProperty(`--accent`, newColor);
+	document.documentElement.style.setProperty(`--hilight`, newColor);
 }
 		
 function saveAccent(newColor) {
