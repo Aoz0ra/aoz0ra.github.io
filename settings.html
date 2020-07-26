@@ -4,6 +4,10 @@
 		<link rel="stylesheet" href="/hydrogen-framework/hydrogen.css">
 		<script src="/settings.js"></script>
 		<script src="/jquery.min.js"></script>
+
+    <script>
+document.getElementById('customAccent').value = document.documentElement.style.getProperty('--accent')
+    </script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 
@@ -46,7 +50,10 @@ drop-content drop-navbar
 					<br>
 					
 				  	<h1 style="color: var(--accent)">Accent colour</h1>
-					<button class="block" onclick="saveAccent('DEFAULT_ACCENT')" style="color: var(--DEFAULT_ACCENT)">default — open for change</button>
+<div class="btn-group btn-group-justified">
+					<button onclick="saveAccent('DEFAULT_ACCENT')" style="color: var(--DEFAULT_ACCENT)">default — blue</button>
+<button onclick="saveAccent('gray')">Grey</button>
+<input type="color" id="customAccent" />
 					<div class="btn-group btn-group-justified">
 						<button onclick="saveAccent('red')" style="color: var(--red)">red</button>
 						<button onclick="saveAccent('orange')" style="color: var(--orange)">orange</button>
