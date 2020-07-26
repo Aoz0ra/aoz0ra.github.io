@@ -8,8 +8,8 @@ function changeAccent(newColor) {
 	else {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--${newColor}Hilight)`);
 	}
-	document.documentElement.style.setProperty(`--accent`, newColor);
-	document.documentElement.style.setProperty(`--hilight`, newColor);
+	document.documentElement.style.setProperty(`--accent`, `var(--${newColor}`);
+	document.documentElement.style.setProperty(`--hilight`, `var(--${newColor}`);
 }
 		
 function saveAccent(newColor) {
