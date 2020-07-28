@@ -7,6 +7,11 @@
 
     <script>
 document.getElementById('customAccent').value = document.documentElement.style.getProperty('--accent')
+
+document.getElementById('customAccent').addEventListener('input', function () {
+  saveAccent(getInputValue('customAccent'));
+})
+
     </script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -54,6 +59,7 @@ drop-content drop-navbar
 					<button onclick="saveAccent('DEFAULT_ACCENT')" style="color: var(--DEFAULT_ACCENT)">default — blue</button>
 <button onclick="saveAccent('gray')">Grey</button>
 <input type="color" id="customAccent" />
+</div>
 					<div class="btn-group btn-group-justified">
 						<button onclick="saveAccent('red')" style="color: var(--red)">red</button>
 						<button onclick="saveAccent('orange')" style="color: var(--orange)">orange</button>
