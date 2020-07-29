@@ -85,6 +85,33 @@ function saveTheme(theme) {
 
 
 
+function saveAnimationState(animStateBool) {
+	if (animStateBool == `true`) {animStateBool = true};
+	if (animStateBool == `fasle`) {animStateBool = false};
+	
+	loadAnimState(animStateBool);
+	localStorage.setItem(`animationState`, `${animStateBool}`)
+}
+
+function loadAnimationState(animStateBool) {
+	if (animStateBool == `true`) {animStateBool = true};
+	if (animStateBool == `fasle`) {animStateBool = false};
+	
+	if (animStateBool == true) {
+		document.documentElement.style.setProperty(`--animationDuration`, `--animationDuration`);
+		document.documentElement.style.setProperty(`--animationDurationFade`, `--animationDurationFade`);
+		document.documentElement.style.setProperty(`--animationDurationSlide`, `--animationDurationSlide`);
+	}
+	else if (animStateBool == false) {
+		document.documentElement.style.setProperty(`--animationDuration`, `0`);
+		document.documentElement.style.setProperty(`--animationDurationFade`, `0`);
+		document.documentElement.style.setProperty(`--animationDurationSlide`, `0`);
+	}
+}
+
+
+
+
 
 
 if (!localStorage.accentColor) {
@@ -104,6 +131,15 @@ if (!localStorage.themeToLoad && localStorage.themeToLoad !== ``) {
 else {
 	loadTheme(localStorage.getItem(`themeToLoad`))
 	console.log(`theme loaded`)
+}
+
+if (!localStorage.animationState) {
+	saveAnimationState(`true`);
+	console.log(`default animation state and saved as there wasn't one`)
+}
+else {
+	changeAccent(localStorage.getItem(`animationState`))
+	console.log(`animation state retrieved and used`)
 }
 
 
