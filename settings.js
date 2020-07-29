@@ -38,7 +38,9 @@ function saveTheme(theme) {
 }
 
 function loadTheme() {
-	$(`head`).append(`${localStorage.themeToLoad}`)
+	
+	// I'm using a non-jQuery method for now.
+	document.getElementsByTagName(`head`)[0].innerHTML += `${localStorage.themeToLoad}`
 	console.log(``)
 }
 
