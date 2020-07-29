@@ -5,72 +5,6 @@
 		<script src="/settings.js"></script>
 		<script src="/jquery.min.js"></script>
 		
-		<script>
-			console.log(`%cStarted executing page script`, `font-size: 2em;`)
-			
-			getElementById('customAccent').value = normalizeHexcode(getComputedStyle(document.documentElement).getPropertyValue('--accent'))
-			console.log(`attempted to set #customAccent's value`)
-
-			getElementById('customAccent').addEventListener('input', function () {
-				console.log(`event listener on #customAccent: saving custom accent of ${getInputValue('customAccent')}`)
-				
-				saveAccent(normalizeHexcode(getInputValue('customAccent')));
-			});
-			
-			
-			if (localStorage.animationState == `false`) {
-				getElementById(`idLikeAnimations`).checked = false;
-				console.log(`animation state checkbox set to unchecked`)
-			}
-			else if (localStorage.animationState == `true`) {
-				getElementById(`idLikeAnimations`).checked = true;
-				console.log(`animation state checkbox set to checked`)
-			}
-			
-			getElementById('idLikeAnimations').addEventListener('input', function () {
-				console.log(`event listener on #idLikeAnimations: saving animation state of ${getElementById(`idLikeAnimations`).checked}`)
-				
-				saveAnimationState(getElementById(`idLikeAnimations`).checked);
-			});
-			
-			
-			
-			String.prototype.trim = function() {
-				console.log(`String.prototype.trim: trimming outer spaces of "${this}"`)
-				
-				return this.replace(/^s+|s+$/g, "");
-			};
-
-			function normalizeHexcode(hexcode) {
-				console.log(`normalizeHexcode: normalizing hexcode "${hexcode}"`)
-				
-				var pattern = new RegExp("^\ *\#?([0-9a-fA-F]{3}){1,2}$\ *");
-
-				if (pattern.test(hexcode)) {
-					console.log(`normalizeHexcode: "${hexcode}" is a hexcode`)
-					hexcode = hexcode.toLowerCase().trim();
-					
-					console.log(`normalizeHexcode: trimmed and made lowercase: "${hexcode}"`)
-					if (hexcode.length === 4) {
-						console.log(`normalizeHexcode: "${hexcode}" is 4 characters long`)
-						return `#${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(3)}`
-					} else if (hexcode.length === 3) {
-						console.log(`normalizeHexcode: "${hexcode}" is 3 characters long`)
-						return `#${hexcode.charAt(0)}${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}`
-					} else if (hexcode.length === 6) {
-						console.log(`normalizeHexcode: "${hexcode}" is 6 characters long`)
-						return `#${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(4)}${hexcode.charAt(5)}`
-					} else {
-						console.log(`normalizeHexcode: "${hexcode}" should be 7 characters long`)
-						return hexcode
-					}
-				}
-				// This is required by ESLint's consistent-return option
-				return;
-			}
-		
-		</script>
-		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 
@@ -167,4 +101,90 @@ drop-content drop-navbar
 		</div>
 	
 	</body>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script>
+		console.log(`%cStarted executing page script`, `font-size: 2em;`)
+		
+		document.getElementById('customAccent').value = normalizeHexcode(getComputedStyle(document.documentElement).getPropertyValue('--accent'))
+		console.log(`attempted to set #customAccent's value`)
+
+		document.getElementById('customAccent').addEventListener('input', function () {
+			console.log(`event listener on #customAccent: saving custom accent of ${getInputValue('customAccent')}`)
+			
+			saveAccent(normalizeHexcode(getInputValue('customAccent')));
+		});
+		
+		
+		if (localStorage.animationState == `false`) {
+			document.getElementById(`idLikeAnimations`).checked = false;
+			console.log(`animation state checkbox set to unchecked`)
+		}
+		else if (localStorage.animationState == `true`) {
+			document.getElementById(`idLikeAnimations`).checked = true;
+			console.log(`animation state checkbox set to checked`)
+		}
+		
+		getElementById('idLikeAnimations').addEventListener('input', function () {
+			console.log(`event listener on #idLikeAnimations: saving animation state of ${getElementById(`idLikeAnimations`).checked}`)
+			
+			saveAnimationState(getElementById(`idLikeAnimations`).checked);
+		});
+		
+		
+		
+		String.prototype.trim = function() {
+			console.log(`String.prototype.trim: trimming outer spaces of "${this}"`)
+			
+			return this.replace(/^s+|s+$/g, "");
+		};
+		
+		function normalizeHexcode(hexcode) {
+			console.log(`normalizeHexcode: normalizing hexcode "${hexcode}"`)
+			
+			var pattern = new RegExp("^\ *\#?([0-9a-fA-F]{3}){1,2}$\ *");
+
+			if (pattern.test(hexcode)) {
+				console.log(`normalizeHexcode: "${hexcode}" is a hexcode`)
+				hexcode = hexcode.toLowerCase().trim();
+				
+				console.log(`normalizeHexcode: trimmed and made lowercase: "${hexcode}"`)
+				if (hexcode.length === 4) {
+					console.log(`normalizeHexcode: "${hexcode}" is 4 characters long`)
+					return `#${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(3)}`
+				} else if (hexcode.length === 3) {
+					console.log(`normalizeHexcode: "${hexcode}" is 3 characters long`)
+					return `#${hexcode.charAt(0)}${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}`
+				} else if (hexcode.length === 6) {
+					console.log(`normalizeHexcode: "${hexcode}" is 6 characters long`)
+					return `#${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(4)}${hexcode.charAt(5)}`
+				} else {
+					console.log(`normalizeHexcode: "${hexcode}" should be 7 characters long`)
+					return hexcode
+				}
+			}
+			// This is required by ESLint's consistent-return option
+			return;
+		}
+		
+	</script>
 </html>
