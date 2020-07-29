@@ -89,8 +89,19 @@ drop-content drop-navbar
 	  			<div class="col-xs-12 col-m-6 col-l-4">
 					
 					<h1>Colour scheme</h1>
-					<button class="block" onclick="saveTheme(`default`)">Default</button>
-					<button class="block" onclick="saveTheme(`Solarized`)">Solarized</button>
+					
+					
+					<div class="btn-group btn-group-justified">
+						<button class="block" onclick="saveTheme(`default`)">Default</button>
+						<button class="block" onclick="saveTheme(`/hydrogen-framework/hydrogen-colours-light.css`)">Light</button>
+						<button class="block" onclick="saveTheme(`/hydrogen-framework/hydrogen-colours-dark.css`)">Dark</button>
+					</div>
+					
+					<div class="btn-group btn-group-justified">
+						<button class="block" onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-solarized.css`)">Solarized</button>
+						<button class="block" onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-solarized-light.css`)">Solarized Light</button>
+						<button class="block" onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-solarized-dark.css`)">Solarized Dark</button>
+					</div>
 		  			
 				</div>
 				
