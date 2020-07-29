@@ -23,6 +23,9 @@ function saveAccent(newColor) {
 
 	localStorage.setItem(`accentColor`, newColor);
 	console.log(`saveAccent: ...and saved`)
+	
+	console.log(`%csaveAccent: RELOADING THE PAGE`, `color: #a94`);
+ 	location.reload(true); // reloads from the server
 }
 
 function loadTheme(theme) {
