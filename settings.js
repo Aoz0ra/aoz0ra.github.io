@@ -105,23 +105,39 @@ function saveTheme(theme) {
 
 
 function saveAnimationState(animStateBool) {
-	if (animStateBool == `true`) {animStateBool = true};
-	if (animStateBool == `fasle`) {animStateBool = false};
+	if (animStateBool == `true`) {
+		console.log(`saveAnimationState: animStateBool is a valid string, normalized it to a boolean`)
+		animStateBool = true
+	};
+	if (animStateBool == `false`) {
+		console.log(`saveAnimationState: animStateBool is a valid string, normalized it to a boolean`)
+		animStateBool = false
+	};
 	
 	loadAnimationState(animStateBool);
+	
 	localStorage.setItem(`animationState`, `${animStateBool}`)
+	console.log(`saveAnimationState: saved animation state of ${animStateBool}`)
 }
 
 function loadAnimationState(animStateBool) {
-	if (animStateBool == `true`) {animStateBool = true};
-	if (animStateBool == `fasle`) {animStateBool = false};
+	if (animStateBool == `true`) {
+		console.log(`animStateBool is a valid string, normalized it to a boolean`)
+		animStateBool = true
+	};
+	if (animStateBool == `false`) {
+		console.log(`animStateBool is a valid string, normalized it to a boolean`)
+		animStateBool = false
+	};
 	
 	if (animStateBool == true) {
+		console.log(`loadAnimationState: turning animations on`)
 		document.documentElement.style.setProperty(`--animationDuration`, `--animationDuration`);
 		document.documentElement.style.setProperty(`--animationDurationFade`, `--animationDurationFade`);
 		document.documentElement.style.setProperty(`--animationDurationSlide`, `--animationDurationSlide`);
 	}
 	else if (animStateBool == false) {
+		console.log(`loadAnimationState: turning animations off`)
 		document.documentElement.style.setProperty(`--animationDuration`, `0`);
 		document.documentElement.style.setProperty(`--animationDurationFade`, `0`);
 		document.documentElement.style.setProperty(`--animationDurationSlide`, `0`);
