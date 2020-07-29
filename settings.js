@@ -27,20 +27,25 @@ function saveAccent(newColor) {
 	
 }
 
+function loadThemeHelper(linkElement) {
+	
+	if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
+		document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = linkElement.replace(`<link rel="stylesheet" href="`, ``).replace(`">`, ``);
+		console.log(`loadThemeHelper: theme href is now ${document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href}`)
+	}
+	else {
+		document.getElementsByTagName(`head`)[0].innerHTML += linkElement
+		console.log(`loadThemeHelper: theme added to html`)
+	}
+}
+
 function loadTheme(theme) {
 	
 	console.log(`loadTheme: loading theme "${theme}"`)
 	
 	// I'm using non-jQuery methods for now.
 	if (!theme) {
-		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
-			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = localStorage.themeToLoad;
-			console.log(`loadTheme: theme href is now ${document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href}`)
-		}
-		else {
-			document.getElementsByTagName(`head`)[0].innerHTML += `${localStorage.themeToLoad}`
-			console.log(`loadTheme: theme added to html`)
-		}
+		loadThemeHelper(localStorage.themeToLoad)
 	}
 	else if (theme == `default`) {
 		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
@@ -49,14 +54,7 @@ function loadTheme(theme) {
 		}
 	}
 	else {
-		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
-			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = theme.replace(`<link rel="stylesheet" href="`, ``).replace(`">`, ``);
-			console.log(`loadTheme: theme href is now ${document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href}`)
-		}
-		else {
-			document.getElementsByTagName(`head`)[0].innerHTML += `${theme}`
-			console.log(`loadTheme: theme added to html`)
-		}
+		loadThemeHelper(theme)
 	}
 }
 
