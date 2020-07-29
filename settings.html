@@ -8,14 +8,32 @@
 		<script>
 			console.log(`%cStarted executing page script`, `font-size: 2em;`)
 			
-			document.getElementById('customAccent').value = normalizeHexcode(getComputedStyle(document.documentElement).getPropertyValue('--accent'))
+			getElementById('customAccent').value = normalizeHexcode(getComputedStyle(document.documentElement).getPropertyValue('--accent'))
 			console.log(`attempted to set #customAccent's value`)
 
-			document.getElementById('customAccent').addEventListener('input', function () {
+			getElementById('customAccent').addEventListener('input', function () {
 				console.log(`event listener on #customAccent: saving custom accent of ${getInputValue('customAccent')}`)
 				
 				saveAccent(normalizeHexcode(getInputValue('customAccent')));
 			});
+			
+			
+			if (localStorage.animationState == `false`) {
+				getElementById(`idLikeAnimations`).checked = false;
+				console.log(`animation state checkbox set to unchecked`)
+			}
+			else if (localStorage.animationState == `true`) {
+				getElementById(`idLikeAnimations`).checked = true;
+				console.log(`animation state checkbox set to checked`)
+			}
+			
+			getElementById('idLikeAnimations').addEventListener('input', function () {
+				console.log(`event listener on #idLikeAnimations: saving animation state of ${getElementById(`idLikeAnimations`).checked}`)
+				
+				saveAnimationState(getElementById(`idLikeAnimations`).checked);
+			});
+			
+			
 			
 			String.prototype.trim = function() {
 				console.log(`String.prototype.trim: trimming outer spaces of "${this}"`)
@@ -104,6 +122,16 @@ drop-content drop-navbar
 					</div>
 					
 					<button class="block" onclick="saveTheme(`/hydrogen-framework/themes/air.css`)">Air</button>
+		  			
+				</div>
+				
+				<div class="col-xs-12 col-m-6 col-l-4">
+					
+					<h1>Animations</h1>
+					
+					
+					<input type="checkbox" id="idLikeAnimations">
+					<label for="idLikeAnimations">I'd like animations here</label>
 		  			
 				</div>
 				
