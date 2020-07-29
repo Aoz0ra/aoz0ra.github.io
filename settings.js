@@ -71,7 +71,7 @@ function saveTheme(theme) {
 		console.log(`solarized theme saved`)
 	}
 	
-	if (theme = `default`) {
+	if (theme == `default`) {
 		loadTheme(`default`)
 	}
 	else {
