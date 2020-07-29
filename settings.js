@@ -105,7 +105,7 @@ function saveAnimationState(animStateBool) {
 	if (animStateBool == `true`) {animStateBool = true};
 	if (animStateBool == `fasle`) {animStateBool = false};
 	
-	loadAnimState(animStateBool);
+	loadAnimationState(animStateBool);
 	localStorage.setItem(`animationState`, `${animStateBool}`)
 }
 
