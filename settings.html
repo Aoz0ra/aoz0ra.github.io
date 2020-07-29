@@ -6,6 +6,8 @@
 		<script src="/jquery.min.js"></script>
 		
 		<script>
+			console.log(`%cStarted executing page script`, `font-size: 2em;`)
+			
 			document.getElementById('customAccent').value = normalizeHexcode(getComputedStyle(document.documentElement).getPropertyValue('--accent'))
 			console.log(`attempted to set #customAccent's value`)
 
@@ -27,15 +29,15 @@
 				var pattern = new RegExp("^\#?([0-9a-fA-F]{3}){1,2}$");
 
 				if (pattern.test(hexcode)) {
-					hexcode = hexcode.toLowerCase();
+					hexcode = hexcode.toLowerCase().trim();
 					if (hexcode.length === 4) {
-						return `#${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(3)}`.toLowerCase().trim()
+						return `#${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(3)}`
 					} else if (hexcode.length === 3) {
-						return `#${hexcode.charAt(0)}${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}`.toLowerCase().trim()
+						return `#${hexcode.charAt(0)}${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}`
 					} else if (hexcode.length === 6) {
-						return `#${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(4)}${hexcode.charAt(5)}`.toLowerCase().trim()
+						return `#${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(4)}${hexcode.charAt(5)}`
 					} else {
-						return hexcode.toLowerCase().trim()
+						return hexcode
 					}
 				}
 				// This is required by ESLint's consistent-return option
