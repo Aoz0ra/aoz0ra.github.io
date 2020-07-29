@@ -4,34 +4,46 @@
 		<link rel="stylesheet" href="/hydrogen-framework/hydrogen.css">
 		<script src="/settings.js"></script>
 		<script src="/jquery.min.js"></script>
-
-    <script>
-			document.getElementById('customAccent').value = getComputedStyle(document.documentElement).getPropertyValue('--accent')
+		
+		<script>
+			document.getElementById('customAccent').value = normalizeHexcode(getComputedStyle(document.documentElement).getPropertyValue('--accent'))
+			console.log(`attempted to set #customAccent's value`)
 
 			document.getElementById('customAccent').addEventListener('input', function () {
-				saveAccent(getInputValue('customAccent'));
-				console.log(`[event listener on #customAccent] saving custom accent of ${getInputValue('customAccent')}`)
-			})
+				console.log(`event listener on #customAccent: saving custom accent of ${getInputValue('customAccent')}`)
+				
+				saveAccent(normalizeHexcode(getInputValue('customAccent')));
+			});
+			
+			String.prototype.trim = function() {
+				console.log(`String.prototype.trim: trimming outer spaces of "${this}"`)
+				
+				return this.replace(/^s+|s+$/g, "");
+			};
 
-			function expandHexcode(hexcode) {
+			function normalizeHexcode(hexcode) {
+				console.log(`normalizeHexcode: normalizing hexcode "${hexcode}"`)
+				
 				var pattern = new RegExp("^\#?([0-9a-fA-F]{3}){1,2}$");
 
 				if (pattern.test(hexcode)) {
 					hexcode = hexcode.toLowerCase();
 					if (hexcode.length === 4) {
-						return `#${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(3)}`
+						return `#${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(3)}`.toLowerCase().trim()
 					} else if (hexcode.length === 3) {
-						return `#${hexcode.charAt(0)}${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}`
+						return `#${hexcode.charAt(0)}${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}`.toLowerCase().trim()
 					} else if (hexcode.length === 6) {
-						return `#${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(4)}${hexcode.charAt(5)}`
+						return `#${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(4)}${hexcode.charAt(5)}`.toLowerCase().trim()
 					} else {
-						return hexcode
+						return hexcode.toLowerCase().trim()
 					}
 				}
 				// This is required by ESLint's consistent-return option
 				return;
 			}
-    </script>
+		
+		</script>
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 
@@ -65,13 +77,15 @@ drop-content drop-navbar
 		
 		<div class="page">
 			<div class="row">
-	  			<div class="col-xs-12">
+	  			<div class="col-xs-12 col-m-6 col-l-4">
 					
 					<h1>Colour scheme</h1>
 					<button class="block" onclick="saveTheme(`default`)">Default</button>
 					<button class="block" onclick="saveTheme(`Solarized`)">Solarized</button>
 		  			
-					<br>
+				</div>
+				
+				<div class="col-xs-12 col-m-6 col-l-4">
 					
 				  	<h1 style="color: var(--accent)">Accent colour</h1>
 <div class="btn-group btn-group-justified">
