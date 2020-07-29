@@ -144,10 +144,10 @@ drop-content drop-navbar
 			console.log(`animation state checkbox set to checked`)
 		}
 		
-		getElementById('idLikeAnimations').addEventListener('input', function () {
-			console.log(`event listener on #idLikeAnimations: saving animation state of ${getElementById(`idLikeAnimations`).checked}`)
+		document.getElementById('idLikeAnimations').addEventListener('input', function () {
+			console.log(`event listener on #idLikeAnimations: saving animation state of ${document.getElementById(`idLikeAnimations`).checked}`)
 			
-			saveAnimationState(getElementById(`idLikeAnimations`).checked);
+			saveAnimationState(document.getElementById(`idLikeAnimations`).checked);
 		});
 		
 		
