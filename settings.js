@@ -44,7 +44,7 @@ function loadTheme(theme) {
 	}
 	else {
 		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
-			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = theme;
+			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = theme.replace(`<link rel="stylesheet" href="`, ``).replace(`">`, ``);
 		}
 		else {
 			document.getElementsByTagName(`head`)[0].innerHTML += `${theme}`
