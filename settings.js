@@ -28,20 +28,38 @@ function saveAccent(newColor) {
 function saveTheme(theme) {
 	if (theme == `default`) {
 		localStorage.setItem(`themeToLoad`, ``)
-		console.log(``)
+		console.log(`default theme saved`)
 	}
 	
 	else if (theme == `Solarized`) {
 		localStorage.setItem(`themeToLoad`, `<link rel="stylesheet" href="/hydrogen-framework/themes/aoz0ras-solarized-dark.css">`)
 		console.log(``)
 	}
+	
+	console.log(`%csaveAccent: RELOADING THE PAGE`, `color: #a94`);
+	location.reload(true); // reloads from the server
 }
 
-function loadTheme() {
+function loadTheme(theme) {
 	
-	// I'm using a non-jQuery method for now.
-	document.getElementsByTagName(`head`)[0].innerHTML += `${localStorage.themeToLoad}`
-	console.log(``)
+	
+	// I'm using non-jQuery methods for now.
+	if (!theme) {
+		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
+			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = localStorage.themeToLoad;
+		}
+		else {
+			document.getElementsByTagName(`head`)[0].innerHTML += `${localStorage.themeToLoad}`
+		}
+	}
+	else {
+		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
+			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = theme;
+		}
+		else {
+			document.getElementsByTagName(`head`)[0].innerHTML += `${theme}`
+		}
+	}
 }
 
 
