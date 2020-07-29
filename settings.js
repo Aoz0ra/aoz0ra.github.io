@@ -8,6 +8,9 @@ function changeAccent(newColor) {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--DEFAULT_ACCENT_HILIGHT)`);
 		console.log(`changeAccent: setting default accent-hilight of var(--DEFAULT_ACCENT_HILIGHT)`);
 		
+		document.documentElement.style.setProperty(`--hilightHilight`, `var(--DEFAULT_ACCENT_HILIGHT)`);
+		console.log(`changeAccent: setting default hilight-hilight of var(--DEFAULT_ACCENT_HILIGHT)`);
+		
 		document.documentElement.style.setProperty(`--accent`, `var(--DEFAULT_ACCENT`);
 		console.log(`changeAccent: setting default accent of var(--DEFAULT_ACCENT)`)
 		
@@ -18,6 +21,9 @@ function changeAccent(newColor) {
 		document.documentElement.style.setProperty(`--accentHilight`, `${newColor}`);
 		console.log(`changeAccent: setting custom accent-hilight of ${newColor}`)
 		
+		document.documentElement.style.setProperty(`--hilightHilight`, `${newColor}`);
+		console.log(`changeAccent: setting custom hilight-hilight of ${newColor}`)
+		
 		document.documentElement.style.setProperty(`--accent`, `${newColor}`);
 		console.log(`changeAccent: setting custom accent of ${newColor})`)
 		
@@ -27,6 +33,9 @@ function changeAccent(newColor) {
 	else {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--${newColor}Hilight)`);
 		console.log(`changeAccent: setting accent-hilight of var(--${newColor}Hilight)`)
+		
+		document.documentElement.style.setProperty(`--hilightHilight`, `var(--${newColor}Hilight)`);
+		console.log(`changeAccent: setting hilight-hilight of var(--${newColor}Hilight)`)
 		
 		document.documentElement.style.setProperty(`--accent`, `var(--${newColor}`);
 		console.log(`changeAccent: setting accent of var(--${newColor})`)
