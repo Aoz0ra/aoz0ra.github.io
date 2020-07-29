@@ -1,20 +1,36 @@
 function changeAccent(newColor) {
 	if (newColor == `DEFAULT_ACCENT`) {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--DEFAULT_ACCENT_HILIGHT)`);
-		console.log(`changeAccent: setting default accent-hilight of var(--DEFAULT_ACCENT_HILIGHT)`)
+		console.log(`changeAccent: setting default accent-hilight of var(--DEFAULT_ACCENT_HILIGHT)`);
+		
+		document.documentElement.style.setProperty(`--accent`, `var(--DEFAULT_ACCENT`);
+		console.log(`changeAccent: setting default accent of var(--DEFAULT_ACCENT)`)
+		
+		document.documentElement.style.setProperty(`--hilight`, `var(--DEFAULT_ACCENT`);
+		console.log(`changeAccent: setting default hilight of var(--DEFAULT_ACCENT)`)
 	}
 	else if (newColor.startsWith(`#`)) {
-		document.documentElement.style.setProperty(`--accentHilight`, `var(--newColor)`);
-		console.log(`changeAccent: setting custom hilight of var(--${newColor})`)
+		document.documentElement.style.setProperty(`--accentHilight`, `${newColor}`);
+		console.log(`changeAccent: setting custom accent-hilight of ${newColor}`)
+		
+		document.documentElement.style.setProperty(`--accent`, `${newColor}`);
+		console.log(`changeAccent: setting custom accent of ${newColor})`)
+		
+		document.documentElement.style.setProperty(`--hilight`, `${newColor}`);
+		console.log(`changeAccent: setting custom hilight of ${newColor})`)
 	}
 	else {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--${newColor}Hilight)`);
 		console.log(`changeAccent: setting accent-hilight of var(--${newColor}Hilight)`)
+		
+		document.documentElement.style.setProperty(`--accent`, `var(--${newColor}`);
+		console.log(`changeAccent: setting accent of var(--${newColor})`)
+		
+		document.documentElement.style.setProperty(`--hilight`, `var(--${newColor}`);
+		console.log(`changeAccent: setting hilight of var(--${newColor})`)
 	}
-	document.documentElement.style.setProperty(`--accent`, `var(--${newColor}`);
-	console.log(`changeAccent: setting accent of var(--${newColor})`)
-	document.documentElement.style.setProperty(`--hilight`, `var(--${newColor}`);
-	console.log(`changeAccent: setting hilight of var(--${newColor})`)
+	
+	
 }
 		
 function saveAccent(newColor) {
