@@ -60,10 +60,15 @@ function saveTheme(theme) {
 	
 	else if (theme == `Solarized`) {
 		localStorage.setItem(`themeToLoad`, `<link rel="stylesheet" href="/hydrogen-framework/themes/aoz0ras-solarized-dark.css">`)
-		console.log(``)
+		console.log(`solarized theme saved`)
 	}
 	
-	loadTheme(theme)
+	if (theme = `default`) {
+		loadTheme(`default`)
+	}
+	else {
+		loadTheme()
+	}
 }
 
 
