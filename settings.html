@@ -6,10 +6,11 @@
 		<script src="/jquery.min.js"></script>
 
     <script>
-document.getElementById('customAccent').value = document.documentElement.style.getProperty('--accent')
+document.getElementById('customAccent').value = getComputedStyle(document.documentElement).getPropertyValue('--accent')
 
 document.getElementById('customAccent').addEventListener('input', function () {
-  saveAccent(getInputValue('customAccent'));
+	saveAccent(getInputValue('customAccent'));
+	console.log(`[event listener on #customAccent] saving custom accent of ${getInputValue('customAccent')}`)
 })
 
     </script>
