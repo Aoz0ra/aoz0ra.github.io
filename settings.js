@@ -1,3 +1,8 @@
+function getInputValue(id) {
+	return document.getElementById(id).value;
+}
+
+
 function changeAccent(newColor) {
 	if (newColor == `DEFAULT_ACCENT`) {
 		document.documentElement.style.setProperty(`--accentHilight`, `var(--DEFAULT_ACCENT_HILIGHT)`);
@@ -29,8 +34,6 @@ function changeAccent(newColor) {
 		document.documentElement.style.setProperty(`--hilight`, `var(--${newColor}`);
 		console.log(`changeAccent: setting hilight of var(--${newColor})`)
 	}
-	
-	
 }
 		
 function saveAccent(newColor) {
