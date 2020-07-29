@@ -6,13 +6,31 @@
 		<script src="/jquery.min.js"></script>
 
     <script>
-document.getElementById('customAccent').value = getComputedStyle(document.documentElement).getPropertyValue('--accent')
+			document.getElementById('customAccent').value = getComputedStyle(document.documentElement).getPropertyValue('--accent')
 
-document.getElementById('customAccent').addEventListener('input', function () {
-	saveAccent(getInputValue('customAccent'));
-	console.log(`[event listener on #customAccent] saving custom accent of ${getInputValue('customAccent')}`)
-})
+			document.getElementById('customAccent').addEventListener('input', function () {
+				saveAccent(getInputValue('customAccent'));
+				console.log(`[event listener on #customAccent] saving custom accent of ${getInputValue('customAccent')}`)
+			})
 
+			function expandHexcode(hexcode) {
+				var pattern = new RegExp("^\#?([0-9a-fA-F]{3}){1,2}$");
+
+				if (pattern.test(hexcode)) {
+					hexcode = hexcode.toLowerCase();
+					if (hexcode.length === 4) {
+						return `#${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(3)}`
+					} else if (hexcode.length === 3) {
+						return `#${hexcode.charAt(0)}${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(2)}`
+					} else if (hexcode.length === 6) {
+						return `#${hexcode.charAt(0)}${hexcode.charAt(1)}${hexcode.charAt(2)}${hexcode.charAt(3)}${hexcode.charAt(4)}${hexcode.charAt(5)}`
+					} else {
+						return hexcode
+					}
+				}
+				// This is required by ESLint's consistent-return option
+				return;
+			}
     </script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     
