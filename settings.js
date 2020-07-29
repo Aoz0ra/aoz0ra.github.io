@@ -154,14 +154,6 @@ if (!localStorage.animationState) {
 	console.log(`default animation state and saved as there wasn't one`)
 }
 else {
-	changeAccent(localStorage.getItem(`animationState`))
+	loadAnimationState(localStorage.getItem(`animationState`))
 	console.log(`animation state retrieved and used`)
 }
-
-
-// for now i'm overriding all transition times with 0.  sorry if this bothers you.
-
-document.documentElement.style.setProperty(`--animationDuration`, `0`);
-document.documentElement.style.setProperty(`--animationDurationFade`, `0`);
-document.documentElement.style.setProperty(`--animationDurationSlide`, `0`)
-console.log(`transition times overridden with 0`)
