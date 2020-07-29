@@ -132,9 +132,9 @@ function loadAnimationState(animStateBool) {
 	
 	if (animStateBool == true) {
 		console.log(`loadAnimationState: turning animations on`)
-		document.documentElement.style.setProperty(`--animationDuration`, `--animationDuration`);
-		document.documentElement.style.setProperty(`--animationDurationFade`, `--animationDurationFade`);
-		document.documentElement.style.setProperty(`--animationDurationSlide`, `--animationDurationSlide`);
+		document.documentElement.style.setProperty(`--animationDuration`, `var(--animationDuration)`);
+		document.documentElement.style.setProperty(`--animationDurationFade`, `var(--animationDurationFade)`);
+		document.documentElement.style.setProperty(`--animationDurationSlide`, `var(--animationDurationSlide)`);
 	}
 	else if (animStateBool == false) {
 		console.log(`loadAnimationState: turning animations off`)
