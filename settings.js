@@ -25,21 +25,6 @@ function saveAccent(newColor) {
 	console.log(`saveAccent: ...and saved`)
 }
 
-function saveTheme(theme) {
-	if (theme == `default`) {
-		localStorage.setItem(`themeToLoad`, ``)
-		console.log(`default theme saved`)
-	}
-	
-	else if (theme == `Solarized`) {
-		localStorage.setItem(`themeToLoad`, `<link rel="stylesheet" href="/hydrogen-framework/themes/aoz0ras-solarized-dark.css">`)
-		console.log(``)
-	}
-	
-	console.log(`%csaveAccent: RELOADING THE PAGE`, `color: #a94`);
-	location.reload(true); // reloads from the server
-}
-
 function loadTheme(theme) {
 	
 	
@@ -52,6 +37,11 @@ function loadTheme(theme) {
 			document.getElementsByTagName(`head`)[0].innerHTML += `${localStorage.themeToLoad}`
 		}
 	}
+	else if (theme == `default`) {
+		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
+			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = ``;
+		}
+	}
 	else {
 		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
 			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = theme;
@@ -61,6 +51,22 @@ function loadTheme(theme) {
 		}
 	}
 }
+
+function saveTheme(theme) {
+	if (theme == `default`) {
+		localStorage.setItem(`themeToLoad`, ``)
+		console.log(`default theme saved`)
+	}
+	
+	else if (theme == `Solarized`) {
+		localStorage.setItem(`themeToLoad`, `<link rel="stylesheet" href="/hydrogen-framework/themes/aoz0ras-solarized-dark.css">`)
+		console.log(``)
+	}
+	
+	loadTheme(theme)
+}
+
+
 
 
 
