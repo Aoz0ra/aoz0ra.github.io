@@ -24,33 +24,38 @@ function saveAccent(newColor) {
 	localStorage.setItem(`accentColor`, newColor);
 	console.log(`saveAccent: ...and saved`)
 	
-	console.log(`%csaveAccent: RELOADING THE PAGE`, `color: #a94`);
- 	location.reload(true); // reloads from the server
+	
 }
 
 function loadTheme(theme) {
 	
+	console.log(`loadTheme: loading theme "${theme}"`)
 	
 	// I'm using non-jQuery methods for now.
 	if (!theme) {
 		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
 			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = localStorage.themeToLoad;
+			console.log(`loadTheme: theme href is now ${document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href}`)
 		}
 		else {
 			document.getElementsByTagName(`head`)[0].innerHTML += `${localStorage.themeToLoad}`
+			console.log(`loadTheme: theme added to html`)
 		}
 	}
 	else if (theme == `default`) {
 		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
 			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = ``;
+			console.log(`loadTheme: theme href is now ${document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href}`)
 		}
 	}
 	else {
 		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
 			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = theme.replace(`<link rel="stylesheet" href="`, ``).replace(`">`, ``);
+			console.log(`loadTheme: theme href is now ${document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href}`)
 		}
 		else {
 			document.getElementsByTagName(`head`)[0].innerHTML += `${theme}`
+			console.log(`loadTheme: theme added to html`)
 		}
 	}
 }
