@@ -65,8 +65,13 @@ function saveTheme(theme) {
 	}
 	
 	else if (theme == `Solarized`) {
-		localStorage.setItem(`themeToLoad`, `<link rel="stylesheet" href="/hydrogen-framework/themes/aoz0ras-solarized-dark.css">`)
+		localStorage.setItem(`themeToLoad`, `<link rel="stylesheet" href="/hydrogen-framework/themes/aoz0ras-solarized.css">`)
 		console.log(`solarized theme saved`)
+	}
+	
+	else if (theme.startsWith(`/`)) {
+		localStorage.setItem(`themeToLoad`, `<link rel="stylesheet" href="${theme}">`)
+		console.log(`${theme} theme saved`)
 	}
 	
 	if (theme == `default`) {
