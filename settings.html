@@ -44,7 +44,7 @@ drop-content drop-navbar
 				
 				
 				
-	  			<div class="col-xs-12 col-m-6 col-l-4">
+	  			<div class="col-xs-12">
 					
 					<h2>Colour scheme</h2>
 					
@@ -56,15 +56,20 @@ drop-content drop-navbar
 					</div>
 					
 					<div class="btn-group btn-group-justified">
-						<button class="hilight" onclick="saveTheme(`default`)">Ambiance</button>
+						<button class="hilight" onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-ambiance`)">Ambiance</button>
 						<button onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-ambiance-light.css`)">Ambiance Light</button>
 						<button onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-ambiance-dark.css`)">Ambiance Dark</button>
 					</div>
 					
 					<div class="btn-group btn-group-justified">
-						<button class="hilight" onclick="saveTheme(`default`)">Radiance</button>
+						<button class="hilight" onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-radiance.css`)">Radiance</button>
 						<button onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-radiance-light.css`)">Radiance Light</button>
 						<button onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-radiance-dark.css`)">Radiance Dark</button>
+					</div>
+					
+					<div class="btn-group btn-group-justified">
+						<button onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-radlight-ambdark.css`)">Radiance on light, Ambiance on dark</button>
+						<button onclick="saveTheme(`/hydrogen-framework/themes/aoz0ras-amblight-raddark.css`)">Ambiance on light, Radiance on dark</button>
 					</div>
 					
 					<div class="btn-group btn-group-justified">
@@ -140,7 +145,7 @@ drop-content drop-navbar
 				
 				<div class="col-xs-12 col-m-6 col-l-4">
 					
-				  	<h2 style="color: var(--hilight)">Selection colour</h2>
+				  	<h2 style="color: var(--selectionBackground)">Selection colour</h2>
 					
 					<div class="btn-group btn-group-justified">
 						<button onclick="saveSelect('DEFAULT_SELECTION_BG')" style="background: var(--DEFAULT_SELECTION_BG)">theme/site default</button>
@@ -182,6 +187,20 @@ drop-content drop-navbar
 					<br> -->
 					<input type="checkbox" id="idLikeAnimations">
 					<label for="idLikeAnimations">Enable animations</label>
+		  			
+				</div>
+				
+				<div class="col-xs-12 col-m-6 col-l-4">
+					
+					<h2>Navigation bar style</h2>
+					
+					
+ 					<div class="btn-group btn-group-justified">
+						<button onclick="saveNavbar('')">Standard</button>
+						<button onclick="saveNavbar('/hydrogen-framework/hydrogen-nav-fullscreen')">Fullscreen</button>
+						<button onclick="saveNavbar('/hydrogen-framework/hydrogen-nav-ubuntu')">Ubuntu</button>
+						<button onclick="saveNavbar('/hydrogen-framework/hydrogen-nav-navbar')">At the top<br><small>on large screens</small></button>
+					</div>
 		  			
 				</div>
 			</div>
