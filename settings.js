@@ -210,7 +210,7 @@ else {
 }
 
 if (!localStorage.hilightColor) {
-	saveAccent(`DEFAULT_HILIGHT`);
+	saveHilight(`DEFAULT_HILIGHT`);
 	console.log(`default hilight set and saved as there wasn't one`)
 }
 else {
@@ -219,7 +219,7 @@ else {
 }
 
 if (!localStorage.selectColor) {
-	saveAccent(`DEFAULT_SELECTION_BG`);
+	saveSelect(`DEFAULT_SELECTION_BG`);
 	console.log(`default selection color set and saved as there wasn't one`)
 }
 else {
