@@ -214,7 +214,7 @@ if (!localStorage.hilightColor) {
 	console.log(`default hilight set and saved as there wasn't one`)
 }
 else {
-	changeAccent(localStorage.getItem(`accentColor`))
+	changeHilight(localStorage.getItem(`accentColor`))
 	console.log(`hilight retrieved and used`)
 }
 
@@ -223,7 +223,7 @@ if (!localStorage.selectColor) {
 	console.log(`default selection color set and saved as there wasn't one`)
 }
 else {
-	changeAccent(localStorage.getItem(`selectColor`))
+	changeSelect(localStorage.getItem(`selectColor`))
 	console.log(`selection color retrieved and used`)
 }
 
