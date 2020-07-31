@@ -214,7 +214,7 @@ if (!localStorage.hilightColor) {
 	console.log(`default hilight set and saved as there wasn't one`)
 }
 else {
-	changeHilight(localStorage.getItem(`accentColor`))
+	changeHilight(localStorage.getItem(`hilightColor`))
 	console.log(`hilight retrieved and used`)
 }
 
