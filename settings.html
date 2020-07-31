@@ -307,7 +307,7 @@ drop-content drop-navbar
 		document.getElementById('customHilight').addEventListener('input', function () {
 			console.log(`event listener on #customHilight: saving custom accent of ${getInputValue('customHilight')}`)
 			
-			saveAccent(normalizeHexcode(getInputValue('customHilight')));
+			saveHilight(normalizeHexcode(getInputValue('customHilight')));
 		});
 		
 		
@@ -320,7 +320,7 @@ drop-content drop-navbar
 		document.getElementById('customSelect').addEventListener('input', function () {
 			console.log(`event listener on #customSelect: saving custom accent of ${getInputValue('customSelect')}`)
 			
-			saveAccent(normalizeHexcode(getInputValue('customSelect')));
+			saveSelect(normalizeHexcode(getInputValue('customSelect')));
 		});
 		
 		
