@@ -1,0 +1,63 @@
+@keyframes rainbow {
+  0%   {--rainbow:var(--red);
+        --rainbowHilight:var(--redHilight);
+        --rainbowFaint:var(--redFaint);}
+
+  8.333% {--rainbow:var(--orange);
+        --rainbowHilight:var(--orangeHilight);
+        --rainbowFaint:var(--orangeFaint);}
+
+  16.667% {--rainbow:var(--yellow);
+        --rainbowHilight:var(--yellowHilight);
+        --rainbowFaint:var(--yellowFaint);}
+
+  25%  {--rainbow:var(--lime);
+        --rainbowHilight:var(--limeHilight);
+        --rainbowFaint:var(--limeFaint);}
+
+  33.333% {--rainbow:var(--green);
+        --rainbowHilight:var(--greenHilight);
+        --rainbowFaint:var(--greenFaint);}
+
+  41.667% {--rainbow:var(--aquagreen);
+        --rainbowHilight:var(--aquagreenHilight);
+        --rainbowFaint:var(--aquagreenFaint);}
+
+  50%  {--rainbow:var(--cyan);
+        --rainbowHilight:var(--cyanHilight);
+        --rainbowFaint:var(--cyanFaint);}
+
+  58.333% {--rainbow:var(--skyblue);
+        --rainbowHilight:var(--skyblueHilight);
+        --rainbowFaint:var(--skyblueFaint);}
+
+  66.667% {--rainbow:var(--blue);
+        --rainbowHilight:var(--blueHilight);
+        --rainbowFaint:var(--blueFaint);}
+
+  75%  {--rainbow:var(--purple);
+        --rainbowHilight:var(--purpleHilight);
+        --rainbowFaint:var(--purpleFaint);}
+
+  83.333% {--rainbow:var(--pink);
+        --rainbowHilight:var(--pinkHilight);
+        --rainbowFaint:var(--pinkFaint);}
+
+  91.667% {--rainbow:var(--hotpink);
+        --rainbowHilight:var(--hotpinkHilight);
+        --rainbowFaint:var(--hotpinkFaint);}
+
+  100% {--rainbow:var(--red);
+        --rainbowHilight:var(--redHilight);
+        --rainbowFaint:var(--redFaint);}
+
+}
+
+:root {
+  --rainbow: var(--hotpink);
+  --rainbowHilight: var(--hotpinkHilight);
+  --rainbowFaint: var(--hotpinkFaint);
+
+  animation-name: rainbows;
+  animation-duration: 60s;
+}
