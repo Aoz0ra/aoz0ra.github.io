@@ -273,9 +273,11 @@ function loadColor(variableToUse, newColor) {
 
 function saveColor(variableToUse, newColor) {
 	if (newColor) {
+		loadColor(variableToUse, newColor)
 		localStorage.setItem(variableToUse.replace(`--`, `custom `), newColor);
 	}
 	else {
+		loadColor(variableToUse)
 		localStorage.setItem(variableToUse.replace(`--`, `custom `), getColor(variableToUse));
 	}
 }
