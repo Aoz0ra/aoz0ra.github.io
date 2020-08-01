@@ -3,26 +3,35 @@ function getInputValue(id) {
 }
 
 
+
+
+
+
+
+
+
+
+
 function changeAccent(newColor) {
 	if (newColor == `DEFAULT_ACCENT`) {
-		document.documentElement.style.setProperty(`--accentHilight`, `var(--DEFAULT_ACCENT_HILIGHT)`);
+		loadColor(`--accentHilight`, `var(--DEFAULT_ACCENT_HILIGHT)`);
 		console.log(`changeAccent: setting default accent-hilight of var(--DEFAULT_ACCENT_HILIGHT)`);
 		
-		document.documentElement.style.setProperty(`--accent`, `var(--DEFAULT_ACCENT`);
+		loadColor(`--accent`, `var(--DEFAULT_ACCENT`);
 		console.log(`changeAccent: setting default accent of var(--DEFAULT_ACCENT)`)
 	}
 	else if (newColor.startsWith(`#`)) {
-		document.documentElement.style.setProperty(`--accentHilight`, `${newColor}`);
+		loadColor(`--accentHilight`, `${newColor}`);
 		console.log(`changeAccent: setting custom accent-hilight of ${newColor}`)
 		
-		document.documentElement.style.setProperty(`--accent`, `${newColor}`);
+		loadColor(`--accent`, `${newColor}`);
 		console.log(`changeAccent: setting custom accent of ${newColor})`)
 	}
 	else {
-		document.documentElement.style.setProperty(`--accentHilight`, `var(--${newColor}Hilight)`);
+		loadColor(`--accentHilight`, `var(--${newColor}Hilight)`);
 		console.log(`changeAccent: setting accent-hilight of var(--${newColor}Hilight)`)
 		
-		document.documentElement.style.setProperty(`--accent`, `var(--${newColor}`);
+		loadColor(`--accent`, `var(--${newColor}`);
 		console.log(`changeAccent: setting accent of var(--${newColor})`)
 	}
 }
@@ -40,24 +49,24 @@ function saveAccent(newColor) {
 
 function changeHilight(newColor) {
 	if (newColor == `DEFAULT_HILIGHT`) {
-		document.documentElement.style.setProperty(`--hilightHilight`, `var(--DEFAULT_HILIGHT_HILIGHT)`);
+		loadColor(`--hilightHilight`, `var(--DEFAULT_HILIGHT_HILIGHT)`);
 		console.log(`changeAccent: setting default hilight-hilight of var(--DEFAULT_HILIGHT_HILIGHT)`);
 		
-		document.documentElement.style.setProperty(`--hilight`, `var(--DEFAULT_HILIGHT`);
+		loadColor(`--hilight`, `var(--DEFAULT_HILIGHT`);
 		console.log(`changeAccent: setting default hilight of var(--DEFAULT_HILIGHT)`)
 	}
 	else if (newColor.startsWith(`#`)) {
-		document.documentElement.style.setProperty(`--hilightHilight`, `${newColor}`);
+		loadColor(`--hilightHilight`, `${newColor}`);
 		console.log(`changeAccent: setting custom hilight-hilight of ${newColor}`)
 		
-		document.documentElement.style.setProperty(`--hilight`, `${newColor}`);
+		loadColor(`--hilight`, `${newColor}`);
 		console.log(`changeAccent: setting custom hilight of ${newColor})`)
 	}
 	else {
-		document.documentElement.style.setProperty(`--hilightHilight`, `var(--${newColor}Hilight)`);
+		loadColor(`--hilightHilight`, `var(--${newColor}Hilight)`);
 		console.log(`changeAccent: setting hilight-hilight of var(--${newColor}Hilight)`)
 		
-		document.documentElement.style.setProperty(`--hilight`, `var(--${newColor}`);
+		loadColor(`--hilight`, `var(--${newColor}`);
 		console.log(`changeAccent: setting hilight of var(--${newColor})`)
 	}
 }
@@ -76,11 +85,11 @@ function saveHilight(newColor) {
 
 function changeSelect(newColor) {
 	if (newColor.startsWith(`#`)) {
-		document.documentElement.style.setProperty(`--selectionBackground`, `${newColor}`);
+		loadColor(`--selectionBackground`, `${newColor}`);
 		console.log(`changeSelect: setting custom selection background of ${newColor})`)
 	}
 	else {
-		document.documentElement.style.setProperty(`--selectionBackground`, `var(--${newColor}`);
+		loadColor(`--selectionBackground`, `var(--${newColor}`);
 		console.log(`changeSelect: setting selection background of var(--${newColor})`)
 	}
 }
@@ -245,3 +254,34 @@ else {
 	loadAnimationState(localStorage.getItem(`animationState`))
 	console.log(`animation state retrieved and used`)
 }
+
+
+
+
+function getColor(variableToUse) {
+	getComputedStyle(document.documentElement).getPropertyValue(variableToUse)
+}
+
+function loadColor(variableToUse, newColor) {
+	if (newColor) {
+		document.documentElement.style.setProperty(variableToUse, newColor);
+	}
+	else {
+		document.documentElement.style.setProperty(variableToUse, localStorage[`custom ${variableToUse.replace(`--`,``)}`])
+	}
+}
+
+function saveColor(variableToUse, newColor) {
+	localStorage.setItem(variableToUse.replace(`--`, `custom `), newColor);
+}
+
+function setUpColor(variableToUse) {
+	if (!localStorage[`custom ${variableToUse.replace(`--`,``)}`]) {
+		saveColor(`${variableToUse}`, getColor(`${variableToUse}`))
+	}
+	else {
+		loadColor(`${variableToUse}`)
+	}
+}
+
+setUpColor(`--background`);
