@@ -282,6 +282,7 @@ function saveColor(variableToUse, newColor) {
 
 function resetColor(variableToUse) {
 	removeItem(`custom ${variableToUse.replace(`--`, ``)}`)
+}
 
 function setUpColor(variableToUse) {
 	//         if we have no custom colour...
