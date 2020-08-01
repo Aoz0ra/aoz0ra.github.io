@@ -280,11 +280,19 @@ function saveColor(variableToUse, newColor) {
 	}
 }
 
+function resetColor(variableToUse) {
+	removeItem(`custom ${variableToUse.replace(`--`, ``)}`)
+
 function setUpColor(variableToUse) {
-	if (!localStorage[`custom ${variableToUse.replace(`--`,``)}`]) {
-		saveColor(`${variableToUse}`, getColor(`${variableToUse}`))
-	}
-	else if (localStorage[`custom ${variableToUse.replace(`--`,``)}`] == ``) {
+	//         if we have no custom colour...
+	if (      !localStorage[`custom ${variableToUse.replace(`--`,``)}`]
+	    
+	    //     ...or it's an empty string...
+		|| localStorage[`custom ${variableToUse.replace(`--`,``)}`] == ``
+	    
+	    //     ...or it's a string containing "undefined" 
+		|| localStorage[`custom ${variableToUse.replace(`--`,``)}`] == `undefined`) {
+		
 		// just do nothing and have the previous CSS define the colour
 		
 		// it's not often that I just put up something like "if A, do X; else if B, no-op; else Z".
