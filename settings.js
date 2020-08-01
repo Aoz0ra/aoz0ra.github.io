@@ -272,12 +272,22 @@ function loadColor(variableToUse, newColor) {
 }
 
 function saveColor(variableToUse, newColor) {
-	localStorage.setItem(variableToUse.replace(`--`, `custom `), newColor);
+	if (newColor) {
+		localStorage.setItem(variableToUse.replace(`--`, `custom `), newColor);
+	}
+	else {
+		localStorage.setItem(variableToUse.replace(`--`, `custom `), getColor(variableToUse));
+	}
 }
 
 function setUpColor(variableToUse) {
 	if (!localStorage[`custom ${variableToUse.replace(`--`,``)}`]) {
 		saveColor(`${variableToUse}`, getColor(`${variableToUse}`))
+	}
+	else if (localStorage[`custom ${variableToUse.replace(`--`,``)}`] == ``) {
+		// just do nothing and have the previous CSS define the colour
+		
+		// it's not often that I just put up something like "if A, do X; else if B, no-op; else Z".
 	}
 	else {
 		loadColor(`${variableToUse}`)
