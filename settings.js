@@ -109,12 +109,12 @@ function saveSelect(newColor) {
 
 function loadColorSchemeHelper(linkElement) {
 	
-	if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
-		document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = linkElement.replace(`<link rel="stylesheet" href="`, ``).replace(`">`, ``);
-		console.log(`loadThemeHelper: theme href is now ${document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href}`)
+	if (document.head.getElementsByTagName(`link`)[1]) {
+		document.head.getElementsByTagName(`link`)[1].href = linkElement.replace(`<link rel="stylesheet" href="`, ``).replace(`">`, ``);
+		console.log(`loadThemeHelper: theme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 	}
 	else {
-		document.getElementsByTagName(`head`)[0].innerHTML += linkElement
+		document.head.innerHTML += linkElement
 		console.log(`loadThemeHelper: theme added to html`)
 	}
 }
@@ -128,9 +128,9 @@ function loadColorScheme(theme) {
 		loadColorSchemeHelper(localStorage.colorSchemeToLoad)
 	}
 	else if (theme == `default`) {
-		if (document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1]) {
-			document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href = ``;
-			console.log(`loadColorScheme: theme href is now ${document.getElementsByTagName(`head`)[0].getElementsByTagName(`link`)[1].href}`)
+		if (document.head.getElementsByTagName(`link`)[1]) {
+			document.head.getElementsByTagName(`link`)[1].href = ``;
+			console.log(`loadColorScheme: theme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 		}
 	}
 	else {
@@ -256,25 +256,41 @@ else {
 }
 
 
-
+function addCSS(cssToAdd) {
+	if (!document.head.getElementsByTagName(`style`)[0]) {
+		document.head.innerHTML += `<style></style>`;
+	}
+	document.head.getElementsByTagName(`style`)[0].innerHTML += addCSS
+}
 
 function getColor(variableToUse) {
 	getComputedStyle(document.documentElement).getPropertyValue(variableToUse)
 }
 
-function loadColor(variableToUse, newColor) {
+function loadColor(variableToUse, newColor, cssSelector) {
 	if (newColor) {
-		document.documentElement.style.setProperty(variableToUse, newColor);
+		if (cssSelector) {
+			addCSS(`${cssSelector} {${variableToUse}: ${newColor}}`)
+		}
+		else {
+			document.documentElement.style.setProperty(variableToUse, newColor);
+		}
 	}
 	else {
 		document.documentElement.style.setProperty(variableToUse, localStorage[`custom ${variableToUse.replace(`--`,``)}`])
 	}
 }
 
-function saveColor(variableToUse, newColor) {
+function saveColor(variableToUse, newColor, cssSelector) {
 	if (newColor) {
-		loadColor(variableToUse, newColor)
-		localStorage.setItem(variableToUse.replace(`--`, `custom `), newColor);
+		if (cssSelector) {
+			loadColor(variableToUse, newColor, cssSelector)
+			localStorage.setItem(variableToUse.replace(`--`, `custom ${cssSelector} `), newColor);
+		}
+		else {
+			loadColor(variableToUse, newColor, cssSelector)
+			localStorage.setItem(variableToUse.replace(`--`, `custom `), newColor);
+		}
 	}
 	else {
 		loadColor(variableToUse)
@@ -282,27 +298,125 @@ function saveColor(variableToUse, newColor) {
 	}
 }
 
-function resetColor(variableToUse) {
-	removeItem(`custom ${variableToUse.replace(`--`, ``)}`)
-}
-
-function setUpColor(variableToUse) {
-	//         if we have no custom colour...
-	if (      !localStorage[`custom ${variableToUse.replace(`--`,``)}`]
-	    
-	    //     ...or it's an empty string...
-		|| localStorage[`custom ${variableToUse.replace(`--`,``)}`] == ``
-	    
-	    //     ...or it's a string containing "undefined" 
-		|| localStorage[`custom ${variableToUse.replace(`--`,``)}`] == `undefined`) {
-		
-		// just do nothing and have the previous CSS define the colour
-		
-		// it's not often that I just put up something like "if A, do X; else if B, no-op; else Z".
+function resetColor(variableToUse, cssSelector) {
+	if (cssSelector) {
+		localStorage.removeItem(`custom ${cssSelector} ${variableToUse.replace(`--`, ``)}`)
 	}
 	else {
-		loadColor(`${variableToUse}`)
+		localStorage.removeItem(`custom ${variableToUse.replace(`--`, ``)}`)
+	}
+}
+
+function setUpColor(variableToUse, cssSelector) {
+	
+	if (cssSelector) {
+		if (      !localStorage[`custom ${cssSelector} ${variableToUse.replace(`--`,``)}`]
+		    
+		    //     ...or it's an empty string...
+			|| localStorage[`custom ${cssSelector} ${variableToUse.replace(`--`,``)}`] == ``
+		    
+		    //     ...or it's a string containing "undefined" 
+			|| localStorage[`custom ${cssSelector} ${variableToUse.replace(`--`,``)}`] == `undefined`) {
+			
+			// just do nothing and have the previous CSS define the colour
+			
+			// it's not often that I just put up something like "if A, do X; else if B, no-op; else Z".
+		}
+		else {
+			addCSS(`${cssSelector} {${variableToUse}: }`)
+		}
+	} else {
+		//         if we have no custom colour...
+		if (      !localStorage[`custom ${variableToUse.replace(`--`,``)}`]
+		    
+		    //     ...or it's an empty string...
+			|| localStorage[`custom ${variableToUse.replace(`--`,``)}`] == ``
+		    
+		    //     ...or it's a string containing "undefined" 
+			|| localStorage[`custom ${variableToUse.replace(`--`,``)}`] == `undefined`) {
+			
+			// just do nothing and have the previous CSS define the colour
+			
+			// it's not often that I just put up something like "if A, do X; else if B, no-op; else Z".
+		}
+		else {
+			loadColor(`${variableToUse}`)
+		}
 	}
 }
 
 setUpColor(`--background`);
+setUpColor(`--backgroundHilight`);
+setUpColor(`--backgroundFaint`);
+setUpColor(`--foreground`);
+setUpColor(`--foregroundHilight`);
+setUpColor(`--foregroundFaint`);
+setUpColor(`--border`);
+setUpColor(`--borderTop`);
+setUpColor(`--borderLeft`);
+setUpColor(`--borderRight`);
+setUpColor(`--borderBottom`);
+
+setUpColor(`--gray`);
+setUpColor(`--red`);
+setUpColor(`--orange`);
+setUpColor(`--yellow`);
+setUpColor(`--lime`);
+setUpColor(`--green`);
+setUpColor(`--aquagreen`);
+setUpColor(`--cyan`);
+setUpColor(`--skyblue`);
+setUpColor(`--blue`);
+setUpColor(`--purple`);
+setUpColor(`--pink`);
+setUpColor(`--hotpink`);
+
+setUpColor(`--grayMuted`);
+setUpColor(`--redMuted`);
+setUpColor(`--orangeMuted`);
+setUpColor(`--yellowMuted`);
+setUpColor(`--limeMuted`);
+setUpColor(`--greenMuted`);
+setUpColor(`--aquagreenMuted`);
+setUpColor(`--cyanMuted`);
+setUpColor(`--skyblueMuted`);
+setUpColor(`--blueMuted`);
+setUpColor(`--purpleMuted`);
+setUpColor(`--pinkMuted`);
+setUpColor(`--hotpinkMuted`);
+
+setUpColor(`--grayHilight`);
+setUpColor(`--redHilight`);
+setUpColor(`--orangeHilight`);
+setUpColor(`--yellowHilight`);
+setUpColor(`--limeHilight`);
+setUpColor(`--greenHilight`);
+setUpColor(`--aquagreenHilight`);
+setUpColor(`--cyanHilight`);
+setUpColor(`--skyblueHilight`);
+setUpColor(`--blueHilight`);
+setUpColor(`--purpleHilight`);
+setUpColor(`--pinkHilight`);
+setUpColor(`--hotpinkHilight`);
+
+setUpColor(`--grayFaint`);
+setUpColor(`--redFaint`);
+setUpColor(`--orangeFaint`);
+setUpColor(`--yellowFaint`);
+setUpColor(`--limeFaint`);
+setUpColor(`--greenFaint`);
+setUpColor(`--aquagreenFaint`);
+setUpColor(`--cyanFaint`);
+setUpColor(`--skyblueFaint`);
+setUpColor(`--blueFaint`);
+setUpColor(`--purpleFaint`);
+setUpColor(`--pinkFaint`);
+setUpColor(`--hotpinkFaint`);
+
+setUpColor(`--DEFAULT_ACCENT`);
+setUpColor(`--DEFAULT_ACCENT_HILIGHT`);
+setUpColor(`--DEFAULT_HILIGHT`);
+setUpColor(`--DEFAULT_HILIGHT`);
+setUpColor(`--DEFAULT_HILIGHT`);
+setUpColor(`--DEFAULT_SELECTION_BG`);
+setUpColor(`--selectionForeground`);
