@@ -1,4 +1,4 @@
-@keyframes rainbow {
+@keyframes rainbows {
   0%   {--rainbow:var(--red);
         --rainbowHilight:var(--redHilight);
         --rainbowFaint:var(--redFaint);}
