@@ -2,8 +2,8 @@
 	<head>
 
 		<link rel="stylesheet" href="/hydrogen-framework/hydrogen.css">
-		<script src="/settings.js"></script>
 		<script src="/jquery.min.js"></script>
+		<script src="/settings.js"></script>
 
 <link rel="stylesheet" href="https://aoz0ra.github.io/hydrogen-extensions.css">
 
@@ -43,135 +43,137 @@ drop-content drop-navbar
 		
 		<div class="page">
 			<div class="row">
-				<div class="col-xs-12 col-l-3">
+				<div class="col-xs-12 col-l-3 floating-toc-">
 					[ General ]
 					<a href="/settings/themes.html">Themes</a>
 				</div>
 				
-				<div class="col-xs-12 col-l-3">
-					
-				  	<h2 style="color: var(--accent)">Accent colour</h2>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveAccent('DEFAULT_ACCENT')" style="color: var(--DEFAULT_ACCENT)">theme default</button>
-						<button onclick="saveAccent('gray')">Grey</button>
-						<button onclick="saveAccent('rainbow')" style="color: var(--rainbow)">Rainbow</button>
-						<input type="color" id="customAccent" />
-					</div>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveAccent('red')" style="color: var(--red)">red</button>
-						<button onclick="saveAccent('orange')" style="color: var(--orange)">orange</button>
-						<button onclick="saveAccent('yellow')" style="color: var(--yellow)">yellow</button>
-						<button onclick="saveAccent('lime')" style="color: var(--lime)">lime green</button>
-					</div>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveAccent('green')" style="color: var(--green)">green</button>
-						<button onclick="saveAccent('aquagreen')" style="color: var(--aquagreen)">aqua green</button>
-						<button onclick="saveAccent('cyan')" style="color: var(--cyan)">cyan</button>
-						<button onclick="saveAccent('skyblue')" style="color: var(--skyblue)">sky blue</button>
-					</div>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveAccent('blue')" style="color: var(--blue)">blue</button>
-						<button onclick="saveAccent('purple')" style="color: var(--purple)">purple</button>
-						<button onclick="saveAccent('pink')" style="color: var(--pink)">pink</button>
-						<button onclick="saveAccent('hotpink')" style="color: var(--hotpink)">hot pink</button>
-					</div>
+				<div class="col-xs-12 col-l-9">
+					<div class="col-xs-12">
 						
-				</div>
-				
-				
-				<div class="col-xs-12 col-m-6 col-l-3">
+					  	<h2 style="color: var(--accent)">Accent colour</h2>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveAccent('DEFAULT_ACCENT')" style="color: var(--DEFAULT_ACCENT)">theme default</button>
+							<button onclick="saveAccent('gray')">Grey</button>
+							<button onclick="saveAccent('rainbow')" style="color: var(--rainbow)">Rainbow</button>
+							<input type="color" id="customAccent" />
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveAccent('red')" style="color: var(--red)">red</button>
+							<button onclick="saveAccent('orange')" style="color: var(--orange)">orange</button>
+							<button onclick="saveAccent('yellow')" style="color: var(--yellow)">yellow</button>
+							<button onclick="saveAccent('lime')" style="color: var(--lime)">lime green</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveAccent('green')" style="color: var(--green)">green</button>
+							<button onclick="saveAccent('aquagreen')" style="color: var(--aquagreen)">aqua green</button>
+							<button onclick="saveAccent('cyan')" style="color: var(--cyan)">cyan</button>
+							<button onclick="saveAccent('skyblue')" style="color: var(--skyblue)">sky blue</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveAccent('blue')" style="color: var(--blue)">blue</button>
+							<button onclick="saveAccent('purple')" style="color: var(--purple)">purple</button>
+							<button onclick="saveAccent('pink')" style="color: var(--pink)">pink</button>
+							<button onclick="saveAccent('hotpink')" style="color: var(--hotpink)">hot pink</button>
+						</div>
+							
+					</div>
 					
-				  	<h2 style="color: var(--hilight)">Hilight colour</h2>
 					
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveHilight('DEFAULT_HILIGHT')" style="--hilight: var(--DEFAULT_HILIGHT)">theme default</button>
-						<button onclick="saveHilight('gray');" style="--hilight: var(--gray)">Grey</button>
-						<button onclick="saveHilight('rainbow')" style="--hilight: var(--rainbow)">Rainbow</button>
-						<input type="color" id="customHilight" />
-					</div>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveHilight('red')" style="--hilight: var(--red)">red</button>
-						<button onclick="saveHilight('orange')" style="--hilight: var(--orange)">orange</button>
-						<button onclick="saveHilight('yellow')" style="--hilight: var(--yellow)">yellow</button>
-						<button onclick="saveHilight('lime')" style="--hilight: var(--lime)">lime green</button>
-					</div>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveHilight('green')" style="--hilight: var(--green)">green</button>
-						<button onclick="saveHilight('aquagreen')" style="--hilight: var(--aquagreen)">aqua green</button>
-						<button onclick="saveHilight('cyan')" style="--hilight: var(--cyan)">cyan</button>
-						<button onclick="saveHilight('skyblue')" style="--hilight: var(--skyblue)">sky blue</button>
-					</div>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveHilight('blue')" style="--hilight: var(--blue)">blue</button>
-						<button onclick="saveHilight('purple')" style="--hilight: var(--purple)">purple</button>
-						<button onclick="saveHilight('pink')" style="--hilight: var(--pink)">pink</button>
-						<button onclick="saveHilight('hotpink')" style="--hilight: var(--hotpink)">hot pink</button>
-					</div>
+					<div class="col-xs-12 col-l-6">
 						
-				</div>
-				
-				
-				<div class="col-xs-12 col-m-6 col-l-3">
-					
-				  	<h2 style="color: var(--selectionBackground)">Selection colour</h2>
-					
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveSelect('DEFAULT_SELECTION_BG')" style="background: var(--DEFAULT_SELECTION_BG); --foreground: var(--selectionForeground);">theme default</button>
-						<button onclick="saveSelect('gray')" style="background: var(--gray); --foreground: var(--selectionForeground);">Grey</button>
-						<input type="color" id="customSelect" />
-					</div>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveSelect('red')" style="background: var(--red); --foreground: var(--selectionForeground);">red</button>
-						<button onclick="saveSelect('orange')" style="background: var(--orange); --foreground: var(--selectionForeground);">orange</button>
-						<button onclick="saveSelect('yellow')" style="background: var(--yellow); --foreground: var(--selectionForeground);">yellow</button>
-						<button onclick="saveSelect('lime')" style="background: var(--lime); --foreground: var(--selectionForeground);">lime green</button>
-					</div>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveSelect('green')" style="background: var(--green); --foreground: var(--selectionForeground);">green</button>
-						<button onclick="saveSelect('aquagreen')" style="background: var(--aquagreen); --foreground: var(--selectionForeground);">aqua green</button>
-						<button onclick="saveSelect('cyan')" style="background: var(--cyan); --foreground: var(--selectionForeground);">cyan</button>
-						<button onclick="saveSelect('skyblue')" style="background: var(--skyblue); --foreground: var(--selectionForeground);">sky blue</button>
-					</div>
-					<div class="btn-group btn-group-justified">
-						<button onclick="saveSelect('blue')" style="background: var(--blue); --foreground: var(--selectionForeground);">blue</button>
-						<button onclick="saveSelect('purple')" style="background: var(--purple); --foreground: var(--selectionForeground);">purple</button>
-						<button onclick="saveSelect('pink')" style="background: var(--pink); --foreground: var(--selectionForeground);">pink</button>
-						<button onclick="saveSelect('hotpink')" style="background: var(--hotpink); --foreground: var(--selectionForeground);">hot pink</button>
-					</div>
+					  	<h2 style="color: var(--hilight)">Hilight colour</h2>
 						
-				</div>
-				
-				
-				<div class="col-xs-12"><h1>Other</h1></div>
-				
-				<div class="col-xs-12">
-					
-					<h2>Animations</h2>
-					
-					
-<!-- 					<input type="checkbox" id="reduceMotion">
-					<label for="reduceMotion">Reduce motion</label>
-					<p style="color: var(--foregroundFaint);" class="faint small">Reduces the motion effects to simple crossfades</p>
-					<br> -->
-					<input type="checkbox" id="idLikeAnimations">
-					<label for="idLikeAnimations">Enable animations</label>
-					<p class="faint small">Slow and resource-intensive on Macs!</p>
-		  			
-				</div>
-				
-<!-- 				<div class="col-xs-12 col-m-6">
-					
-					<h2>Navigation bar style</h2>
-					
-					
- 					<div class="btn-group btn-group-justified">
-						<button onclick="saveNavbar('')">Standard</button>
-						<button onclick="saveNavbar('/hydrogen-framework/hydrogen-nav-fullscreen')">Fullscreen</button>
-						<button onclick="saveNavbar('/hydrogen-framework/hydrogen-nav-ubuntu')">Ubuntu</button>
-						<button onclick="saveNavbar('/hydrogen-framework/hydrogen-nav-navbar')">At the top<br><small>on large screens</small></button>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveHilight('DEFAULT_HILIGHT')" style="--hilight: var(--DEFAULT_HILIGHT)">theme default</button>
+							<button onclick="saveHilight('gray');" style="--hilight: var(--gray)">Grey</button>
+							<button onclick="saveHilight('rainbow')" style="--hilight: var(--rainbow)">Rainbow</button>
+							<input type="color" id="customHilight" />
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveHilight('red')" style="--hilight: var(--red)">red</button>
+							<button onclick="saveHilight('orange')" style="--hilight: var(--orange)">orange</button>
+							<button onclick="saveHilight('yellow')" style="--hilight: var(--yellow)">yellow</button>
+							<button onclick="saveHilight('lime')" style="--hilight: var(--lime)">lime green</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveHilight('green')" style="--hilight: var(--green)">green</button>
+							<button onclick="saveHilight('aquagreen')" style="--hilight: var(--aquagreen)">aqua green</button>
+							<button onclick="saveHilight('cyan')" style="--hilight: var(--cyan)">cyan</button>
+							<button onclick="saveHilight('skyblue')" style="--hilight: var(--skyblue)">sky blue</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveHilight('blue')" style="--hilight: var(--blue)">blue</button>
+							<button onclick="saveHilight('purple')" style="--hilight: var(--purple)">purple</button>
+							<button onclick="saveHilight('pink')" style="--hilight: var(--pink)">pink</button>
+							<button onclick="saveHilight('hotpink')" style="--hilight: var(--hotpink)">hot pink</button>
+						</div>
+							
 					</div>
-		  			
-				</div> -->
+					
+					
+					<div class="col-xs-12 col-l-6">
+						
+					  	<h2 style="color: var(--selectionBackground)">Selection colour</h2>
+						
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveSelect('DEFAULT_SELECTION_BG')" style="background: var(--DEFAULT_SELECTION_BG); --foreground: var(--selectionForeground);">theme default</button>
+							<button onclick="saveSelect('gray')" style="background: var(--gray); --foreground: var(--selectionForeground);">Grey</button>
+							<input type="color" id="customSelect" />
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveSelect('red')" style="background: var(--red); --foreground: var(--selectionForeground);">red</button>
+							<button onclick="saveSelect('orange')" style="background: var(--orange); --foreground: var(--selectionForeground);">orange</button>
+							<button onclick="saveSelect('yellow')" style="background: var(--yellow); --foreground: var(--selectionForeground);">yellow</button>
+							<button onclick="saveSelect('lime')" style="background: var(--lime); --foreground: var(--selectionForeground);">lime green</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveSelect('green')" style="background: var(--green); --foreground: var(--selectionForeground);">green</button>
+							<button onclick="saveSelect('aquagreen')" style="background: var(--aquagreen); --foreground: var(--selectionForeground);">aqua green</button>
+							<button onclick="saveSelect('cyan')" style="background: var(--cyan); --foreground: var(--selectionForeground);">cyan</button>
+							<button onclick="saveSelect('skyblue')" style="background: var(--skyblue); --foreground: var(--selectionForeground);">sky blue</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveSelect('blue')" style="background: var(--blue); --foreground: var(--selectionForeground);">blue</button>
+							<button onclick="saveSelect('purple')" style="background: var(--purple); --foreground: var(--selectionForeground);">purple</button>
+							<button onclick="saveSelect('pink')" style="background: var(--pink); --foreground: var(--selectionForeground);">pink</button>
+							<button onclick="saveSelect('hotpink')" style="background: var(--hotpink); --foreground: var(--selectionForeground);">hot pink</button>
+						</div>
+							
+					</div>
+					
+					
+					<div class="col-xs-12"><h1>Other</h1></div>
+					
+					<div class="col-xs-12">
+						
+						<h2>Animations</h2>
+						
+						
+<!-- 						<input type="checkbox" id="reduceMotion">
+						<label for="reduceMotion">Reduce motion</label>
+						<p style="color: var(--foregroundFaint);" class="faint small">Reduces the motion effects to simple crossfades</p>
+						<br> -->
+						<input type="checkbox" id="idLikeAnimations">
+						<label for="idLikeAnimations">Enable animations</label>
+						<p class="faint small">Slow and resource-intensive on Macs!</p>
+		  				
+					</div>
+					
+<!-- 					<div class="col-xs-12 col-m-6">
+						
+						<h2>Navigation bar style</h2>
+						
+						
+ 						<div class="btn-group btn-group-justified">
+							<button onclick="saveNavbar('')">Standard</button>
+							<button onclick="saveNavbar('/hydrogen-framework/hydrogen-nav-fullscreen')">Fullscreen</button>
+							<button onclick="saveNavbar('/hydrogen-framework/hydrogen-nav-ubuntu')">Ubuntu</button>
+							<button onclick="saveNavbar('/hydrogen-framework/hydrogen-nav-navbar')">At the top<br><small>on large screens</small></button>
+						</div>
+		  				
+					</div> -->
+				</div>
 			</div>
 		</div>
 	
