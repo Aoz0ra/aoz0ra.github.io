@@ -115,7 +115,7 @@ function saveSelect(newColor) {
 function loadColorSchemeHelper(linkElement) {
 	
 	if ($(`head link#colourscheme`).length) {
-		document.head.getElementsByTagName(`link`)[1].href = linkElement.replace(`<link rel="stylesheet" id="colourscheme" href="`, ``).replace(`">`, ``);
+		document.head.getElementById(`colourscheme`).href = linkElement.replace(`<link rel="stylesheet" id="colourscheme" href="`, ``).replace(`">`, ``);
 		console.log(`loadColorSchemeHelper: color scheme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 	}
 	else {
@@ -130,11 +130,13 @@ function loadColorScheme(theme) {
 	
 	// I'm using non-jQuery methods for now.
 	if (!theme) {
+		console.log(`no theme specified, loading from storage`)
 		loadColorSchemeHelper(localStorage.colorSchemeToLoad)
 	}
 	else if (theme == `default`) {
+		console.log(`default theme specified, erasing`)
 		if ($(`head link#colourscheme`).length) {
-			document.head.getElementsByTagName(`link`)[1].href = ``;
+			document.head.getElementById(`colourscheme`)[1].href = ``;
 			console.log(`loadColorScheme: color scheme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 		}
 	}
@@ -170,8 +172,8 @@ function saveColorScheme(theme) {
 
 function loadStyleHelper(linkElement) {
 	
-	if ($(`head link#colourscheme`).length) {
-		document.head.getElementsByTagName(`link`)[1].href = linkElement.replace(`<link rel="stylesheet" id="colourscheme" href="`, ``).replace(`">`, ``);
+	if ($(`head link#style`).length) {
+		document.head.getElementById(`style`).href = linkElement.replace(`<link rel="stylesheet" id="style" href="`, ``).replace(`">`, ``);
 		console.log(`loadStyleHelper: style href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 	}
 	else {
@@ -190,7 +192,7 @@ function loadStyle(theme) {
 	}
 	else if (theme == `default`) {
 		if ($(`head link#style`).length) {
-			document.head.getElementsByTagName(`link`)[1].href = ``;
+			document.head.getElementById(`style`).href = ``;
 			console.log(`loadStyle: style href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 		}
 	}
