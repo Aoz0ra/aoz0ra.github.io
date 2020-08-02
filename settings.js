@@ -10,8 +10,8 @@ $(`#dropContent`).html(`<div class="item"> <a href="/hydrogen-framework/index.ht
 		      `<div class="item"> <a href="/winclassic/index.html">WinClassic</a> </div>`+
 		      `<div class="item"> <a href="/settings/index.html">Settings</a> </div>`)
 
-$(`#settingsIndex`).html(`<a href="/index.html">General</a>`+
-			`<a href="/themes.html">Themes</a>`)
+$(`#settingsIndex`).html(`<a href="/settings/index.html">General</a><br>`+
+			`<a href="/settings/themes.html">Themes</a>`)
 
 
 
@@ -114,7 +114,7 @@ function saveSelect(newColor) {
 
 function loadColorSchemeHelper(linkElement) {
 	
-	if (document.head.getElementsByTagName(`link`)[1]) {
+	if (!!($(`head link#colourscheme`).length)) {
 		document.head.getElementsByTagName(`link`)[1].href = linkElement.replace(`<link rel="stylesheet" href="`, ``).replace(`">`, ``);
 		console.log(`loadThemeHelper: theme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 	}
