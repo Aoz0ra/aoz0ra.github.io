@@ -60,93 +60,97 @@ drop-content drop-navbar
 					
 					
 					
-	  				<div class="col-xs-12">
-						
-						<h2>Colour scheme</h2>
-						
-						<div class="row">
-							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified">
-									<button class="hilight" onclick="saveColorScheme(`default`)">Default</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours-light.css`)">Light</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours-dark.css`)">Dark</button>
-								</div>
-							</div>
+	  				<div class="col-xs-12 col-l-4">
+					
+					  	<h2 style="color: var(--accent)">Accent colour</h2>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveAccent('DEFAULT_ACCENT')" style="color: var(--DEFAULT_ACCENT)">theme default</button>
+							<button onclick="saveAccent('gray')">Grey</button>
+							<button onclick="saveAccent('rainbow')" style="color: var(--rainbow)">Rainbow</button>
+							<input type="color" id="customAccent" />
 						</div>
-						
-						<br>
-						
-						<div class="row">
-							<h3>Ambiance and Radiance</h3>
-							<div class="col-xs-12 col-m-6 col-xl-4">
-								<div class="btn-group btn-group-justified">
-									<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-ambiance.css`)">Ambi&shy;ance</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-ambiance-light.css`)">Ambi&shy;ance Light</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-ambiance-dark.css`)">Ambi&shy;ance Dark</button>
-								</div>
-							</div>
-						
-							<div class="col-xs-12 col-m-6 col-xl-4">
-								<div class="btn-group btn-group-justified">
-									<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-radiance.css`)">Radi&shy;ance</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-radiance-light.css`)">Radi&shy;ance Light</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-radiance-dark.css`)">Radi&shy;ance Dark</button>
-								</div>
-							</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveAccent('red')" style="color: var(--red)">red</button>
+							<button onclick="saveAccent('orange')" style="color: var(--orange)">orange</button>
+							<button onclick="saveAccent('yellow')" style="color: var(--yellow)">yellow</button>
+							<button onclick="saveAccent('lime')" style="color: var(--lime)">lime green</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveAccent('green')" style="color: var(--green)">green</button>
+							<button onclick="saveAccent('aquagreen')" style="color: var(--aquagreen)">aqua green</button>
+							<button onclick="saveAccent('cyan')" style="color: var(--cyan)">cyan</button>
+							<button onclick="saveAccent('skyblue')" style="color: var(--skyblue)">sky blue</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveAccent('blue')" style="color: var(--blue)">blue</button>
+							<button onclick="saveAccent('purple')" style="color: var(--purple)">purple</button>
+							<button onclick="saveAccent('pink')" style="color: var(--pink)">pink</button>
+							<button onclick="saveAccent('hotpink')" style="color: var(--hotpink)">hot pink</button>
+						</div>
 							
-							<div class="col-xs-12 col-xl-4">
-								<div class="btn-group btn-group-justified">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-radlight-ambdark.css`)">Radi&shy;ance on light, Ambi&shy;ance on dark</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-amblight-raddark.css`)">Ambi&shy;ance on light, Radi&shy;ance on dark</button>
-								</div>
-							</div>
-						</div>
+					</div>
+					
+					
+					<div class="col-xs-12 col-m-6 col-l-4">
 						
-						<div class="row">
-							<h3>Solarized</h3>
-							<div class="col-xs-12 col-l-6">
-								<div class="btn-group btn-group-justified">
-									<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-solarized.css`)">Solar&shy;ized</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-solarized-light.css`)">Solar&shy;ized Light</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-solarized-dark.css`)">Solar&shy;ized Dark</button>
-								</div>
-							</div>
+					  	<h2 style="color: var(--hilight)">Hilight colour</h2>
+						
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveHilight('DEFAULT_HILIGHT')" style="--hilight: var(--DEFAULT_HILIGHT)">theme default</button>
+							<button onclick="saveHilight('gray');" style="--hilight: var(--gray)">Grey</button>
+							<button onclick="saveHilight('rainbow')" style="--hilight: var(--rainbow)">Rainbow</button>
+							<input type="color" id="customHilight" />
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveHilight('red')" style="--hilight: var(--red)">red</button>
+							<button onclick="saveHilight('orange')" style="--hilight: var(--orange)">orange</button>
+							<button onclick="saveHilight('yellow')" style="--hilight: var(--yellow)">yellow</button>
+							<button onclick="saveHilight('lime')" style="--hilight: var(--lime)">lime green</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveHilight('green')" style="--hilight: var(--green)">green</button>
+							<button onclick="saveHilight('aquagreen')" style="--hilight: var(--aquagreen)">aqua green</button>
+							<button onclick="saveHilight('cyan')" style="--hilight: var(--cyan)">cyan</button>
+							<button onclick="saveHilight('skyblue')" style="--hilight: var(--skyblue)">sky blue</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveHilight('blue')" style="--hilight: var(--blue)">blue</button>
+							<button onclick="saveHilight('purple')" style="--hilight: var(--purple)">purple</button>
+							<button onclick="saveHilight('pink')" style="--hilight: var(--pink)">pink</button>
+							<button onclick="saveHilight('hotpink')" style="--hilight: var(--hotpink)">hot pink</button>
+						</div>
 							
-							<div class="col-xs-12 col-l-6">
-								<div class="btn-group btn-group-justified">
-									<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-solarized-alt.css`)">Solar&shy;ized (alternate light)</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-solarized-light-alt.css`)">Solar&shy;ized Light (alternate)</button>
-								</div>
-							</div>
+					</div>
+					
+					
+					<div class="col-xs-12 col-m-6 col-l-4">
+						
+					  	<h2 style="color: var(--selectionBackground)">Selection colour</h2>
+						
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveSelect('DEFAULT_SELECTION_BG')" style="background: var(--DEFAULT_SELECTION_BG); --foreground: var(--selectionForeground);">theme default</button>
+							<button onclick="saveSelect('gray')" style="background: var(--gray); --foreground: var(--selectionForeground);">Grey</button>
+							<input type="color" id="customSelect" />
 						</div>
-						
-						<br>
-						
-						<div class="row">
-							<h3>Other</h3>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveSelect('red')" style="background: var(--red); --foreground: var(--selectionForeground);">red</button>
+							<button onclick="saveSelect('orange')" style="background: var(--orange); --foreground: var(--selectionForeground);">orange</button>
+							<button onclick="saveSelect('yellow')" style="background: var(--yellow); --foreground: var(--selectionForeground);">yellow</button>
+							<button onclick="saveSelect('lime')" style="background: var(--lime); --foreground: var(--selectionForeground);">lime green</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveSelect('green')" style="background: var(--green); --foreground: var(--selectionForeground);">green</button>
+							<button onclick="saveSelect('aquagreen')" style="background: var(--aquagreen); --foreground: var(--selectionForeground);">aqua green</button>
+							<button onclick="saveSelect('cyan')" style="background: var(--cyan); --foreground: var(--selectionForeground);">cyan</button>
+							<button onclick="saveSelect('skyblue')" style="background: var(--skyblue); --foreground: var(--selectionForeground);">sky blue</button>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<button onclick="saveSelect('blue')" style="background: var(--blue); --foreground: var(--selectionForeground);">blue</button>
+							<button onclick="saveSelect('purple')" style="background: var(--purple); --foreground: var(--selectionForeground);">purple</button>
+							<button onclick="saveSelect('pink')" style="background: var(--pink); --foreground: var(--selectionForeground);">pink</button>
+							<button onclick="saveSelect('hotpink')" style="background: var(--hotpink); --foreground: var(--selectionForeground);">hot pink</button>
+						</div>
 							
-							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified btn-group-vertical-s">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-air.css`)">Air</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-cold-steel.css`)">Cold Steel</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-dark-increased-contrast.css`)">Increased Contrast Dark</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-neon.css`)">Neon</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-system-colours.css`)">System Colours</button>
-								</div>
-							</div>
-						</div>
-						
-						<div class="row">
-							<h3>Accessibility</h3>
-							
-							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified">
-									<button class="block" onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-high-contrast.css`)">High Contrast</button>
-									<button class="block" onclick="saveColorScheme(`/hydrogen-framework/colour-schemes/aoz0ras-low-contrast.css`)">Low Contrast</button>
-								</div>
-							</div>
-						</div>
-		  				
 					</div>
 					
 					
