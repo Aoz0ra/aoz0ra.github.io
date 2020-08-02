@@ -114,28 +114,28 @@ function saveSelect(newColor) {
 
 function loadColorSchemeHelper(linkElement) {
 	
-	if (!!($(`head link#colourscheme`).length)) {
-		document.head.getElementsByTagName(`link`)[1].href = linkElement.replace(`<link rel="stylesheet" href="`, ``).replace(`">`, ``);
-		console.log(`loadThemeHelper: theme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
+	if ($(`head link#colourscheme`).length) {
+		document.head.getElementsByTagName(`link`)[1].href = linkElement.replace(`<link rel="stylesheet" id="colourscheme" href="`, ``).replace(`">`, ``);
+		console.log(`loadColorSchemeHelper: color scheme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 	}
 	else {
 		document.head.innerHTML += linkElement
-		console.log(`loadThemeHelper: theme added to html`)
+		console.log(`loadColorSchemeHelper: color scheme added to html`)
 	}
 }
 
 function loadColorScheme(theme) {
 	
-	console.log(`loadColorScheme: loading theme "${theme}"`)
+	console.log(`loadColorScheme: loading "${theme}"`)
 	
 	// I'm using non-jQuery methods for now.
 	if (!theme) {
 		loadColorSchemeHelper(localStorage.colorSchemeToLoad)
 	}
 	else if (theme == `default`) {
-		if (document.head.getElementsByTagName(`link`)[1]) {
+		if ($(`head link#colourscheme`).length) {
 			document.head.getElementsByTagName(`link`)[1].href = ``;
-			console.log(`loadColorScheme: theme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
+			console.log(`loadColorScheme: color scheme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 		}
 	}
 	else {
@@ -146,12 +146,12 @@ function loadColorScheme(theme) {
 function saveColorScheme(theme) {
 	if (theme == `default`) {
 		localStorage.setItem(`colorSchemeToLoad`, ``)
-		console.log(`default theme saved`)
+		console.log(`default color scheme saved`)
 	}
 	
 	else if (theme.startsWith(`/`)) {
-		localStorage.setItem(`colorSchemeToLoad`, `<link rel="stylesheet" href="${theme}">`)
-		console.log(`${theme} theme saved`)
+		localStorage.setItem(`colorSchemeToLoad`, `<link rel="stylesheet" id="colourscheme" href="${theme}">`)
+		console.log(`${theme} color scheme saved`)
 	}
 	
 	if (theme == `default`) {
@@ -159,6 +159,62 @@ function saveColorScheme(theme) {
 	}
 	else {
 		loadColorScheme()
+	}
+}
+
+
+
+
+
+
+
+function loadStyleHelper(linkElement) {
+	
+	if ($(`head link#colourscheme`).length) {
+		document.head.getElementsByTagName(`link`)[1].href = linkElement.replace(`<link rel="stylesheet" id="colourscheme" href="`, ``).replace(`">`, ``);
+		console.log(`loadStyleHelper: style href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
+	}
+	else {
+		document.head.innerHTML += linkElement
+		console.log(`loadStyleHelper: style added to html`)
+	}
+}
+
+function loadStyle(theme) {
+	
+	console.log(`loadStyle: loading "${theme}"`)
+	
+	// I'm using non-jQuery methods for now.
+	if (!theme) {
+		loadStyleHelper(localStorage.styleToLoad)
+	}
+	else if (theme == `default`) {
+		if ($(`head link#style`).length) {
+			document.head.getElementsByTagName(`link`)[1].href = ``;
+			console.log(`loadStyle: style href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
+		}
+	}
+	else {
+		loadStyleHelper(theme)
+	}
+}
+
+function saveStyle(theme) {
+	if (theme == `default`) {
+		localStorage.setItem(`styleToLoad`, ``)
+		console.log(`default style saved`)
+	}
+	
+	else if (theme.startsWith(`/`)) {
+		localStorage.setItem(`styleToLoad`, `<link rel="stylesheet" id="style" href="${theme}">`)
+		console.log(`${theme} style saved`)
+	}
+	
+	if (theme == `default`) {
+		loadStyle(`default`)
+	}
+	else {
+		loadStyle()
 	}
 }
 
