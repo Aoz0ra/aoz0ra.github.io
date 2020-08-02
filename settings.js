@@ -6,7 +6,9 @@ function getInputValue(id) {
 
 
 
-
+$(`#dropContent`).html(`<a href="/hydrogen-framework/index.html">Hydrogen</a>`+
+		      `<a href="/winclassic/index.html">WinClassic</a>`+
+		      `<a href="/settings/index.html">Settings</a>`)
 
 
 
