@@ -115,7 +115,7 @@ function saveSelect(newColor) {
 function loadColorSchemeHelper(linkElement) {
 	
 	if ($(`head link#colourscheme`).length) {
-		document.head.getElementById(`colourscheme`).href = linkElement.replace(`<link rel="stylesheet" id="colourscheme" href="`, ``).replace(`">`, ``);
+		document.getElementById(`colourscheme`).href = linkElement.replace(`<link rel="stylesheet" id="colourscheme" href="`, ``).replace(`">`, ``);
 		console.log(`loadColorSchemeHelper: color scheme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 	}
 	else {
@@ -136,7 +136,7 @@ function loadColorScheme(theme) {
 	else if (theme == `default`) {
 		console.log(`default theme specified, erasing`)
 		if ($(`head link#colourscheme`).length) {
-			document.head.getElementById(`colourscheme`)[1].href = ``;
+			document.getElementById(`colourscheme`)[1].href = ``;
 			console.log(`loadColorScheme: color scheme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 		}
 	}
@@ -173,7 +173,7 @@ function saveColorScheme(theme) {
 function loadStyleHelper(linkElement) {
 	
 	if ($(`head link#style`).length) {
-		document.head.getElementById(`style`).href = linkElement.replace(`<link rel="stylesheet" id="style" href="`, ``).replace(`">`, ``);
+		document.getElementById(`style`).href = linkElement.replace(`<link rel="stylesheet" id="style" href="`, ``).replace(`">`, ``);
 		console.log(`loadStyleHelper: style href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 	}
 	else {
@@ -192,7 +192,7 @@ function loadStyle(theme) {
 	}
 	else if (theme == `default`) {
 		if ($(`head link#style`).length) {
-			document.head.getElementById(`style`).href = ``;
+			document.getElementById(`style`).href = ``;
 			console.log(`loadStyle: style href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 		}
 	}
