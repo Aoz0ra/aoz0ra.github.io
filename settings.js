@@ -192,7 +192,7 @@ function loadColorScheme(theme) {
 	else if (theme == `default`) {
 		console.log(`default theme specified, erasing`)
 		if ($(`head link#colourscheme`).length) {
-			document.getElementById(`colourscheme`)[1].href = ``;
+			document.getElementById(`colourscheme`).href = ``;
 			console.log(`loadColorScheme: color scheme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 		}
 	}
