@@ -17,6 +17,10 @@ $(`#settingsIndex`).html(`<a href="/settings/index.html">General</a><br>`+
 
 
 
+
+
+//                  ACCENT COLOUR:
+
 function changeAccent(newColor) {
 	if (newColor == `DEFAULT_ACCENT`) {
 		loadColor(`--accentHilight`, `var(--DEFAULT_ACCENT_HILIGHT)`);
@@ -49,8 +53,24 @@ function saveAccent(newColor) {
 	console.log(`saveAccent: ...and saved`)
 }
 
+if (!localStorage.accentColor) {
+	saveAccent(`DEFAULT_ACCENT`);
+	console.log(`default accent set and saved as there wasn't one`)
+}
+else {
+	changeAccent(localStorage.getItem(`accentColor`))
+	console.log(`accent retrieved and used`)
+}
 
 
+
+
+
+
+
+
+
+//                  HILIGHT COLOUR:
 
 function changeHilight(newColor) {
 	if (newColor == `DEFAULT_HILIGHT`) {
@@ -84,9 +104,26 @@ function saveHilight(newColor) {
 	console.log(`saveHilight: ...and saved`)
 }
 
+if (!localStorage.hilightColor) {
+	saveHilight(`DEFAULT_HILIGHT`);
+	console.log(`default hilight set and saved as there wasn't one`)
+}
+else {
+	changeHilight(localStorage.getItem(`hilightColor`))
+	console.log(`hilight retrieved and used`)
+}
 
 
 
+
+
+
+
+
+
+
+
+//            SELECTION COLOUR:
 
 function changeSelect(newColor) {
 	if (newColor.startsWith(`#`)) {
@@ -107,10 +144,29 @@ function saveSelect(newColor) {
 	console.log(`saveSelect: ...and saved`)
 }
 
+if (!localStorage.selectColor) {
+	saveSelect(`DEFAULT_SELECTION_BG`);
+	console.log(`default selection color set and saved as there wasn't one`)
+}
+else {
+	changeSelect(localStorage.getItem(`selectColor`))
+	console.log(`selection color retrieved and used`)
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+//            COLOUR SCHEMES:
 
 function loadColorSchemeHelper(linkElement) {
 	
@@ -164,11 +220,25 @@ function saveColorScheme(theme) {
 	}
 }
 
+// Make sure that an empty string doesn't cause the color scheme to be reset, just in case
+if (!localStorage.colorSchemeToLoad && localStorage.colorSchemeToLoad !== ``) {
+	saveColorScheme(`default`);
+	console.log(`default color scheme saved as there wasn't one`)
+}
+else {
+	loadColorScheme(localStorage.getItem(`colorSchemeToLoad`))
+	console.log(`color scheme loaded`)
+}
 
 
 
 
 
+
+
+
+
+//                 WEBSITE STYLE:
 
 function loadStyleHelper(linkElement) {
 	
@@ -219,6 +289,18 @@ function saveStyle(theme) {
 		loadStyle()
 	}
 }
+
+// Make sure that an empty string doesn't cause the color scheme to be reset, just in case
+if (!localStorage.styleToLoad && localStorage.styleToLoad !== ``) {
+	saveStyle(`default`);
+	console.log(`default style saved as there wasn't one`)
+}
+else {
+	loadStyle(localStorage.getItem(`styleToLoad`))
+	console.log(`style loaded`)
+}
+
+
 
 
 
@@ -272,42 +354,13 @@ function loadAnimationState(animStateBool) {
 
 
 
-if (!localStorage.accentColor) {
-	saveAccent(`DEFAULT_ACCENT`);
-	console.log(`default accent set and saved as there wasn't one`)
-}
-else {
-	changeAccent(localStorage.getItem(`accentColor`))
-	console.log(`accent retrieved and used`)
-}
 
-if (!localStorage.hilightColor) {
-	saveHilight(`DEFAULT_HILIGHT`);
-	console.log(`default hilight set and saved as there wasn't one`)
-}
-else {
-	changeHilight(localStorage.getItem(`hilightColor`))
-	console.log(`hilight retrieved and used`)
-}
 
-if (!localStorage.selectColor) {
-	saveSelect(`DEFAULT_SELECTION_BG`);
-	console.log(`default selection color set and saved as there wasn't one`)
-}
-else {
-	changeSelect(localStorage.getItem(`selectColor`))
-	console.log(`selection color retrieved and used`)
-}
 
-// Make sure that an empty string doesn't cause the color scheme to be reset, just in case
-if (!localStorage.colorSchemeToLoad && localStorage.colorSchemeToLoad !== ``) {
-	saveColorScheme(`default`);
-	console.log(`default color scheme saved as there wasn't one`)
-}
-else {
-	loadColorScheme(localStorage.getItem(`colorSchemeToLoad`))
-	console.log(`color scheme loaded`)
-}
+
+
+
+
 
 if (!localStorage.animationState) {
 	saveAnimationState(`true`);
@@ -318,6 +371,16 @@ else {
 	console.log(`animation state retrieved and used`)
 }
 
+
+
+
+
+
+
+
+
+
+//                             CUSTOM COLOURS
 
 function addCSS(cssToAdd) {
 	if (!document.head.getElementsByTagName(`style`)[0]) {
