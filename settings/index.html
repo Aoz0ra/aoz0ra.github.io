@@ -299,8 +299,9 @@ drop-content drop-navbar
 					<h2>Style</h2>
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="btn-group btn-group-justified">
+							<div class="btn-group btn-group-justified btn-group-vertical-s">
 								<button class="hilight" onclick="saveStyle(`default`)">Default</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-stylish.css`)">Stylish</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-flat.css`)">Flat</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-metro.css`)">Metro</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-lighthearted.css`)">Lighthearted</button>
@@ -342,6 +343,11 @@ drop-content drop-navbar
 					<input type="checkbox" id="reduceMotion" />
 					<label for="reduceMotion">Reduce Motion</label>
 					<p class="faint small">Reduce the motion of the user interface to mostly crossfades</p>
+					<br>
+					
+					<input type="checkbox" id="differentiateWithoutColor" />
+					<label for="boldFonts">Differentiate without colour</label>
+					<p class="faint small">Use alternate strategies to help users distinguish between items</p>
 					<br>
 					
 					<input type="checkbox" id="boldFonts" />
