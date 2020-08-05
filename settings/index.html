@@ -300,6 +300,7 @@ drop-content drop-navbar
 								<button class="hilight" onclick="saveStyle(`default`)">Default</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-flat.css`)">Flat</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-metro.css`)">Metro</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-lighthearted.css`)">Lighthearted</button>
 							</div>
 						</div>
 						
@@ -331,10 +332,27 @@ drop-content drop-navbar
 					<input type="checkbox" id="reduceMotion" />
 					<label for="reduceMotion">Reduce Motion</label>
 					<p class="faint small">Reduce the motion of the user interface to mostly crossfades</p>
+					<br>
 					
 					<input type="checkbox" id="boldFonts" />
 					<label for="boldFonts">Bold Text</label>
-					<p class="faint small"></p>
+					<br>
+					
+					<div class="btn-group btn-group-justified btn-group-vertical-s">
+						<span>Font size:</span>
+						<button onclick="saveColor(`--fontSize`, `0.8rem`)">0.8x</button>
+						<button onclick="saveColor(`--fontSize`, `0.9rem`)">0.9x</button>
+						<button onclick="saveColor(`--fontSize`, `1rem`)">1x</button>
+						<button onclick="saveColor(`--fontSize`, `1.2rem`)">1.2x</button>
+						<button onclick="saveColor(`--fontSize`, `1.4rem`)">1.4x</button>
+						<button onclick="saveColor(`--fontSize`, `1.6rem`)">1.6x</button>
+						<button onclick="saveColor(`--fontSize`, `1.8rem`)">1.8x</button>
+						<button onclick="saveColor(`--fontSize`, `2rem`)">2x</button>
+						<button onclick="saveColor(`--fontSize`, `2.5rem`)">2.5x</button>
+						<button onclick="saveColor(`--fontSize`, `3rem`)">3x</button>
+						<button onclick="saveColor(`--fontSize`, `4rem`)">4x</button>
+						<button onclick="saveColor(`--fontSize`, `5rem`)">5x</button>
+					</div>
 				</div>
 			</div>
 
