@@ -555,6 +555,8 @@ setUpColor(`--fontSizeH4`);
 setUpColor(`--fontSizeH5`);
 setUpColor(`--fontSizeH6`);
 
+setUpColor(`--sansSerifFont`);
+
 setUpColor(`--pagePaddingTop`);
 setUpColor(`--pagePaddingLeft`);
 setUpColor(`--pagePaddingRight`);
