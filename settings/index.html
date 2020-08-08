@@ -205,11 +205,7 @@ drop-content drop-navbar
 					<h2>Colour scheme</h2>
 					<div class="row">
 						<div class="col-xs-12">
-							<div class="btn-group btn-group-justified">
-								<button class="hilight" onclick="saveColorScheme(`default`)">Default</button>
-								<button onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours-light.css`)">Light</button>
-								<button onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours-dark.css`)">Dark</button>
-							</div>
+							<button class="hilight block" onclick="saveColorScheme(`default`)">Default</button>
 						</div>
 						
 						<br>
@@ -218,17 +214,8 @@ drop-content drop-navbar
 							<h3>Ambiance and Radiance</h3>
 							<div class="col-xs-12 col-m-6 col-l-4 col-xl-6">
 								<div class="btn-group btn-group-justified">
-									<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ambiance.css`)">Ambi&shy;ance</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ambiance-light.css`)">Ambi&shy;ance Light</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ambiance-dark.css`)">Ambi&shy;ance Dark</button>
-								</div>
-							</div>
-							
-							<div class="col-xs-12 col-m-6 col-l-4 col-xl-6">
-								<div class="btn-group btn-group-justified">
+									<button class="block" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ambiance.css`)">Ambi&shy;ance</button>
 									<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-radiance.css`)">Radi&shy;ance</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-radiance-light.css`)">Radi&shy;ance Light</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-radiance-dark.css`)">Radi&shy;ance Dark</button>
 								</div>
 							</div>
 							
@@ -248,17 +235,7 @@ drop-content drop-navbar
 							<div class="col-xs-12 col-l-6">
 								<div class="btn-group btn-group-justified">
 									<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized.css`)">Solar&shy;ized</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized-light.css`)">Solar&shy;ized Light</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized-dark.css`)">Solar&shy;ized Dark</button>
-								</div>
-							</div>
-							
-							
-							
-							<div class="col-xs-12 col-l-6">
-								<div class="btn-group btn-group-justified">
-									<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized-alt.css`)">Solar&shy;ized (alternate light)</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized-light-alt.css`)">Solar&shy;ized Light (alternate)</button>
+									<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized-alt.css`)">Alternate</button>
 								</div>
 							</div>
 						</div>
@@ -273,15 +250,15 @@ drop-content drop-navbar
 							
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified btn-group-vertical-s">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-air.css`)">Air</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-lighthearted.css`)">Lighthearted</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-gmm-transparency.css`)">Pale Moon + GMM trans&shy;parency</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-system-colours.css`)">System Colours</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-air.css`, false)">Air</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-lighthearted.css`, false)">Lighthearted</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-gmm-transparency.css`, false)">Pale Moon + GMM trans&shy;parency</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-system-colours.css`), false">System Colours</button>
 								</div>
 								<div class="btn-group btn-group-justified btn-group-vertical-s">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-cold-steel.css`)">Cold Steel</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-dark-increased-contrast.css`)">Increased Contrast Dark</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-neon.css`)">Neon</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-cold-steel.css`, false)">Cold Steel</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-dark-increased-contrast.css`, false)">Increased Contrast Dark</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-neon.css`, false)">Neon</button>
 								</div>
 							</div>
 						</div>
@@ -293,10 +270,10 @@ drop-content drop-navbar
 							
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-high-contrast-light.css`)">High Contrast Light</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-high-contrast-dark.css`)">High Contrast Dark</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-high-contrast-light.css`, false)">High Contrast Light</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-high-contrast-dark.css`, false)">High Contrast Dark</button>
 								</div>
-								<button class="block" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-low-contrast.css`)">Low Contrast</button>
+								<button class="block" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-low-contrast.css`, false)">Low Contrast</button>
 							</div>
 						</div>
 					</div>
