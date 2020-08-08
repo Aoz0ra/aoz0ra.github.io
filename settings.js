@@ -184,7 +184,7 @@ function loadColorScheme(theme) {
 	
 	console.log(`loadColorScheme: loading "${theme}"`)
 	
-	// I'm using non-jQuery methods for now.
+	
 	if (!theme) {
 		console.log(`no theme specified, loading from storage`)
 		loadColorSchemeHelper(localStorage.colorSchemeToLoad)
@@ -232,6 +232,19 @@ else {
 
 
 
+
+
+
+
+
+
+//               THEME POLARITY:
+
+function savePolarity(polarity) {
+  saveColorScheme(localStorage.colorSchemeToLoad.replace(`<link rel="stylesheet" id="colourscheme" href="`, ``).replace(`">`, ``).replace(localStorage.themePolarity, polarity))
+
+  localStorage.setItem(`themePolarity`, polarity);
+}
 
 
 
