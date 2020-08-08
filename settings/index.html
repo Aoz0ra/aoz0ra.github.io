@@ -44,11 +44,12 @@ drop-content drop-navbar
 			
 			<!--            <GENERAL SETTINGS>          -->
 			
-			<div class="row">
+			<div class="row" id="generalSettingsContent">
 				
 				<div class="col-xs-12">
 					<h1>General Settings</h1>
 				</div>
+
 				
 	  			<div class="col-xs-12 col-l-4">
 				
@@ -179,7 +180,7 @@ drop-content drop-navbar
 			
 			
 			
-			<!--            <COLOUR SCHEMES>          -->
+			<!--            <THEMES>          -->
 			
 			<div class="row">
 				<div class="col-xs-12">
@@ -189,6 +190,16 @@ drop-content drop-navbar
 				</div>
 				
 				
+<div class="col-xs-12">
+<h2>Theme polarity</h2>
+
+<div class="btn-group btn-group-justified">
+<button onclick="savePolarity(``)">OS preference</button>
+<button onclick="savePolarity(`-light`)>Light</button>
+<button onclick="savePolarity(`-dark`)Dark</button>
+</div>
+</div>
+
 				
 				<div class="col-xs-12 col-xl-6">
 					<h2>Colour scheme</h2>
