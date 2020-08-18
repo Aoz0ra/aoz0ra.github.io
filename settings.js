@@ -579,3 +579,23 @@ setUpColor(`--headerPaddingTop`);
 setUpColor(`--headerPaddingLeft`);
 setUpColor(`--headerPaddingRight`);
 setUpColor(`--headerPaddingBottom`);
+
+
+
+
+
+
+
+
+//                   LOCALISATION
+
+if (!localStorage.localization) {
+  localStorage.setItem(`localization`, `UK`)
+}
+
+if (localStorage.localization == `US`) {
+  
+}
+else {
+  
+}
