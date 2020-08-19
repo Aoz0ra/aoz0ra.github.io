@@ -33,8 +33,12 @@ var templates = {
 
 var finishedPageHTML = JSON.stringify($(`div.page`).html()).findReplace(`\\n`, ``).findReplace(`\\t`, ``).findReplace(`\\"`, `"`)
 
+
+
 for (const templateToReplace of Object.keys(templates)) {
 	finishedPageHTML = finishedPageHTML.findReplace(templateToReplace, templates[templateToReplace])
 }
+
+finishedPageHTML = finishedPageHTML.substring(1, finishedPageHTML.length - 1)
 
 $(`div.page`).html(finishedPageHTML)
