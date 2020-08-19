@@ -38,6 +38,8 @@ var templates = {
 '[[CONJECTURAL_NAME]]':   `<div class="card" style="text-align: center"><blockquote><p style="color: var(--red);">I need to find the Chaos Emerald to reveal the secrets about my past...</p><footer><p>— Shadow</p></footer></blockquote><p>The real name of this is unknown, and as such this temporary name is being used instead.</p></div>`,
 '[[DELETE_THIS]]':        `<div class="card" style="text-align: center"><blockquote><p style="color: var(--gray);">The strong will always vanquish the weak!</p><footer><p>— Infinite, Sonic Forces</p></footer></blockquote><p>This page should be deleted.  Consider checking what links to this page and migrating its content elsewhere.</p></div>`,
 '[[STUB]]':               `<div class="card" style="text-align: center"><blockquote><p style="color: var(--orange);">There's not a whole lot of information on this right now...</p><footer><p>— Tails</p></footer></blockquote><p>This page is a stub.  Please help by expanding it!</p></div>`,
+'[[ABANDONED]]':          `<div class="card" style="text-align: center"><blockquote><p style="color: var(--rainbow);">Honey the Cat?  Haven't seen her in a while.</p><footer><p>— anyone</p></footer></blockquote><p>This has been abandoned and, unless revived, likely won't be seeing any updates in the future.</p></div>`,
+'[[APRIL_FOOLS]]':        `<div class="card" style="text-align: center"><blockquote><p style="color: var(--blue);">*laughs*</p><footer><p>— Sonic</p></footer></blockquote><p>This page was an April Fools joke and is not meant to be taken seriously.</p></div>`,
 
 }
 
