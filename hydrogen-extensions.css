@@ -58,5 +58,5 @@
   --rainbowHilight: var(--hotpinkHilight);
   --rainbowFaint: var(--hotpinkFaint);
 
-  animation: rainbows 30s linear infinite;
+  animation: rainbows 10s linear infinite;
 }
