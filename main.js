@@ -28,7 +28,12 @@ String.prototype.findReplace = function(find, replace, caseSensitiveBool, failsa
 
 
 var templates = {
-	'[[TEST_TEMPLATE]]': `<button>Congratulations, this test template works.</button>`
+	'[[TEST_TEMPLATE]]': `<button>Congratulations, this test template works.</button>`,
+	'[[SONIC_DOESNT_CARE]]': `<div class="card"><p style="color: var(--blue)">Woah! That's interesting, but I sure don't care!</p><p>While this page may have some interesting content, it's not part of the main stuff here.</p></div>`,
+	'[[THIS_IS_HAPPENIN]]': `<div class="card"><p style="color: var(--blue)">Aw yeah!  This is happenin'!</p><p>[will fill out the text later]</p></div>`,
+	'[[AU_SCARY]]': `<div class="card"><p style="color: var(--orange)">[cream is scared]</p><p>[will fill out the text later]</p></div>`,
+	'[[AU_SCARY_VERY]]': `<div class="card"><p style="color: var(--orange)">[cream is scared for her life]</p><p>[will fill out the text later]</p></div>`,
+	'[[NO_ONLINE_PRESENCE]]': `<div class="card"><p style="color: var(--skyblue)">...Where is everyone?</p><p>This AU has no online presence other than this very page.</p></div>`,
 }
 
 var finishedPageHTML = JSON.stringify($(`div.page`).html()).findReplace(`\\n`, ``).findReplace(`\\t`, ``).findReplace(`\\"`, `"`)
