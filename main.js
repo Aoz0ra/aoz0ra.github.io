@@ -31,7 +31,7 @@ var templates = {
 	'[[TEST_TEMPLATE]]': `<button>Congratulations, this test template works.</button>`
 }
 
-var finishedPageHTML = JSON.stringify($(`div.page`).html())
+var finishedPageHTML = JSON.stringify($(`div.page`).html()).findReplace(`\\n`, ``).findReplace(`\\t`, ``)
 
 for (const templateToReplace of Object.keys(templates)) {
 	finishedPageHTML = finishedPageHTML.findReplace(templateToReplace, templates[templateToReplace])
