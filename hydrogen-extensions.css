@@ -1,4 +1,4 @@
-@keyframes rainbows {
+/*@keyframes rainbows {
   0%   {--rainbow:var(--red);
         --rainbowHilight:var(--redHilight);
         --rainbowFaint:var(--redFaint);}
@@ -46,6 +46,63 @@
   91.667% {--rainbow:var(--hotpink);
         --rainbowHilight:var(--hotpinkHilight);
         --rainbowFaint:var(--hotpinkFaint);}
+
+  100% {--rainbow:var(--red);
+        --rainbowHilight:var(--redHilight);
+        --rainbowFaint:var(--redFaint);}
+
+}*/
+
+
+
+@keyframes rainbows {
+  0%   {--rainbow:var(--red);
+        --rainbowHilight:var(--redHilight);
+        --rainbowFaint:var(--redFaint);}
+
+  8.333% {--rainbow:var(--yellow);
+        --rainbowHilight:var(--yellowHilight);
+        --rainbowFaint:var(--yellowFaint);}
+
+  16.667% {--rainbow:var(--red);
+        --rainbowHilight:var(--redHilight);
+        --rainbowFaint:var(--redFaint);}
+
+  25%  {--rainbow:var(--yellow);
+        --rainbowHilight:var(--yellowHilight);
+        --rainbowFaint:var(--yellowFaint);}
+
+  33.333% {--rainbow:var(--red);
+        --rainbowHilight:var(--redHilight);
+        --rainbowFaint:var(--redFaint);}
+
+  41.667% {--rainbow:var(--yellow);
+        --rainbowHilight:var(--yellowHilight);
+        --rainbowFaint:var(--yellowFaint);}
+
+  50%  {--rainbow:var(--red);
+        --rainbowHilight:var(--redHilight);
+        --rainbowFaint:var(--redFaint);}
+
+  58.333% {--rainbow:var(--yellow);
+        --rainbowHilight:var(--yellowHilight);
+        --rainbowFaint:var(--yellowFaint);}
+
+  66.667% {--rainbow:var(--red);
+        --rainbowHilight:var(--redHilight);
+        --rainbowFaint:var(--redFaint);}
+
+  75%  {--rainbow:var(--yellow);
+        --rainbowHilight:var(--yellowHilight);
+        --rainbowFaint:var(--yellowFaint);}
+
+  83.333% {--rainbow:var(--red);
+        --rainbowHilight:var(--redHilight);
+        --rainbowFaint:var(--redFaint);}
+
+  91.667% {--rainbow:var(--yellow);
+        --rainbowHilight:var(--yellowHilight);
+        --rainbowFaint:var(--yellowFaint);}
 
   100% {--rainbow:var(--red);
         --rainbowHilight:var(--redHilight);
