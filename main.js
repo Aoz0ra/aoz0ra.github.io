@@ -56,7 +56,7 @@ var templates = {
 	'[[MAJOR_EDIT]]':             `<div class="card" style="text-align: center"><blockquote><p style="color: var(--orange);">Hold on, I'm still working on this.</p><footer><p>— Tails</p></footer></blockquote><p>This is currently undergoing a major edit.</p></div>`,
 	'[[EDIT_PERMISSION_NEEDED]]': `<div class="card" style="text-align: center"><blockquote><p style="color: var(--blue);">S.F.P.D, pending background check!  Paws in the air!</p><footer><p>— Donut Lord, Sonic The Hedgehog (Paramount)</p></footer></blockquote><p>Do not edit this without Aoz0ra's permission.</p></div>`,
 	'[[EDIT_PERMISSION_DENIED]]': `<div class="card" style="text-align: center"><blockquote><p style="color: var(--purple);">Move aside!</p><footer><p>— Blaze, Team Sonic Racing</p></footer></blockquote><p>Only Aoz0ra can edit this page.</p></div>`,
-	'[[I_NEED_HELP]]':            `<div class="card" style="text-align: center"><blockquote><p style="color: var(--orange);">Sonic, HELP ME!!</p><footer><p>— Tails, Sonic Forces</p></footer></blockquote><p>I'll need help with completing this page</p></div>`,
+	'[[I_NEED_HELP]]':            `<div class="card" style="text-align: center"><blockquote><p style="color: var(--orange);">Sonic, HELP ME!!</p><footer><p>— Tails, Sonic Forces</p></footer></blockquote><p>I'll need help with completing this page.</p></div>`,
 
 }
 
