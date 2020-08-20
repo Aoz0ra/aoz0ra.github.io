@@ -33,9 +33,16 @@
 		
 		<div class="page">
 			
+			<div class="btn-group" style="position: sticky; top: 2em;">
+				<button onclick="showPage(`general`)">General</button>
+				<button onclick="showPage(`themes`)">Themes</button>
+				<button onclick="showPage(`accessibility`)">Accessi&shy;bility</button>
+				<button onclick="showPage(`all`)">Show All</button>
+			</div>
+			
 			<!--            <GENERAL SETTINGS>          -->
 			
-			<div class="row" id="generalSettingsContent">
+			<div class="row" id="generalSettings">
 				
 				<div class="col-xs-12">
 					<h1>General Settings</h1>
@@ -173,7 +180,7 @@
 			
 			<!--            <THEMES>          -->
 			
-			<div class="row">
+			<div class="row" id="themesSettings">
 				<div class="col-xs-12">
 					
 					<h1>Themes:</h1>
@@ -442,7 +449,7 @@
 
 
 
-			<div class="row">
+			<div class="row" id="accessibilitySettings">
 				<div class="col-xs-12 col-xl-6">
 					
 					<h2>Accessibility</h2>
@@ -622,6 +629,27 @@
 			}
 			// This is required by ESLint's consistent-return option
 			return;
+		}
+		
+		
+		
+		
+		
+		
+		function showPage(pageToShow) {
+			
+			if (pageToShow == `all`) {
+				$(`#generalSettings`).show()
+				$(`#themesSettings`).show()
+				$(`#accessibilitySettings`).show()
+			}
+			else {
+				$(`#generalSettings`).hide()
+				$(`#themesSettings`).hide()
+				$(`#accessibilitySettings`).hide()
+				
+				$(`#${pageToShow}Settings`).show()
+			}
 		}
 		
 	</script>
