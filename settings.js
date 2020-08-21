@@ -91,7 +91,7 @@ function changeHilight(newColor) {
 		loadColor(`--hilightHilight`, `var(--${newColor}Hilight)`);
 		console.log(`changeAccent: setting hilight-hilight of var(--${newColor}Hilight)`)
 		
-		loadColor(`--hilight`, `var(--${newColor}`);
+		loadColor(`--hilight`, `var(--${newColor})`);
 		console.log(`changeAccent: setting hilight of var(--${newColor})`)
 	}
 }
@@ -131,7 +131,7 @@ function changeSelect(newColor) {
 		console.log(`changeSelect: setting custom selection background of ${newColor})`)
 	}
 	else {
-		loadColor(`--selectionBackground`, `var(--${newColor}`);
+		loadColor(`--selectionBackground`, `var(--${newColor})`);
 		console.log(`changeSelect: setting selection background of var(--${newColor})`)
 	}
 }
