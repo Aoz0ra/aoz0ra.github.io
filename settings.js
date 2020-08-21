@@ -40,7 +40,7 @@ function changeAccent(newColor) {
 		loadColor(`--accentHilight`, `var(--${newColor}Hilight)`);
 		console.log(`changeAccent: setting accent-hilight of var(--${newColor}Hilight)`)
 		
-		loadColor(`--accent`, `var(--${newColor}`);
+		loadColor(`--accent`, `var(--${newColor})`);
 		console.log(`changeAccent: setting accent of var(--${newColor})`)
 	}
 }
