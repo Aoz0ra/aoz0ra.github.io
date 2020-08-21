@@ -201,6 +201,10 @@
 				
 				<div class="col-xs-12 col-xl-6" style="max-width: 100%">
 					<h2>Colour scheme</h2>
+					
+					<p class="warning">Several of these themes haven't been created yet.</p>
+
+					
 					<div class="row">
 						<div class="col-xs-12">
 							<button class="hilight block" onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours${localStorage.themePolarity}.css`)">Default</button>
@@ -209,7 +213,17 @@
 						<br>
 						
 						<div class="row">
-							<h3>Ambiance and Radiance</h3>
+							<h3>Linux</h3>
+							
+							<div class="col-xs-12 col-l-6">
+								<div class="btn-group btn-group-justified">
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-clearlooks.css`)">Clearlooks</button>
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-crux.css`)">Crux</button>
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-human.css`)">Human</button>
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-industrial.css`)">Industrial</button>
+								</div>
+							</div>
+							
 							<div class="col-xs-12 col-l-6">
 								<div class="btn-group btn-group-justified">
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ambiance${localStorage.themePolarity}.css`)">Ambi&shy;ance</button>
@@ -224,24 +238,29 @@
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-amblight-raddark.css`)">Ambi&shy;ance on light, Radi&shy;ance on dark</button>
 								</div>
 							</div>
-						</div>
-						
-						<p class="warning">Several of these themes haven't been created yet.</p>
-						
-						<div class="row">
-							<h3>KDE's colour schemes</h3>
 							
 							<div class="col-xs-12 col-l-6">
-<!-- 								<div class="btn-group btn-group-justified"> -->
-									<button class="block" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-breeze${localStorage.themePolarity}.css`)">Breeze</button>
-<!-- 								</div> -->
+								<div class="btn-group btn-group-justified">
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-yaru${localStorage.themePolarity}.css`)">Yaru</button>
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-yaru${localStorage.themePolarity}-alt.css`)">Yaru (alternate)</button>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+							<h3>KDE</h3>
+							
+							<div class="col-xs-12 col-l-6">
+								<div class="btn-group btn-group-justified">
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-breeze${localStorage.themePolarity}.css`)">Breeze</button>
+								</div>
 							</div>
 							
 							
 							<div class="col-xs-12 col-l-6">
 								<div class="btn-group btn-group-justified">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-oxygen.css`)">Oxygen</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-oxygen-cold.css`)">Oxygen Cold</button>
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-oxygen.css`)">Oxygen</button>
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-oxygen-cold.css`)">Oxygen Cold</button>
 								</div>
 							</div>
 						</div>
@@ -253,7 +272,7 @@
 							<div class="col-xs-12 col-l-6">
 								<div class="btn-group btn-group-justified">
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized${localStorage.themePolarity}.css`)">Solar&shy;ized</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized${localStorage.themePolarity}-alt.css`)">Alternate</button>
+									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized${localStorage.themePolarity}-alt.css`)">Alternate</button>
 								</div>
 							</div>
 						</div>
@@ -282,22 +301,38 @@
 								</div>
 							</div> -->
 						</div>
-
-						<div class="row" style="max-width: 100%">
-							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified" style="overflow: scroll hidden; width: auto; flex-wrap: nowrap;">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-the-matrix.css`)">7H3 M4721X</button>
-
- 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-artifacts-198w.css`)">ARTI&shy;FACTS 198w</button>
+						
+						<div class="row">
+ 							<div class="col-xs-12">
+								<div class="btn-group btn-group-justified" style="overflow: scroll hidden; width: 100%;">
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-skies-clear.css`)">Clear Skies</button>
+ 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-skies-cloudy.css`)">Cloudy Skies</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-skies-rainy.css`)">Rainy Skies</button>
+ 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-skies-stormy.css`)">Stormy Skies</button>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+ 							<div class="col-xs-12">
+								<div class="btn-group btn-group-justified" style="overflow: scroll hidden; width: 100%;">
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-artifacts-198w.css`)">ARTI&shy;FACTS 198w</button>
  									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-artifacts-199x.css`)">ARTI&shy;FACTS 199x</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-artifacts-200y.css`)">ARTI&shy;FACTS 200y</button>
  									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-artifacts-201z.css`)">ARTI&shy;FACTS 201z</button>
+								</div>
+							</div>
+						</div>
+						
+
+						<div class="row" style="max-width: 100%">
+							<div class="col-xs-12">
+								<div class="btn-group btn-group-justified">
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-the-matrix.css`)">7H3 M4721X</button>
 
 <!--									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-blackout.css`)">Blackout</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-blueprint.css`)">Blueprint</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-calm-down.css`)">Calm Down</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-clearlooks.css`)">Clearlooks</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-crux.css`)">Crux</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-dark-sepia.css`)">Dark Sepia</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-electronic-ink.css`)">Electronic Ink</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-fireworks.css`)">Fireworks</button>
@@ -305,9 +340,7 @@
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-foggy-days.css`)">Foggy Days</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-gold.css`)">Gold</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-gold-n-black.css`)">Gold 'n Black</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-human.css`)">Human</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-incognit0.css`)">Incognit0</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-industrial.css`)">Industrial</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-interstellar.css`)">Inter&shy;stellar</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-lined-paper.css`)">Lined Paper</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-liquid-crystal.css`)">Liquid Crystal</button>
@@ -322,7 +355,6 @@
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-trichromatic.css`)">Tri&shy;chromatic</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-venom.css`)">Venom</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-virtualweb.css`)">Virtual Web</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-yaru.css`)">Yaru</button> -->
 								</div>
 							</div>
 						</div>
