@@ -29,7 +29,8 @@ String.prototype.findReplace = function(find, replace, caseSensitiveBool, failsa
 
 var templates = {
 
-	'[[TEST_TEMPLATE]]':      `<button>Congratulations, this test template works.</button>`,
+	'[[TEST_TEMPLATE]]':          `<button>Congratulations, this test template works.</button>`,
+	'[[WINDOWS_XP_BUTTON]]':      `<button onclick="loadStyle('/hydrogen-framework/styles/aoz0ras-experience.css'); loadColorScheme('/hydrogen-framework/colourschemes/aoz0ras-luna.css'); var winXPStartup = new Audio('https://www.myinstants.com/media/sounds/windows-xp-startup_1ph012N.mp3'); winXPStartup.play();"><img src="https://png2.cleanpng.com/sh/f75b0e8e310c1ab40c8a56aa1fb18cb1/L0KzQYm3WMAzN6hwgpH0aYP2gLBuTgdqdpV0jAU2eICwfbrqkv90d5d5RdV4coDygrL7if9vNZ5ueAR4c3BphH7Aif5ld6h4RdlydD3pfLL6iL1ud5YyTdQBM3LpdbO4hcgyPmczTKQ5MUO0RIm4VcM0Omc4UKc6MUK4PsH1h5==/kisspng-windows-xp-microsoft-corporation-microsoft-windows-git-flash-moe-5b63bfeb1e8166.420131481533263851125.png" style="width: 128px;">`,
 
 	'[[SONIC_DOESNT_CARE]]':      `<div class="card" style="text-align: center"><blockquote><p style="color: var(--blue);">Woah! That's interesting, but I sure don't care!</p><footer><p>— Sonic</p></footer></blockquote><p>While this page may have some interesting content, it's not part of the main stuff here.</p></div>`,
 	'[[THIS_IS_HAPPENIN]]':       `<div class="card" style="text-align: center"><blockquote><p style="color: var(--blue);">Aw yeah!  This is happenin'!</p><footer><p>— Sonic</p></footer></blockquote><p>[will fill out the text later]</p></div>`,
