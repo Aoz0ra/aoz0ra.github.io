@@ -195,6 +195,8 @@ function loadColorScheme(theme) {
 			document.getElementById(`colourscheme`).href = ``;
 			console.log(`loadColorScheme: color scheme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
 		}
+else {
+  loadColorSchemeHelper(`/hydrogen-framework/hydrogen-colours-light.css`)
 	}
 	else {
 		loadColorSchemeHelper(theme)
@@ -269,7 +271,7 @@ function loadStyle(theme) {
 	
 	console.log(`loadStyle: loading "${theme}"`)
 	
-	// I'm using non-jQuery methods for now.
+	
 	if (!theme) {
 		loadStyleHelper(localStorage.styleToLoad)
 	}
