@@ -190,13 +190,8 @@ function loadColorScheme(theme) {
 		loadColorSchemeHelper(localStorage.colorSchemeToLoad)
 	}
 	else if (theme == `default`) {
-		console.log(`default theme specified, erasing`)
-		if ($(`head link#colourscheme`).length) {
-			document.getElementById(`colourscheme`).href = ``;
-			console.log(`loadColorScheme: color scheme href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
-		}
-else {
-  loadColorSchemeHelper(`/hydrogen-framework/hydrogen-colours-light.css`)
+		console.log(`default theme specified, loading the standard`)
+		loadColorSchemeHelper(`<link rel="stylesheet" id="colourscheme" href="/hydrogen-framework/hydrogen-colours${localStorage.themePolarity}.css">`)
 	}
 	else {
 		loadColorSchemeHelper(theme)
@@ -276,10 +271,8 @@ function loadStyle(theme) {
 		loadStyleHelper(localStorage.styleToLoad)
 	}
 	else if (theme == `default`) {
-		if ($(`head link#style`).length) {
-			document.getElementById(`style`).href = ``;
-			console.log(`loadStyle: style href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
-		}
+		console.log(`default theme specified, loading the standard`)
+		loadColorSchemeHelper(`<link rel="stylesheet" id="colourscheme" href="/hydrogen-framework/hydrogen-styles.css">`)
 	}
 	else {
 		loadStyleHelper(theme)
