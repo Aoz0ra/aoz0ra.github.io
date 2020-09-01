@@ -272,7 +272,7 @@ function loadStyle(theme) {
 	}
 	else if (theme == `default`) {
 		console.log(`default theme specified, loading the standard`)
-		loadColorSchemeHelper(`<link rel="stylesheet" id="colourscheme" href="/hydrogen-framework/hydrogen-styles.css">`)
+		loadStyleHelper(`<link rel="stylesheet" id="colourscheme" href="/hydrogen-framework/hydrogen-styles.css">`)
 	}
 	else {
 		loadStyleHelper(theme)
