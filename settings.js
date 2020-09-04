@@ -371,11 +371,11 @@ function saveNavLayout(theme) {
 
 // Make sure that an empty string doesn't cause the color scheme to be reset, just in case
 if (!localStorage.navLayoutToLoad && localStorage.navLayoutToLoad !== ``) {
-	savenavLayout(`default`);
+	saveNavLayout(`default`);
 	console.log(`default nav layout saved as there wasn't one`)
 }
 else {
-	loadnavLayout(localStorage.getItem(`navLayoutToLoad`))
+	loadNavLayout(localStorage.getItem(`navLayoutToLoad`))
 	console.log(`nav layout loaded`)
 }
 
@@ -439,12 +439,12 @@ function saveFloatbar(theme) {
 }
 
 // Make sure that an empty string doesn't cause the color scheme to be reset, just in case
-if (!localStorage.navLayoutToLoad && localStorage.navLayoutToLoad !== ``) {
-	savenavLayout(`default`);
-	console.log(`default nav layout saved as there wasn't one`)
+if (!localStorage.floatingNavbar && localStorage.floatingNavbar !== ``) {
+	saveFloatbar(`default`);
+	console.log(`default floatbar setting saved as there wasn't one`)
 }
 else {
-	loadnavLayout(localStorage.getItem(`navLayoutToLoad`))
+	loadFloatbar(localStorage.getItem(`floatingNavbar`))
 	console.log(`nav layout loaded`)
 }
 
