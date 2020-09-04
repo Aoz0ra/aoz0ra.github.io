@@ -242,6 +242,11 @@ function savePolarity(polarity) {
 
   localStorage.setItem(`themePolarity`, polarity);
 }
+if (!localStorage.themePolarity) {
+	savePolarity(`-dynamic`)
+}
+
+
 
 
 
@@ -314,6 +319,139 @@ else {
 
 
 
+//                 NAVBAR LAYOUT:
+
+function loadNavLayoutHelper(linkElement) {
+	
+	if ($(`head link#navlayout`).length) {
+		document.getElementById(`navlayout`).href = linkElement.replace(`<link rel="stylesheet" id="navlayout" href="`, ``).replace(`">`, ``);
+		console.log(`loadNavLayoutHelper: nav layout href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
+	}
+	else {
+		document.head.innerHTML += linkElement
+		console.log(`loadNavLayoutHelper: style added to html`)
+	}
+}
+
+function loadNavLayout(theme) {
+	
+	console.log(`loadNavLayout: loading "${theme}"`)
+	
+	
+	if (!theme) {
+		loadNavLayoutHelper(localStorage.styleToLoad)
+	}
+	else if (theme == `default`) {
+		console.log(`default theme specified, loading the standard`)
+		loadNavLayoutHelper(`<link rel="stylesheet" id="colourscheme" href="#">`)
+	}
+	else {
+		loadNavLayoutHelper(theme)
+	}
+}
+
+function saveNavLayout(theme) {
+	if (theme == `default`) {
+		localStorage.setItem(`navLayoutToLoad`, ``)
+		console.log(`default nav layout saved`)
+	}
+	
+	else if (theme.startsWith(`/`)) {
+		localStorage.setItem(`navLayoutToLoad`, `<link rel="stylesheet" id="navlayout" href="${theme}">`)
+		console.log(`${theme} nav layout saved`)
+	}
+	
+	if (theme == `default`) {
+		loadStyle(`default`)
+	}
+	else {
+		loadStyle()
+	}
+}
+
+// Make sure that an empty string doesn't cause the color scheme to be reset, just in case
+if (!localStorage.navLayoutToLoad && localStorage.navLayoutToLoad !== ``) {
+	savenavLayout(`default`);
+	console.log(`default nav layout saved as there wasn't one`)
+}
+else {
+	loadnavLayout(localStorage.getItem(`navLayoutToLoad`))
+	console.log(`nav layout loaded`)
+}
+
+
+
+
+
+
+
+//              FLOATING NAVBAR
+
+var floatingNavbarLocation = `<link rel="stylesheet" id="navlayout" href="/hydrogen-framework/navbar-styles/floating-navbar.css">`;
+
+function loadFloatbarHelper(linkElement) {
+	
+	if ($(`head link#floatbar`).length) {
+		document.getElementById(`floatbar`).href = linkElement.replace(`<link rel="stylesheet" id="floatbar" href="`, ``).replace(`">`, ``);
+		console.log(`loadFloatbarHelper: nav layout href is now ${document.head.getElementsByTagName(`link`)[1].href}`)
+	}
+	else {
+		document.head.innerHTML += linkElement
+		console.log(`loadFloatbarHelper: style added to html`)
+	}
+}
+
+function loadFloatbar(theme) {
+	
+	console.log(`loadFloatbar: loading "${theme}"`)
+	
+	if (theme == true) {
+		loadFloatbarHelper(floatingNavbarLocation)
+	}
+	
+	else if (theme == false) {
+		loadFloatbarHelper(`<link rel="stylesheet" id="floatbar" href="#">`)
+	}
+	
+	else {
+		loadFloatbarHelper(`<link rel="stylesheet" id="floatbar" href="#">`)
+	}
+	
+}
+
+function saveFloatbar(theme) {
+	if (theme == true) {
+		localStorage.setItem(`floatingNavbar`, floatingNavbarLocation)
+		console.log(`${theme} floating nav bar saved`)
+	}
+	
+	else if (theme == false) {
+		localStorage.setItem(`floatingNavbar`, ``)
+		console.log(`floating nav bar off and saved`)
+	}
+	
+	else {
+		localStorage.setItem(`floatingNavbar`, ``)
+		console.log(`floating nav bar off and saved`)
+	}
+	
+	loadFloatbar(localStorage.floatingNavbar)
+}
+
+// Make sure that an empty string doesn't cause the color scheme to be reset, just in case
+if (!localStorage.navLayoutToLoad && localStorage.navLayoutToLoad !== ``) {
+	savenavLayout(`default`);
+	console.log(`default nav layout saved as there wasn't one`)
+}
+else {
+	loadnavLayout(localStorage.getItem(`navLayoutToLoad`))
+	console.log(`nav layout loaded`)
+}
+
+
+
+
+
 
 
 
@@ -345,9 +483,9 @@ function loadAnimationState(animStateBool) {
 	
 	if (animStateBool == true) {
 		console.log(`loadAnimationState: turning animations on`)
-		document.documentElement.style.setProperty(`--animationDuration`, `var(--animationDuration)`);
-		document.documentElement.style.setProperty(`--animationDurationFade`, `var(--animationDurationFade)`);
-		document.documentElement.style.setProperty(`--animationDurationSlide`, `var(--animationDurationSlide)`);
+		document.documentElement.style.removeProperty(`--animationDuration`);
+		document.documentElement.style.removeProperty(`--animationDurationFade`);
+		document.documentElement.style.removeProperty(`--animationDurationSlide`);
 	}
 	else if (animStateBool == false) {
 		console.log(`loadAnimationState: turning animations off`)
