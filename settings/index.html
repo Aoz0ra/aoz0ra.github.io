@@ -610,7 +610,7 @@
 						<button onclick="saveColor(`--fontSize`, `4rem`)">4x</button>
 						<button onclick="saveColor(`--fontSize`, `5rem`)">5x</button> -->
 						<input id="fontSizeInput" type=number min="0.5" max="5" step="0.05">
-						<button onclick="saveColor(`--fontSize`, `${getInputValue(`fontSizeInput`)`}rem )">Apply</button>
+						<button onclick="saveColor(`--fontSize`, `${getInputValue(`fontSizeInput`)}rem` )">Apply</button>
 					</div>
 				</div>
 			</div>
@@ -660,7 +660,7 @@
 		
 		//        CUSTOM FONT and SIZE:
 		document.getElementById('customFont').value = getComputedStyle(document.documentElement).getPropertyValue('--sansSerifFont')
-		document.getElementById('fontSize').value = getComputedStyle(document.documentElement).getPropertyValue('--fontSize').replace(`rem`, ``)
+		document.getElementById('fontSizeInput').value = getComputedStyle(document.documentElement).getPropertyValue('--fontSize').replace(`rem`, ``)
 
 		
 		
