@@ -169,6 +169,8 @@
 					<h1>Themes:</h1>
 				</div>
 				
+				<p class="warning">Several of these themes haven't been created yet and some are still a WIP.</p>
+				
 				<div class="col-xs-12">
 					<h2>Theme polarity</h2>
 
@@ -178,12 +180,25 @@
 						<button onclick="savePolarity(`-dark`)">Dark</button>
 					</div>
 				</div>
+				
+				<div class="col-xs-12">
+					<h2>Pre-composed themes</h2>
+
+					<div class="btn-group btn-group-justified">
+						<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours${localStorage.themePolarity}.css`);
+									         saveStyle(`/hydrogen-framework/hydrogen-styles.css`)">Default</button>
+						<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-breeze${localStorage.themePolarity}.css`);
+									       saveStyle(`/hydrogen-framework/styles/aoz0ras-breeze.css`)">Breeze</button>
+						<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-oxygen.css`);
+									       saveStyle(`/hydrogen-framework/hydrogen-styles.css`)">Oxygen</button>
+						<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-2000.css`);
+								 saveStyle(`/hydrogen-framework/styles/aoz0ras-windows-classic.css`)">Windows Classic</button>
+					</div>
+				</div>
 
 				<div class="col-xs-12 col-xl-6" style="max-width: 100%">
 					<h2>Colour scheme</h2>
 					
-					<p class="warning">Several of these themes haven't been created yet and some are still a WIP.</p>
-
 					<div class="row">
 						<div class="col-xs-12">
 							<button class="hilight block" onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours${localStorage.themePolarity}.css`)">Default</button>
@@ -495,7 +510,7 @@
 						<div class="col-xs-12">
 							<h3>The main set</h3>
 							<div class="btn-group btn-group-justified btn-group-vertical-s">
-								<button class="hilight" onclick="saveStyle(`default`)">Default</button>
+								<button class="hilight" onclick="saveStyle(`/hydrogen-framework/hydrogen-styles.css`)">Default</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-stylish.css`)">Stylish</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-shiny.css`)">Shiny</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-flat.css`)">Flat</button>
