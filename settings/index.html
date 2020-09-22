@@ -593,7 +593,7 @@
 					<br>
 				
 					<input type="checkbox" id="reduceMotion" />
-					<label for="reduceMotion">Reduce Motion</label>
+					<label for="reduceMotion">Reduce motion</label>
 					<p class="faint small">Reduce the motion of the user interface to mostly crossfades</p>
 					<br>
 					
@@ -602,8 +602,46 @@
 					<p class="faint small">Use alternate strategies to help users distinguish between items</p>
 					<br>
 					
+					<input type="checkbox" id="prefersDesaturatedColours" />
+					<label for="prefersDesaturatedColours">Desaturated colours</label>
+					<br>
+					
+					<input type="checkbox" id="prefersGreyscale" />
+					<label for="prefersGreyscale">Greyscale</label>
+					<br>
+					
+					<input type="checkbox" id="prefersExtraSaturation" />
+					<label for="prefersExtraSaturation">Increase saturation</label>
+					<br>
+					
+					<input type="checkbox" id="prefersIncreasedContrast" />
+					<label for="prefersIncreasedContrast">Increase contrast</label>
+					<br>
+					
+					<input type="checkbox" id="prefersDecreasedContrast" />
+					<label for="prefersDecreasedContrast">Decrease contrast</label>
+					<br>
+					
+					<input type="checkbox" id="prefersHilightedHeaders" />
+					<label for="prefersHilightedHeaders">Highlight headers</label>
+					<br>
+					
+					<input type="checkbox" id="prefersHilightedLinks" />
+					<label for="prefersHilightedLinks">Highlight links</label>
+					<br>
+					
+					<input type="checkbox" id="prefersReachableTargets" />
+					<label for="prefersReachableTargets">Reachable targets</label>
+					<p class="faint small">Make click targets larger, and thus easier to click on</p>
+					<br>
+					
 					<input type="checkbox" id="prefersBoldFonts" />
-					<label for="prefersBoldFonts">Bold Text</label>
+					<label for="prefersBoldFonts">Bold text</label>
+					<br>
+					
+					<input type="checkbox" id="prefersHiddenImages" />
+					<label for="prefersHiddenImages">Hide images</label>
+					<p class="faint small">There aren't many images on this site, but just in case</p>
 					<br>
 					
 					<input type="checkbox" id="prefersReachableTargets" />
@@ -770,7 +808,18 @@
 				saveAccessibilitySetting(elementID, document.getElementById(elementID).checked? `true` : ``);
 			});
 		}
+		
+		
+		setUpCheckbox(`prefersDesaturatedColours`)
+		setUpCheckbox(`prefersGreyscale`)
+		setUpCheckbox(`prefersExtraSaturation`)
+		setUpCheckbox(`prefersIncreasedContrast`)
+		setUpCheckbox(`prefersDecreasedContrast`)
+		setUpCheckbox(`prefersHilightedHeaders`)
+		setUpCheckbox(`prefersHilightedLinks`)
+		setUpCheckbox(`prefersReachableTargets`)
 		setUpCheckbox(`prefersBoldFonts`)
+		setUpCheckbox(`prefersHiddenImages`)
 		setUpCheckbox(`prefersReachableTargets`)
 		
 		
