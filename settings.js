@@ -319,13 +319,16 @@ else {
 
 //   MISC. ACCESSIBILITY SETTINGS
 
+// I firly believe that not only should the Internet be accessible to anyone and everyone, but electronic devices too, and thus add these settings.
+
 var colourFiltersToApply = ``;
+
 // Some people can't stand highly-saturated colours
 if (!localStorage.prefersDesaturatedColours) {
 	localStorage.setItem(`prefersDesaturatedColours`, ``);
 	console.log(`no preference for desaturated colours yet, so assume the user likes the full range`)
 }
-else if (localStorage.prefersDesaturatedColours == true) {
+else if (localStorage.prefersDesaturatedColours == `true`) {
 	colourFiltersToApply += `saturate(40%)`
 	console.log(`desaturating the colours`)
 }
@@ -335,7 +338,7 @@ if (!localStorage.prefersGreyscale) {
 	localStorage.setItem(`prefersGreyscale`, ``);
 	console.log(`no preference for greyscale usage yet, so assume the user likes the full range`)
 }
-else if (localStorage.prefersGreyscale == true) {
+else if (localStorage.prefersGreyscale == `true`) {
 	colourFiltersToApply += `saturate(0%)`
 	console.log(`greyscale'ing the colours`)
 }
@@ -345,9 +348,9 @@ if (!localStorage.prefersWarmerColours) {
 	localStorage.setItem(`prefersWarmerColours`, ``);
 	console.log(`no preference for warmer colours yet, so assume the user likes the full range`)
 }
-else if (localStorage.preferWarmerColours == true) {
+else if (localStorage.preferWarmerColours == `true`) {
 	colourFiltersToApply += `contrast(80%) sepia(50%)`
-	console.log(`greyscale'ing the colours`)
+	console.log(`warming up the colours`)
 }
 
 // some prefer higher contrast in saturation
@@ -355,9 +358,9 @@ if (!localStorage.prefersExtraSaturation) {
 	localStorage.setItem(`prefersExtraSaturation`, ``);
 	console.log(`no preference for extra saturation yet, so assume the user likes the normal range`)
 }
-else if (localStorage.prefersExtraSaturation == true) {
+else if (localStorage.prefersExtraSaturation == `true`) {
 	colourFiltersToApply += `saturate(150%)`
-	console.log(`desaturating the colours`)
+	console.log(`increasing the saturation`)
 }
 
 // some prefer higher contrast without a custom theme.  easily, but cheaply, make high-contrast variants of themes
@@ -365,7 +368,7 @@ if (!localStorage.prefersIncreasedContrast) {
 	localStorage.setItem(`prefersIncreasedContrast`, ``);
 	console.log(`no preference for  yet, so assume the user likes the full range`)
 }
-else if (localStorage.prefersIncreasedContrast == true) {
+else if (localStorage.prefersIncreasedContrast == `true`) {
 	colourFiltersToApply += `saturate(90%) contrast(130%)`
 	console.log(`increasing the contrast`)
 }
@@ -375,9 +378,9 @@ if (!localStorage.prefersDecreasedContrast) {
 	localStorage.setItem(`prefersDesaturatedColours`, ``);
 	console.log(`no preference for desaturated colours yet, so assume the user likes the full range`)
 }
-else if (localStorage.prefersDecreasedContrast == true) {
+else if (localStorage.prefersDecreasedContrast == `true`) {
 	colourFiltersToApply += `saturate(90%) contrast(60%)`
-	console.log(`desaturating the colours`)
+	console.log(`decreasing the contrast`)
 }
 
 // some need higher contrast not in colour usage, but in hilighting things
@@ -385,7 +388,7 @@ if (!localStorage.prefersHilightedHeaders) {
 	localStorage.setItem(`prefersHilightedHeaders`, ``);
 	console.log(`no preference for hilighted headers`)
 }
-else if (localStorage.prefersHilightedHeaders == true) {
+else if (localStorage.prefersHilightedHeaders == `true`) {
 	$(`head`).append(`<style>h1, h2, h3, h4, h5, h6 {outline: 1px var(--accentHilight) solid}</style>`)
 	console.log(`hilighting the headers`)
 }
@@ -393,11 +396,31 @@ else if (localStorage.prefersHilightedHeaders == true) {
 // 
 if (!localStorage.prefersHilightedLinks) {
 	localStorage.setItem(`prefersHilightedLinks`, ``);
-	console.log(`no preference for hilihgted links`)
+	console.log(`no preference for hilighted links`)
 }
-else if (localStorage.prefersHilightedLinks == true) {
+else if (localStorage.prefersHilightedLinks == `true`) {
 	$(`head`).append(`<style>a {outline: 1px var(--accentHilight) solid}</style>`)
 	console.log(`hilighting the links`)
+}
+
+
+if (!localStorage.prefersHiddenImages) {
+	localStorage.setItem(`prefersHiddenImages`, ``);
+	console.log(`no preference for hidden images`)
+}
+else if (localStorage.prefersHiddenImages == `true`) {
+	$(`head`).append(`<style>img {display: none}</style>`)
+	console.log(`hilighting the links`)
+}
+
+
+if (!localStorage.prefersBoldFonts) {
+	localStorage.setItem(`prefersBoldFonts`, ``);
+	console.log(`no preference for bold fonts`)
+}
+else if (localStorage.prefersBoldFonts == `true`) {
+	$(`head`).append(`<style>* {font-weight: 700}</style>`)
+	console.log(`thickening the fonts`)
 }
 
 if ($(`head style#colourfilters`).get(0)) {
