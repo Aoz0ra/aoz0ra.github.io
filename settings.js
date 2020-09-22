@@ -423,6 +423,16 @@ else if (localStorage.prefersBoldFonts == `true`) {
 	console.log(`thickening the fonts`)
 }
 
+
+if (!localStorage.prefersReachableTargets) {
+	localStorage.setItem(`prefersReachableTargets`, ``);
+	console.log(`no preference for bold fonts`)
+}
+else if (localStorage.prefersReachableTargets == `true`) {
+	$(`head`).append(`<style>* {min-width: 44px; min-height: 44px}</style>`)
+	console.log(`enlarging the targets`)
+}
+
 if ($(`head style#colourfilters`).get(0)) {
 	$(`head style#colourfilters`).html(`html {filter: ${colourFiltersToApply}; backdrop-filter: ${colourFiltersToApply}}`)
 }
