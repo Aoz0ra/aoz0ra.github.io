@@ -606,6 +606,11 @@
 					<label for="prefersBoldFonts">Bold Text</label>
 					<br>
 					
+					<input type="checkbox" id="prefersReachableTargets" />
+					<label for="prefersReachableTargets">Reachable targets</label>
+					<p class="faint small">Make click targets larger, and thus easier to click on</p>
+					<br>
+					
 					<div class="btn-group btn-group-justified">
 						<span>Font size:</span>
 <!-- 						<button onclick="saveColor(`--fontSize`, `0.6rem`)">0.6x</button>
@@ -744,6 +749,11 @@
 		
 		// THE NEW SETTINGS:
 		
+		function saveAccessibilitySetting(settingToUse, valueToSave) {
+			localStorage.setItem(settingToUse, valueToSave)
+			
+			// will expand later.  for now, you have to reload
+		}
 		function setUpCheckbox(elementID) {
 			if (localStorage[elementID] == `true`) {
 				document.getElementById(elementID).checked = true;
@@ -757,10 +767,11 @@
 			document.getElementById(elementID).addEventListener('input', function () {
 				console.log(`setUpCheckbox: event listener on #${elementID}: saving setting of ${document.getElementById(elementID).checked}`)
 				
-				saveAnimationState(document.getElementById(elementID).checked);
+				saveAccessibilitySetting(elementID, document.getElementById(elementID).checked? `true` : ``);
 			});
 		}
 		setUpCheckbox(`prefersBoldFonts`)
+		setUpCheckbox(`prefersReachableTargets`)
 		
 		
 		
