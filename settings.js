@@ -348,7 +348,7 @@ if (!localStorage.prefersWarmerColours) {
 	localStorage.setItem(`prefersWarmerColours`, ``);
 	console.log(`no preference for warmer colours yet, so assume the user likes the full range`)
 }
-else if (localStorage.preferWarmerColours == `true`) {
+else if (localStorage.prefersWarmerColours == `true`) {
 	colourFiltersToApply += `contrast(80%) sepia(50%)`
 	console.log(`warming up the colours`)
 }
