@@ -366,7 +366,7 @@ else if (localStorage.prefersExtraSaturation == `true`) {
 // some prefer higher contrast without a custom theme.  easily, but cheaply, make high-contrast variants of themes
 if (!localStorage.prefersIncreasedContrast) {
 	localStorage.setItem(`prefersIncreasedContrast`, ``);
-	console.log(`no preference for  yet, so assume the user likes the full range`)
+	console.log(`no preference for increased contrast yet`)
 }
 else if (localStorage.prefersIncreasedContrast == `true`) {
 	colourFiltersToApply += `saturate(90%) contrast(130%)`
@@ -375,8 +375,8 @@ else if (localStorage.prefersIncreasedContrast == `true`) {
 
 // some prefer lower contrast without a custom theme.  again, this is cheap but it works out better smh
 if (!localStorage.prefersDecreasedContrast) {
-	localStorage.setItem(`prefersDesaturatedColours`, ``);
-	console.log(`no preference for desaturated colours yet, so assume the user likes the full range`)
+	localStorage.setItem(`prefersDecreasedContrast`, ``);
+	console.log(`no preference for decreased contrast yet, so assume the user likes the standard range`)
 }
 else if (localStorage.prefersDecreasedContrast == `true`) {
 	colourFiltersToApply += `saturate(90%) contrast(60%)`
