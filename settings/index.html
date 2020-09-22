@@ -747,15 +747,15 @@
 		function setUpCheckbox(elementID) {
 			if (localStorage[elementID] == `true`) {
 				document.getElementById(elementID).checked = true;
-				console.log(`${elementID} checkbox set to checked`)
+				console.log(`setUpCheckbox: ${elementID} checkbox set to checked`)
 			}
 			else {
 				document.getElementById(elementID).checked = false;
-				console.log(`${elementID} checkbox set to unchecked`)
+				console.log(`setUpCheckbox: ${elementID} checkbox set to unchecked`)
 			}
 			
 			document.getElementById(elementID).addEventListener('input', function () {
-				console.log(`event listener on #${elementID}: saving animation state of ${document.getElementById(elementID).checked}`)
+				console.log(`setUpCheckbox: event listener on #${elementID}: saving setting of ${document.getElementById(elementID).checked}`)
 				
 				saveAnimationState(document.getElementById(elementID).checked);
 			});
