@@ -315,6 +315,99 @@ else {
 
 
 
+
+
+//   MISC. ACCESSIBILITY SETTINGS
+
+var colourFiltersToApply = ``;
+// Some people can't stand highly-saturated colours
+if (!localStorage.prefersDesaturatedColours) {
+	localStorage.setItem(`prefersDesaturatedColours`, ``);
+	console.log(`no preference for desaturated colours yet, so assume the user likes the full range`)
+}
+else if (localStorage.prefersDesaturatedColours == true) {
+	colourFiltersToApply += `saturate(40%)`
+	console.log(`desaturating the colours`)
+}
+
+// some can't stand even desaturated colours and head for greyscale themes
+if (!localStorage.prefersGreyscale) {
+	localStorage.setItem(`prefersGreyscale`, ``);
+	console.log(`no preference for greyscale usage yet, so assume the user likes the full range`)
+}
+else if (localStorage.prefersGreyscale == true) {
+	colourFiltersToApply += `saturate(0%)`
+	console.log(`greyscale'ing the colours`)
+}
+
+// some don't like blue that much or can't deal with colder colours
+if (!localStorage.prefersWarmerColours) {
+	localStorage.setItem(`prefersWarmerColours`, ``);
+	console.log(`no preference for warmer colours yet, so assume the user likes the full range`)
+}
+else if (localStorage.preferWarmerColours == true) {
+	colourFiltersToApply += `contrast(80%) sepia(50%)`
+	console.log(`greyscale'ing the colours`)
+}
+
+// some prefer higher contrast in saturation
+if (!localStorage.prefersExtraSaturation) {
+	localStorage.setItem(`prefersExtraSaturation`, ``);
+	console.log(`no preference for extra saturation yet, so assume the user likes the normal range`)
+}
+else if (localStorage.prefersExtraSaturation == true) {
+	colourFiltersToApply += `saturate(150%)`
+	console.log(`desaturating the colours`)
+}
+
+// some prefer higher contrast without a custom theme.  easily, but cheaply, make high-contrast variants of themes
+if (!localStorage.prefersIncreasedContrast) {
+	localStorage.setItem(`prefersIncreasedContrast`, ``);
+	console.log(`no preference for  yet, so assume the user likes the full range`)
+}
+else if (localStorage.prefersIncreasedContrast == true) {
+	colourFiltersToApply += `saturate(90%) contrast(130%)`
+	console.log(`increasing the contrast`)
+}
+
+// some prefer lower contrast without a custom theme.  again, this is cheap but it works out better smh
+if (!localStorage.prefersDecreasedContrast) {
+	localStorage.setItem(`prefersDesaturatedColours`, ``);
+	console.log(`no preference for desaturated colours yet, so assume the user likes the full range`)
+}
+else if (localStorage.prefersDecreasedContrast == true) {
+	colourFiltersToApply += `saturate(90%) contrast(60%)`
+	console.log(`desaturating the colours`)
+}
+
+// some need higher contrast not in colour usage, but in hilighting things
+if (!localStorage.prefersHilightedHeaders) {
+	localStorage.setItem(`prefersHilightedHeaders`, ``);
+	console.log(`no preference for hilighted headers`)
+}
+else if (localStorage.prefersHilightedHeaders == true) {
+	$(`head`).append(`<style>h1, h2, h3, h4, h5, h6 {outline: 1px var(--accentHilight) solid}</style>`)
+	console.log(`hilighting the headers`)
+}
+
+// 
+if (!localStorage.prefersHilightedLinks) {
+	localStorage.setItem(`prefersHilightedLinks`, ``);
+	console.log(`no preference for hilihgted links`)
+}
+else if (localStorage.prefersHilightedLinks == true) {
+	$(`head`).append(`<style>a {outline: 1px var(--accentHilight) solid}</style>`)
+	console.log(`hilighting the links`)
+}
+
+if ($(`head style#colourfilters`).get(0)) {
+	$(`head style#colourfilters`).html(`html {filter: ${colourFiltersToApply}; backdrop-filter: ${colourFiltersToApply}}`)
+}
+else {
+	$(`head`).append(`<style>html {filter: ${colourFiltersToApply}; backdrop-filter: ${colourFiltersToApply}}`)
+}
+
+
 /*
 
 
@@ -701,6 +794,8 @@ setUpColor(`--fontSizeH5`);
 setUpColor(`--fontSizeH6`);
 
 setUpColor(`--sansSerifFont`);
+setUpColor(`--lineHeight`);
+setUpColor(`--letterSpacing`);
 
 setUpColor(`--pagePaddingTop`);
 setUpColor(`--pagePaddingLeft`);
