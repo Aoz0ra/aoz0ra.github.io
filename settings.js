@@ -838,6 +838,7 @@ setUpColor(`--fontSizeH6`);
 setUpColor(`--sansSerifFont`);
 setUpColor(`--lineHeight`);
 setUpColor(`--letterSpacing`);
+setUpColor(`--wordSpacing`);
 
 setUpColor(`--pagePaddingTop`);
 setUpColor(`--pagePaddingLeft`);
