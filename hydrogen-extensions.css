@@ -126,3 +126,93 @@
 
   animation: rainbows 30s linear infinite;
 }
+
+.objection-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--yellow) solid;
+}
+.objection-block:before {
+  content: "Objection!";
+  color: var(--yellow);
+}
+
+.notsofast-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--yellow) solid;
+}
+.notsofast-block:before {
+  content: "Not so fast!";
+  color: var(--yellow);
+}
+
+.silence-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--yellow) solid;
+}
+.silence-block:before {
+  content: "Silence!";
+  color: var(--yellow);
+}
+
+.takethat-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--skyblue) solid;
+}
+.takethat-block:before {
+  content: "Take That!";
+  color: var(--skyblue);
+}
+
+.havealook-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--yellow) solid;
+}
+.havealook-block:before {
+  content: "Have A Look!";
+  color: var(--skyblue);
+}
+
+.holdit-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--red) solid;
+}
+.holdit-block:before {
+  content: "Hold It!";
+  color: var(--red);
+}
+
+.gotcha-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--green) solid;
+}
+.gotcha-block:before {
+  content: "Gotcha!";
+  color: var(--green);
+}
+
+.eureka-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--cyan) solid;
+}
+.eureka-block:before {
+  content: "Eureka!";
+  color: var(--cyan);
+}
+
+.overruled-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--red) solid;
+}
+.overruled-block:before {
+  content: "Overruled!";
+  color: var(--red);
+}
+
+.gotit-block {
+  padding: 1em;
+  border-left: var(--borderWidth) var(--green) solid;
+}
+.gotit-block:before {
+  content: "Got It!";
+  color: var(--green);
+}
