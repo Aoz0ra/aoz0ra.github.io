@@ -1,0 +1,135 @@
+:root {
+--fontSizeH1: 3em;
+--fontSizeH2: 2.5em;
+--fontSizeH3: 2em;
+--fontSizeH4: 1.72em;
+--fontSizeH5: 1.44em;
+--fontSizeH6: 1.2em;
+}
+
+body {
+  background: var(--backgroundSecondary);
+}
+
+div.page {
+	margin: var(--pagePaddingTop) var(--pagePaddingRight) var(--pagePaddingBottom) var(--pagePaddingLeft);
+	padding: 0;
+	
+	background: var(--background);
+	
+	box-shadow: 0px 3px 6px 0px #0002, 0px 6px 6px -6px #0001;
+}
+
+div.header {
+	--background: var(--backgroundSecondary);
+
+  background: radial-gradient(farthest-side at 50% 0%, var(--backgroundHilight), transparent) no-repeat, linear-gradient(to bottom, var(--backgroundHilight), transparent) no-repeat, var(--backgroundSecondary);
+	background-size: 100vw 60px, 100vw 140px;
+	background-attachment: fixed;
+
+}
+
+button:not(.nohydrogen), div.navbar,
+input[type=color]:not(.nohydrogen),
+input[type="checkbox"]:not(.nohydrogen){
+	background: linear-gradient(to bottom, var(--background), var(--backgroundTop) 50%, var(--background) 50%, var(--backgroundBottom) );
+	box-shadow: 0px 0px 12px 2px var(--decoration), 0px 1px 2px 0px #0005, 0px 2px 2px -2px #0003;
+}
+
+h1:not(.nohydrogen),
+h2:not(.nohydrogen),
+h3:not(.nohydrogen),
+h4:not(.nohydrogen),
+h5:not(.nohydrogen),
+h6:not(.nohydrogen) {
+  color: var(--accent);
+	text-shadow: 0px 1px 3px var(--accent);
+	font-variation-settings: "CASL" 1;
+}
+
+h1:not(.nohydrogen) {
+  font-weight: 100;
+}
+
+h2:not(.nohydrogen) {
+  font-weight: 200;
+}
+
+h3:not(.nohydrogen) {
+  font-weight: 200;
+}
+
+h4:not(.nohydrogen) {
+  font-weight: 300;
+}
+
+h5:not(.nohydrogen) {
+  font-weight: 300;
+}
+
+h6:not(.nohydrogen) {
+  font-weight: 400;
+}
+
+h1:not(.nohydrogen):hover,
+h2:not(.nohydrogen):hover,
+h3:not(.nohydrogen):hover,
+h4:not(.nohydrogen):hover,
+h5:not(.nohydrogen):hover,
+h6:not(.nohydrogen):hover {
+    font-weight: 400;
+
+    font-variation-settings: "slnt" -10, "CASL" 1, "CRSV" 1;
+}
+
+
+input[type="checkbox"]:not(.nohydrogen):active {
+	--foreground: var(--grayFaint);
+}
+
+input[type="checkbox"]:not(.nohydrogen):active:before {
+	opacity: 100%;
+}
+
+input[type="checkbox"]:not(.nohydrogen):checked {
+	--background: var(--accent);
+	--backgroundTop: var(--accentHilight);
+	--backgroundBottom: var(--accent);
+	--foreground: var(--selectionForeground);
+}
+
+input[type="checkbox"]:not(.nohydrogen):checked:active {
+	--background: var(--accentHilight);
+	--backgroundTop: var(--accent);
+	--backgroundBottom: var(--accentHilight);
+	--foreground: var(--accentHilight);
+}
+
+input:hover, button:hover, button:focus {
+	font-weight: 500;
+	font-variation-settings: "slnt" -4, "CASL" 0;
+}
+
+input:active, button:active {
+	font-variation-settings: "slnt" -14, "CASL" 1;
+}
+
+
+
+div.floating-toc-m {
+	z-index: 0;
+}
+
+div.navbar {
+	z-index: 1;
+}
+
+
+a {
+	transition: font-variation-settings 3s !important;
+}
+
+a:hover {
+	font-weight: 500;
+	font-variation-settings: "CASL" 1, "slnt" -7;
+}
