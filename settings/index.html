@@ -42,12 +42,12 @@
 			<div class="row" id="generalSettings">
 				
 				<div class="col-xs-12">
-					<h1>General Settings</h1>
+					<h2>General Settings</h2>
 				</div>
 
 				
 	  			<div class="col-xs-12 col-l-4">
-				  	<h2 style="color: var(--accent)">Accent colour</h2>
+				  	<h3 style="color: var(--accent)">Accent colour</h2>
 					<div class="btn-group btn-group-justified">
 						<button onclick="saveAccent('DEFAULT_ACCENT')" style="color: var(--DEFAULT_ACCENT)">theme default</button>
 						<button onclick="saveAccent('gray')">Grey</button>
@@ -76,7 +76,7 @@
 				
 				
 				<div class="col-xs-12 col-m-6 col-l-4">
-				  	<h2 style="color: var(--hilight)">Hilight colour</h2>
+				  	<h3 style="color: var(--hilight)">Hilight colour</h3>
 					
 					<div class="btn-group btn-group-justified">
 						<button onclick="saveHilight('DEFAULT_HILIGHT')" style="--hilight: var(--DEFAULT_HILIGHT)">theme default</button>
@@ -106,7 +106,7 @@
 				
 				
 				<div class="col-xs-12 col-m-6 col-l-4">
-				  	<h2 style="color: var(--selectionBackground)">Selection colour</h2>
+				  	<h3 style="color: var(--selectionBackground)">Selection colour</h3>
 					
 					<div class="btn-group btn-group-justified">
 						<button onclick="saveSelect('DEFAULT_SELECTION_BG')" style="background: var(--DEFAULT_SELECTION_BG); --foreground: var(--selectionForeground);">theme default</button>
@@ -135,7 +135,7 @@
 				
 				
 <!-- 				<div class="col-xs-12 col-m-6">
-					<h2>Navigation bar style</h2>
+					<h3>Navigation bar style</h3>
 					
  					<div class="btn-group btn-group-justified">
 						<button onclick="saveNavbar('')">Standard</button>
@@ -157,13 +157,13 @@
 			
 			<div class="row" id="themesSettings">
 				<div class="col-xs-12">
-					<h1>Themes:</h1>
+					<h2>Themes</h2>
 				</div>
 				
 				<p class="warning">Several of these themes haven't been created yet and some are still a WIP.</p>
 				
 				<div class="col-xs-12">
-					<h2>Theme polarity</h2>
+					<h3>Theme polarity</h3>
 
 					<div class="btn-group btn-group-justified">
 						<button onclick="savePolarity(`-dynamic`)">OS preference</button>
@@ -173,7 +173,7 @@
 				</div>
 				
 				<div class="col-xs-12">
-					<h2>Pre-composed themes</h2>
+					<h3>Pre-composed themes</h3>
 
 					<div class="btn-group btn-group-justified btn-group-vertical-s">
 						<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours${localStorage.themePolarity}.css`);
@@ -196,7 +196,7 @@
 				</div>
 
 				<div class="col-xs-12 col-xl-6" style="max-width: 100%">
-					<h2>Colour scheme</h2>
+					<h3>Colour scheme</h3>
 					
 					<div class="row">
 						<div class="col-xs-12">
@@ -206,7 +206,7 @@
 						<br>
 						
 						<div class="row">
-							<h3>Linux</h3>
+							<h4>From Linux themes</h4>
 							
 							<div class="col-xs-12 col-l-6">
 								<div class="btn-group btn-group-justified">
@@ -241,7 +241,7 @@
 						</div>
 						
 						<div class="row">
-							<h3>KDE</h3>
+							<h4>From KDE</h4>
 							
 							<div class="col-xs-12 col-l-6">
 								<div class="btn-group btn-group-justified">
@@ -293,9 +293,7 @@
 								<!--	<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-well-read${localStorage.themePolarity}.css`)">Well-Read</button> -->
 								</div>
 							</div>
-						</div>
 						
-						<div class="row">
  							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified">
 									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-skies-clear.css`)">Clear Skies</button>
@@ -304,9 +302,7 @@
  									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-skies-stormy.css`)">Stormy Skies</button>
 								</div>
 							</div>
-						</div>
 						
-						<div class="row">
  							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified">
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-artifacts-198w.css`)">ARTI&shy;FACTS 198w</button>
@@ -315,10 +311,7 @@
  									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-artifacts-201z.css`)">ARTI&shy;FACTS 201z</button>
 								</div>
 							</div>
-						</div>
 						
-
-						<div class="row" style="max-width: 100%">
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-the-matrix.css`)">7H3 M4721X</button>
@@ -353,7 +346,7 @@
 						</div> 
 									
 						<div class="row">
-							<h4>Converted directly from Windows Classic</h4>
+							<h5>Converted directly from Windows Classic</h5>
 							
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
@@ -371,6 +364,7 @@
 						<div class="row">
 
  							<h4>Converted from <a href="https://github.com/tPenguinLTG">tPenguinLTG</a>'s themes</h4>
+					<p>Some have been extended with a dark theme by me</p>
 							
 							<!-- <div class="col-xs-12">
 								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
@@ -463,7 +457,7 @@
 						
 						
 						<div class="row">
-							<h3>Other</h3>
+							<h4>Other</h4>
 							
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified btn-group-vertical-s">
@@ -487,7 +481,7 @@
 						
 						
 						<div class="row">
-							<h3>Accessibility</h3>
+							<h4>Accessibility</h4>
 							
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified">
@@ -505,10 +499,10 @@
 				
 				<div class="col-xs-12 col-xl-6">
 					
-					<h2>Style</h2>
+					<h3>Style</h3>
 					<div class="row">
 						<div class="col-xs-12">
-							<h3>The main set</h3>
+							<h4>The main set</h4>
 							<div class="btn-group btn-group-justified btn-group-vertical-s">
 								<button class="hilight" onclick="saveStyle(`/hydrogen-framework/hydrogen-styles.css`)">Default</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-stylish.css`)">Stylish</button>
@@ -518,7 +512,7 @@
 						</div>
 
 						<div class="col-xs-12">
-							<h3>Aoz0ra's own</h3>
+							<h4>Aoz0ra's own</h4>
 							<div class="btn-group btn-group-justified">
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-lighthearted.css`)">Light&shy;hearted</button>
 							</div>
@@ -526,7 +520,7 @@
 
 						
 						<div class="col-xs-12">
-							<h3>Modern Imitations</h3>
+							<h4>Modern Imitations</h4>
 							<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-tenified.css`)">Tenified</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-metro.css`)">Metro</button>
@@ -539,7 +533,7 @@
 						</div>
 						
 						<div class="col-xs-12">
-							<h3>Reliving the Classics</h3>
+							<h4>Reliving the Classics</h4>
 							<div class="btn-group btn-group-justified">
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-windows-classic.css`)">Windows Classic</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-windows-classic-remix.css`)">Classic Remix</button>
@@ -549,19 +543,19 @@
 						</div>
 						
 						<div class="col-xs-12">
-							<h3>Experiments</h3>
+							<h4>Experiments</h4>
 							<div class="btn-group btn-group-justified">
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-floating-buttons.css`)">Floating Buttons</button>
 								<!-- <button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-tridimensional.css`)">Tridimen&shy;sional</button> -->
 
-								<button onclick="saveStyle(`/extra-hydrogen-themes/styles/aoz0ras-recursive-experiments.css`)">Experiments with Recursive</button>
+								<button onclick="saveStyle(`/extra-hydrogen-themes/styles/aoz0ras-recursive-experiments.css`)">Recursive font</button>
 							</div>
 						</div>
 						
 						
 						
 						<div class="col-xs-12">
-							<h3>Accessiblity</h3>
+							<h4>Accessiblity</h4>
 							<div class="btn-group btn-group-justified">
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-accessible.css`)">Accessible</button>
 								<!--<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-accessible-large.css`)">Accessible (Large)</button>
@@ -592,10 +586,12 @@
 				<div class="col-xs-12 col-xl-6">
 					
 					<h2>Accessibility</h2>
+
+					<p>Some users may find these setting useful, even if they don't need to use them for accessibility reasons.  Feel free to experiment!</p>
 					
 					<input type="checkbox" id="idLikeAnimations">
 					<label for="idLikeAnimations">Enable animations</label>
-					<p class="faint small">May be slow and resource-intensive!</p>
+					<p class="faint small">Animations may be resource-intensive.</p>
 					<br>
 				
 					<input type="checkbox" id="reduceMotion" />
@@ -610,32 +606,33 @@
 					
 					<input type="checkbox" id="prefersDesaturatedColours" />
 					<label for="prefersDesaturatedColours">Desaturated colours</label>
-					<p class="faint small"></p>
+					<p class="faint small">Use cases: Sensitive eyes</p>
 					<br>
 					
 					<input type="checkbox" id="prefersGreyscale" />
 					<label for="prefersGreyscale">Greyscale</label>
-					<p class="faint small"></p>
+					<p class="faint small">Use cases: Sensitive eyes</p>
 					<br>
 					
 					<input type="checkbox" id="prefersExtraSaturation" />
 					<label for="prefersExtraSaturation">Increase saturation</label>
-					<p class="faint small"></p>
+					<p class="faint small">Use cases: Loss of vision</p>
 					<br>
 					
 					<input type="checkbox" id="prefersWarmerColours" />
 					<label for="prefersWarmerColours">Warmer colours</label>
 					<p class="faint small">Reduce the amount of blue light to make the website easier to look at</p>
+					<p class="faint small">Use cases: Sensitive eyes</p>
 					<br>
 					
 					<input type="checkbox" id="prefersIncreasedContrast" />
 					<label for="prefersIncreasedContrast">Increase contrast</label>
-					<p class="faint small"></p>
+					<p class="faint small">Use cases: Loss of vision</p>
 					<br>
 					
 					<input type="checkbox" id="prefersDecreasedContrast" />
 					<label for="prefersDecreasedContrast">Decrease contrast</label>
-					<p class="faint small"></p>
+					<p class="faint small">Use cases: Sensitive eyes</p>
 					<br>
 					
 					<input type="checkbox" id="prefersHilightedHeaders" />
@@ -651,6 +648,7 @@
 					<input type="checkbox" id="prefersReachableTargets" />
 					<label for="prefersReachableTargets">Reachable targets</label>
 					<p class="faint small">Make click targets larger, and thus easier to click on</p>
+					<p class="faint small">Use cases: Motor issues</p>
 					<br>
 					
 					<input type="checkbox" id="prefersBoldFonts" />
@@ -666,6 +664,7 @@
 					<input type="checkbox" id="prefersSingleColumn" />
 					<label for="prefersSingleColumn">Single-column layouts</label>
 					<p class="faint small">Use layouts that have one column</p>
+					<p class="faint small">Use cases: Dyslexia or other reading issues</p>
 					<br>
 					
 					<div class="btn-group btn-group-justified">
@@ -673,24 +672,28 @@
 						<input id="fontSizeInput" type=number min="0.5" max="5" step="0.05">
 						<button onclick="saveColor(`--fontSize`, `${getInputValue(`fontSizeInput`)}rem` )">Apply</button>
 					</div>
+					<p class="faint small">Use cases: Personal preference; loss of vision</p>
 
 					<div class="btn-group btn-group-justified">
 						<span>Letter spacing:</span>
 						<input id="letterSpacingInput" type=number min="0" max="0.15" step="0.01">
 						<button onclick="saveColor(`--letterSpacing`, `${getInputValue(`letterSpacingInput`)}em` )">Apply</button>
 					</div>
+					<p class="faint small">Use cases: Dyslexia or other reading issues</p>
 
 					<div class="btn-group btn-group-justified">
 						<span>Word spacing:</span>
 						<input id="wordSpacingInput" type=number min="0" max="0.75" step="0.05">
 						<button onclick="saveColor(`--wordSpacing`, `${getInputValue(`wordSpacingInput`)}em` )">Apply</button>
 					</div>
+					<p class="faint small">Use cases: Dyslexia or other reading issues</p>
 
 					<div class="btn-group btn-group-justified">
 						<span>Line height:</span>
 						<input id="lineHeightInput" type=number min="1" max="3" step="0.05">
 						<button onclick="saveColor(`--lineHeight`, `${getInputValue(`lineHeightInput`)}em` )">Apply</button>
 					</div>
+					<p class="faint small">Use cases: Dyslexia or other reading issues</p>
 				</div>
 			</div>
 
