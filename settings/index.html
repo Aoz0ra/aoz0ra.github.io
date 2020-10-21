@@ -208,7 +208,7 @@
 						<div class="row">
 							<h4>From Linux themes</h4>
 							
-							<div class="col-xs-12 col-l-6">
+							<div class="col-xs-12 col-l-6 col-xl-12">
 								<div class="btn-group btn-group-justified">
 									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-clearlooks.css`)">Clearlooks</button>
 									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-crux.css`)">Crux</button>
@@ -262,7 +262,7 @@
 						
 						<div class="row">
 							<h3>Solarized</h3>
-							<div class="col-xs-12 col-l-6">
+							<div class="col-xs-12 col-l-6 col-xl-12">
 								<div class="btn-group btn-group-justified">
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized${localStorage.themePolarity}.css`)">Solar&shy;ized</button>
 									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized${localStorage.themePolarity}-alt.css`)">Alternate</button>
@@ -278,14 +278,14 @@
 						<div class="row">
 							<h3>Aoz0ra's Collection</h3>
 							
-							<!-- Many of these are derived from my Windows Classic themes -->
+							<!-- Many of these are derived from, or even straight conversions of, my Windows Classic themes -->
 						</div>
 
-						<div class="row">
+						<div class="row" style="max-width: 100%; overflow: auto>
 
 							<h4>My own</h4>
-							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
+							<div class="col-xs-12"">
+								<div class="btn-group btn-group-justified">
 								<!--	<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-aesthetic${localStorage.themePolarity}.css`)">Aesthetic</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-special${localStorage.themePolarity}.css`)">Aoz0ra's Special</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-autism-awareness${localStorage.themePolarity}.css`)">Autism Aware&shy;ness</button> -->
@@ -313,7 +313,7 @@
 							</div>
 						
 							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
+								<div class="btn-group btn-group-justified">
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-the-matrix.css`)">7H3 M4721X</button>
 									
 <!--									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-blackout.css`)">Blackout</button>
@@ -345,11 +345,19 @@
 							</div>
 						</div> 
 									
-						<div class="row">
+						<div class="row" style="max-width: 100%; overflow: auto;">
 							<h5>Converted directly from Windows Classic</h5>
 							
 							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
+								<div class="btn-group btn-group-justified">
+							
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-aesthetic${localStorage.themePolarity}.css`)">Aiee</button>
+									
+								</div>
+							</div>
+							
+							<div class="col-xs-12">
+								<div class="btn-group btn-group-justified">
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-clear-skies.css`)">Clear Skies</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-cloudy-skies.css`)">Cloudy Skies</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-rainy-skies.css`)">Rainy Skies</button>
@@ -357,38 +365,45 @@
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-sunset-skies.css`)">Sunset Skies</button>
 									
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-modern.css`)">Classic Modern</button>
+									
+								</div>
+							</div>
+							
+							<div class="col-xs-12">
+								<div class="btn-group btn-group-justified">
+							
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-the-matrix.css`)">Aiee</button>
+									
 								</div>
 							</div>
 						</div>
+						
+						
 
-						<div class="row">
+						<div class="row" style="max-width: 100%; overflow: auto;">
 
  							<h4>Converted from <a href="https://github.com/tPenguinLTG">tPenguinLTG</a>'s themes</h4>
-					<p>Some have been extended with a dark theme by me</p>
+							<p>Some have been extended with a dark theme by me</p>
 							
 							 <div class="col-xs-12">
-								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-aiee${localStorage.themePolarity}.css`)">Aiee</button>
+								<div class="btn-group btn-group-justified">
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-aiee${localStorage.themePolarity}.css`)">Aiee</button>
 									<!--
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-clouds${localStorage.themePolarity}.css`)">Blue</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-fx${localStorage.themePolarity}.css`)">Fx</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-fxn${localStorage.themePolarity}.css`)">FxN</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-teal-for-shelbi${localStorage.themePolarity}.css`)">Teal for Shelbi</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-vista-esque${localStorage.themePolarity}.css`)">Vista-esque</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-vista-esque-blue${localStorage.themePolarity}.css`)">Vista-esque Blue</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-vista-esque-green${localStorage.themePolarity}.css`)">Vista-esque Green</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-98.css`)">Windows 98</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-clouds${localStorage.themePolarity}.css`)">Blue</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-fx${localStorage.themePolarity}.css`)">Fx</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-fxn${localStorage.themePolarity}.css`)">FxN</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-teal-for-shelbi${localStorage.themePolarity}.css`)">Teal for Shelbi</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-vista-esque${localStorage.themePolarity}.css`)">Vista-esque</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-vista-esque-blue${localStorage.themePolarity}.css`)">Vista-esque Blue</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-vista-esque-green${localStorage.themePolarity}.css`)">Vista-esque Green</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-windows-98.css`)">Windows 98</button>
 									-->
 								</div>
 							</div> 
 
-						</div>
-
-						<!-- <div class="row">
-
-							
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
+									<!--
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ash.css`)">Ash</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-blue.css`)">Blue</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-cherry.css`)">Cherry</button>
@@ -405,14 +420,10 @@
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-tomato.css`)">Tomato</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-1_01.css`)">Windows 1.01</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-95.css`)">Windows 95</button>
+									-->
 								</div>
 							</div>
-							
-							
-						</div> -->
 						
-						
-						<div class="row">
 							<h5>Direct conversions</h5>
 							
  							<div class="col-xs-12">
@@ -431,11 +442,11 @@
 						
 						
 						
-						<div class="row">
+						<div class="row" style="max-width: 100%; overflow: auto;">
 							<h4>Microsoft's</h4>
 							
 							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
+								<div class="btn-group btn-group-justified">
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-tenified.css`)">Windows 10</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-luna.css`)">Luna (Windows XP)</button>
 								</div>
