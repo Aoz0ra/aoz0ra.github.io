@@ -1,17 +1,9 @@
+
+console.log(`started executing settings.js`)
+
 function getInputValue(id) {
 	return document.getElementById(id).value;
 }
-
-
-
-
-
-$(`#dropContent`).html(`<div class="item"> <a href="/hydrogen-framework/index.html">Hydrogen</a> </div>`+
-		       `<div class="item"> <a href="/winclassic/index.html">WinClassic</a> </div>`+
-		       `<div class="item"> <a href="/sonic-aus/index.html">Sonic AUs</a> </div>`+
-		       `<div class="item"> <a href="/settings/index.html">Settings</a> </div>`)
-
-
 
 
 
@@ -317,11 +309,13 @@ else {
 
 
 
-//   MISC. ACCESSIBILITY SETTINGS
+//   ACCESSIBILITY SETTINGS
 
-// I firly believe that not only should the Internet be accessible to anyone and everyone, but electronic devices too, and thus add these settings.
+// I firmly believe that not only the Internet, but electronic devices too, should be accessible to anyone and everyone.  And thus I add these settings.
 
 var colourFiltersToApply = ``;
+var extraStyles = ``;
+
 
 // Some people can't stand highly-saturated colours
 if (!localStorage.prefersDesaturatedColours) {
@@ -336,7 +330,7 @@ else if (localStorage.prefersDesaturatedColours == `true`) {
 // some can't stand even desaturated colours and head for greyscale themes
 if (!localStorage.prefersGreyscale) {
 	localStorage.setItem(`prefersGreyscale`, ``);
-	console.log(`no preference for greyscale usage yet, so assume the user likes the full range`)
+	console.log(`no preference for greyscale usage yet, so assume the user likes having colours`)
 }
 else if (localStorage.prefersGreyscale == `true`) {
 	colourFiltersToApply += `saturate(0%)`
@@ -346,7 +340,7 @@ else if (localStorage.prefersGreyscale == `true`) {
 // some don't like blue that much or can't deal with colder colours
 if (!localStorage.prefersWarmerColours) {
 	localStorage.setItem(`prefersWarmerColours`, ``);
-	console.log(`no preference for warmer colours yet, so assume the user likes the full range`)
+	console.log(`no preference for warmer colours yet, so assume the user likes the standard colour temperature`)
 }
 else if (localStorage.prefersWarmerColours == `true`) {
 	colourFiltersToApply += `contrast(80%) sepia(50%)`
@@ -373,7 +367,7 @@ else if (localStorage.prefersIncreasedContrast == `true`) {
 	console.log(`increasing the contrast`)
 }
 
-// some prefer lower contrast without a custom theme.  again, this is cheap but it works out better smh
+// some prefer lower contrast without a custom theme.  again, this is cheap but it works out better
 if (!localStorage.prefersDecreasedContrast) {
 	localStorage.setItem(`prefersDecreasedContrast`, ``);
 	console.log(`no preference for decreased contrast yet, so assume the user likes the standard range`)
@@ -389,7 +383,7 @@ if (!localStorage.prefersHilightedHeaders) {
 	console.log(`no preference for hilighted headers`)
 }
 else if (localStorage.prefersHilightedHeaders == `true`) {
-	$(`head`).append(`<style>h1, h2, h3, h4, h5, h6 {outline: 1px var(--accentHilight) solid}</style>`)
+	extraStyles += `h1, h2, h3, h4, h5, h6 {outline: 1px var(--accentHilight) solid}`
 	console.log(`hilighting the headers`)
 }
 
@@ -399,7 +393,7 @@ if (!localStorage.prefersHilightedLinks) {
 	console.log(`no preference for hilighted links`)
 }
 else if (localStorage.prefersHilightedLinks == `true`) {
-	$(`head`).append(`<style>a {outline: 1px var(--accentHilight) solid}</style>`)
+	extraStyles += `a {outline: 1px var(--accentHilight) solid}`
 	console.log(`hilighting the links`)
 }
 
@@ -409,45 +403,65 @@ if (!localStorage.prefersHiddenImages) {
 	console.log(`no preference for hidden images`)
 }
 else if (localStorage.prefersHiddenImages == `true`) {
-	$(`head`).append(`<style>img {display: none}</style>`)
+	extraStyles += `img {display: none}`
 	console.log(`hilighting the links`)
 }
 
-
+// some need thicker fonts
 if (!localStorage.prefersBoldFonts) {
 	localStorage.setItem(`prefersBoldFonts`, ``);
 	console.log(`no preference for bold fonts`)
 }
 else if (localStorage.prefersBoldFonts == `true`) {
-	$(`head`).append(`<style>* {font-weight: 700 !important}</style>`)
+	extraStyles += `* {font-weight: 700 !important}`
 	console.log(`thickening the fonts`)
 }
 
-
+// some need larger targets
 if (!localStorage.prefersReachableTargets) {
 	localStorage.setItem(`prefersReachableTargets`, ``);
 	console.log(`no preference for reachable targets`)
 }
 else if (localStorage.prefersReachableTargets == `true`) {
-	$(`head`).append(`<style>* {min-width: 44px; min-height: 44px}</style>`)
+	extraStyles += `* {min-width: 44px; min-height: 44px}`
 	console.log(`enlarging the targets`)
 }
 
+// some need single-column styles
 if (!localStorage.prefersSingleColumn) {
 	localStorage.setItem(`prefersSingleColumn`, ``);
 	console.log(`no preference for single column`)
 }
 else if (localStorage.prefersSingleColumn == `true`) {
-	$(`head`).append(`<style>.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12 {width: 100%;}</style>`)
+	extraStyles += `.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12 {width: 100% !important;}`
 	console.log(`linearising the layout`)
 }
 
 if ($(`head style#colourfilters`).get(0)) {
-	$(`head style#colourfilters`).html(`html {filter: ${colourFiltersToApply}; backdrop-filter: ${colourFiltersToApply}}`)
+	$(`head style#colourfilters`).text(`:root {filter: ${colourFiltersToApply}; backdrop-filter: ${colourFiltersToApply}}`)
 }
 else {
-	$(`head`).append(`<style>html {filter: ${colourFiltersToApply}; backdrop-filter: ${colourFiltersToApply}}`)
+	$(`head`).append(`<style>html {filter: ${colourFiltersToApply}; backdrop-filter: ${colourFiltersToApply}}</style>`)
 }
+
+if ($(`head style#extrastyles`).get(0)) {
+	$(`head style#extrastyles`).text(extraStyles);
+}
+else {
+	$(`head`).append(`<style>${extraStyles}</style>`)
+}
+
+/*
+if (!localStorage.prefersHeaderNumbers) {
+	localStorage.setItem(`prefersHeaderNumbers`, ``);
+	console.log(`no preference for header numbers`)
+}
+else if (localStorage.prefersHeaderNumbers == `true`) {
+	$(`head`).append(`<style>body {counter-reset: levelone;}h1 {counter-reset: leveltwo;}h2 {counter-reset: levelthree;}h3 {counter-reset: levelfour;}h4 {counter-reset: levelfive;}h5 {counter-reset: levelsix;}h2::before {counter-increment: leveltwo;content: counter(leveltwo) " - ";}h3::before {counter-increment:levelthree;content:counter(leveltwo) "." counter(levelthree) " - ";}h4::before {counter-increment: levelfour;content: counter(leveltwo) "." counter(levelthree) "." counter(levelfour) " - ";}h5::before {counter-increment: levelfive;content: counter(leveltwo) "." counter(levelthree) "." counter(levelfour) "." counter(levelfive) " - ";}h6::before {counter-increment: levelsix;content: counter(leveltwo) "." counter(levelthree) "." counter(levelfour) "." counter(levelfive) "." counter(levelsix) " - ";}</style>`)
+	console.log(`applying header numbers`)
+}
+*/
+
 
 
 /*
@@ -632,16 +646,6 @@ function loadAnimationState(animStateBool) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 if (!localStorage.animationState) {
 	saveAnimationState(`true`);
 	console.log(`default animation state and saved as there wasn't one`)
@@ -742,8 +746,6 @@ function setUpColor(variableToUse, cssSelector) {
 			|| localStorage[`custom ${variableToUse.replace(`--`,``)}`] == `undefined`) {
 			
 			// just do nothing and have the previous CSS define the colour
-			
-			// it's not often that I just put up something like "if A, do X; else if B, no-op; else Z".
 		}
 		else {
 			loadColor(`${variableToUse}`)
@@ -853,19 +855,40 @@ setUpColor(`--headerPaddingBottom`);
 
 
 
+if (!localStorage.floatingSettings) {
+	localStorage.setItem(`floatingSettings`, ``);
+	console.log(`no preference for having a floating settings page`)
+}
+else if (localStorage.floatingSettings == `true` && !window.location.href.includes(`/settings/`)) {
+	$(`<div id="floatingsettings"><iframe src="/aoz0ra.github.io/settings/index.html"></iframe></div><style>#floatingsettings {position: fixed;bottom: 6px;left: 9px;overflow: hidden;width: 1em;height: 1em;}#floatingsettings:hover, #floatingsettings iframe {width: calc(100px + 33vw);height: calc(100vh - 12px - 2em);}</style>`).appendTo(`body`)
+	console.log(`and the floating settings are added`)
+}
+
 
 
 
 
 //                   LOCALISATION
 
+/*
 if (!localStorage.localization) {
   localStorage.setItem(`localization`, `UK`)
 }
 
-if (localStorage.localization == `US`) {
-  
+var BritishToAmericanSpellings = {
+	'colour':          `color`,
+	'localis':         `localiz`,
 }
-else {
-  
+
+var finishedPageHTML = JSON.stringify($(`div.page`).html()).findReplace(`\\n`, ``).findReplace(`\\t`, ``).findReplace(`\\"`, `"`)
+
+
+
+for (const templateToReplace of Object.keys(templates)) {
+	finishedPageHTML = finishedPageHTML.findReplace(templateToReplace, templates[templateToReplace])
 }
+
+finishedPageHTML = finishedPageHTML.substring(1, finishedPageHTML.length - 1)
+
+$(`div.page`).html(finishedPageHTML)
+*/
