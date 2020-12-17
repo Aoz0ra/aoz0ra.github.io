@@ -1,11 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="/hydrogen-framework/hydrogen.css">
 		<script src="/jquery.min.js"></script>
-
-		<link rel="stylesheet" href="https://aoz0ra.github.io/hydrogen-extensions.css">
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<title>Aoz0ra's Creations | Settings</title>
 	</head>
@@ -177,21 +172,23 @@
 
 					<div class="btn-group btn-group-justified btn-group-vertical-s">
 						<button class="hilight" onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours${localStorage.themePolarity}.css`);
-									         saveStyle(`/hydrogen-framework/hydrogen-styles.css`)">Default</button>
+									         saveStyle(`/hydrogen-framework/hydrogen-styles.css`)" title="Hydrogen's default theme">Hydrogen Default</button>
+						<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-royalist.css`);
+									         saveStyle(`/hydrogen-framework/styles/aoz0ras-shiny-hard.css`)" title="">Royalist</button>
 						<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-breeze${localStorage.themePolarity}.css`);
-									       saveStyle(`/hydrogen-framework/styles/aoz0ras-breeze.css`)">Breeze</button>
+									       saveStyle(`/hydrogen-framework/styles/aoz0ras-breeze.css`)" title="Breeze by the KDE VDG, ported by none other than Aoz0ra!">Breeze</button>
 						<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-oxygen.css`);
-									       saveStyle(`/hydrogen-framework/hydrogen-styles.css`)">Oxygen</button>
+									       saveStyle(`/hydrogen-framework/hydrogen-styles.css`)" title="Oxygen theme, from KDE Plasma 4">Oxygen</button>
 						<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-2000.css`);
-								 saveStyle(`/hydrogen-framework/styles/aoz0ras-windows-classic.css`)">Windows Classic</button>
+								 saveStyle(`/hydrogen-framework/styles/aoz0ras-windows-classic.css`)" title="Relive the Windows 9x days!">Windows Classic</button>
 						<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-luna.css`);
-								 saveStyle(`/hydrogen-framework/styles/aoz0ras-experience.css`)">Luna (Windows XP)</button>
+								 saveStyle(`/hydrogen-framework/styles/aoz0ras-experience.css`)" title="Relive the Windows XP days!">Luna (Windows XP)</button>
 						<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-tenified.css`);
-								 saveStyle(`/hydrogen-framework/styles/aoz0ras-tenified.css`)">Tenified</button>
+								 saveStyle(`/hydrogen-framework/styles/aoz0ras-tenified.css`)" title="The visual style of Windows 10, now for Hydrogen!">Tenified</button>
 						<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-little-sur.css`);
-								 saveStyle(`/hydrogen-framework/styles/aoz0ras-little-sur.css`)">Little Sur</button>
+								 saveStyle(`/hydrogen-framework/styles/aoz0ras-little-sur.css`)" title="macOS Big Sur's styles, coming to a Hydrogen Framework near you!">Little Sur</button>
 						<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-lighthearted.css`);
-								 saveStyle(`/hydrogen-framework/styles/aoz0ras-lighthearted.css`)">Light&shy;hearted</button>
+								 saveStyle(`/hydrogen-framework/styles/aoz0ras-lighthearted.css`)" title="Guaranteed to keep you happy ^.^ 💮">Light&shy;hearted</button>
 					</div>
 				</div>
 
@@ -199,12 +196,10 @@
 					<h3>Colour scheme</h3>
 					
 					<div class="row">
-						<div class="col-xs-12">
-							<button class="hilight block" onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours${localStorage.themePolarity}.css`)">Default</button>
-						</div>
+						<button class="hilight block" onclick="saveColorScheme(`/hydrogen-framework/hydrogen-colours${localStorage.themePolarity}.css`)" title="Hydrogen's default colour scheme">Default</button>
 						
 						<br>
-						
+
 						<div class="row">
 							<h4>From Linux themes</h4>
 							
@@ -219,14 +214,8 @@
 							
 							<div class="col-xs-12 col-l-6">
 								<div class="btn-group btn-group-justified">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ambiance${localStorage.themePolarity}.css`)">Ambi&shy;ance</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-radiance${localStorage.themePolarity}.css`)">Radi&shy;ance</button>
-								</div>
-							</div>
-							
-							
-							<div class="col-xs-12 col-l-6">
-								<div class="btn-group btn-group-justified">
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ambiance${localStorage.themePolarity}.css`)" title="Ubuntu's Ambiance colours">Ambi&shy;ance</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-radiance${localStorage.themePolarity}.css`)" title="Ubuntu's Radiance colours">Radi&shy;ance</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-radlight-ambdark.css`)">Radi&shy;ance on light, Ambi&shy;ance on dark</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-amblight-raddark.css`)">Ambi&shy;ance on light, Radi&shy;ance on dark</button>
 								</div>
@@ -262,9 +251,9 @@
 						
 						<div class="row">
 							<h3>Solarized</h3>
-							<div class="col-xs-12 col-l-6 col-xl-12">
+							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized${localStorage.themePolarity}.css`)">Solar&shy;ized</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized${localStorage.themePolarity}.css`)" title="Solarized by Ethan Schnoover">Solar&shy;ized</button>
 									<button class="faint" onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-solarized${localStorage.themePolarity}-alt.css`)">Alternate</button>
 								</div>
 							</div>
@@ -289,7 +278,7 @@
 								<!--	<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-aesthetic${localStorage.themePolarity}.css`)">Aesthetic</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-special${localStorage.themePolarity}.css`)">Aoz0ra's Special</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-autism-awareness${localStorage.themePolarity}.css`)">Autism Aware&shy;ness</button> -->
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-onebit${localStorage.themePolarity}.css`)">Onebit</button><!--
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-onebit${localStorage.themePolarity}.css`)" title="The oldest of colour limitations on computers... It was either yin or yang, never anything in between.">Onebit</button><!--
 								<!--	<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-well-read${localStorage.themePolarity}.css`)">Well-Read</button> -->
 								</div>
 							</div>
@@ -314,7 +303,7 @@
 						
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-the-matrix.css`)">7H3 M4721X</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-the-matrix.css`)" title="Could it be... that we're just living in a 51MUL4710N?">7H3 M4721X</button>
 									
 <!--									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-blackout.css`)">Blackout</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-blueprint.css`)">Blueprint</button>
@@ -325,7 +314,7 @@
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-flutter.css`)">Flutter</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-foggy-days.css`)">Foggy Days</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-gold.css`)">Gold</button>-->
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-gold-n-black.css`)">Gold 'n Black</button><!--
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-gold-n-black.css`)" title="This somehow makes me feel elite.">Gold 'n Black</button><!--
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-incognit0.css`)">Incognit0</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-interstellar.css`)">Inter&shy;stellar</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-lined-paper.css`)">Lined Paper</button>
@@ -349,30 +338,31 @@
 							<h5>Converted directly from Windows Classic</h5>
 							
 							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified">
-							
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-aesthetic${localStorage.themePolarity}.css`)">Aiee</button>
+								<div class="btn-group btn-group-justified btn-group-vertical-s">
+									
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-aesthetic${localStorage.themePolarity}.css`)" title="Light (or dark) and airy">Aesthetic</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-aoz0ras-special${localStorage.themePolarity}.css`)" title="My favourite colours!">Aoz0ra's Special</button>
 									
 								</div>
 							</div>
 							
 							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified">
+								<div class="btn-group btn-group-justified btn-group-vertical-s">
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-clear-skies.css`)">Clear Skies</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-cloudy-skies.css`)">Cloudy Skies</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-rainy-skies.css`)">Rainy Skies</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-stormy-skies.css`)">Stormy Skies</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-sunset-skies.css`)">Sunset Skies</button>
 									
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-modern.css`)">Classic Modern</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-modern.css`)" title="A nice, modern-ish verison of the Winows Classic colour scheme.">Classic Modern</button>
 									
 								</div>
 							</div>
 							
 							<div class="col-xs-12">
-								<div class="btn-group btn-group-justified">
+								<div class="btn-group btn-group-justified btn-group-vertical-s">
 							
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-the-matrix.css`)">Aiee</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-the-matrix.css`)" title="Insert The Matrix Reference Here">7H3 M4721X</button>
 									
 								</div>
 							</div>
@@ -385,57 +375,47 @@
  							<h4>Converted from <a href="https://github.com/tPenguinLTG">tPenguinLTG</a>'s themes</h4>
 							<p>Some have been extended with a dark theme by me</p>
 							
+							<h5>Direct conversions</h5>
+							
 							 <div class="col-xs-12">
 								<div class="btn-group btn-group-justified">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-aiee${localStorage.themePolarity}.css`)">Aiee</button>
-									<!--
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-clouds${localStorage.themePolarity}.css`)">Blue</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-aiee${localStorage.themePolarity}.css`)" title="aIEe 4-8">Aiee</button>
+									<!--<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-clouds${localStorage.themePolarity}.css`)">Clouds</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-fx${localStorage.themePolarity}.css`)">Fx</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-fxn${localStorage.themePolarity}.css`)">FxN</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-teal-for-shelbi${localStorage.themePolarity}.css`)">Teal for Shelbi</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-fxn${localStorage.themePolarity}.css`)">FxN</button>-->
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-solarized${localStorage.themePolarity}.css`)" title="Solarized by Ethan Schnoover">Solarized</button>
+									<!--<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-teal-for-shelbi${localStorage.themePolarity}.css`)">Teal for Shelbi</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-vista-esque${localStorage.themePolarity}.css`)">Vista-esque</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-vista-esque-blue${localStorage.themePolarity}.css`)">Vista-esque Blue</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-vista-esque-green${localStorage.themePolarity}.css`)">Vista-esque Green</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-windows-98.css`)">Windows 98</button>
-									-->
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-classic-windows-98.css`)">Windows 98</button>-->
 								</div>
 							</div> 
 
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
-									<!--
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ash.css`)">Ash</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-blue.css`)">Blue</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-cherry.css`)">Cherry</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-drpbx.css`)">drpbx</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-honey.css`)">Honey</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-hotdog-stand.css`)">Hotdog Stand</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-ink-pen.css`)">Ink Pen</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-peggys-pastels.css`)">Peggy's Pastels</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-precision.css`)">Precision</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-raspberry.css`)">Raspberry</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-seawater.css`)">Seawater</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-seawater-soft.css`)">Seawater Soft</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-tango.css`)">Tango</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-tomato.css`)">Tomato</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-1_01.css`)">Windows 1.01</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-windows-95.css`)">Windows 95</button>
-									-->
+									<!--<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-ash.css`)">Ash</button>-->
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-blue.css`)" title="I'm blue dabba dee dabba die ba dabba dee dabba ...">Blue</button>
+									<!--<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-cherry.css`)">Cherry</button>-->
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-dropbox.css`)" title="Like the website">Dropbox</button>
+									<!--<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-honey.css`)">Honey</button>-->
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-human.css`)" title="Ubuntu Human colours">Human</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-hotdog-stand.css`)" title="Possibly the most notorious of colour schemes out there">Hotdog Stand</button>
+									<!--<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-ink-pen.css`)">Ink Pen</button>-->
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-peggys-pastels.css`)">Peggy's Pastels</button>
+									<!--<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-precision.css`)">Precision</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-raspberry.css`)">Raspberry</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-seawater.css`)">Seawater</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-tango.css`)">Tango</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-tomato.css`)">Tomato</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-windows-1_01.css`)">Windows 1.01</button>-->
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-seawater-soft.css`)" title="Here's something you don't see that often in Windows Classic... Flat themes.">Seawater Soft</button>
 								</div>
 							</div>
-						
-							<h5>Direct conversions</h5>
-							
+
  							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-hybrid-dark.css`)">Windows Hybrid Dark</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-blue.css`)">Blue</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-dropbox.css`)">Dropbox</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-hotdog-stand.css`)">Hotdog Stand</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-human.css`)">Human</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-peggys-pastels.css`)">Peggy's Pastels</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-seawater-soft.css`)">Seawater Soft</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-solarized${localStorage.themePolarity}.css`)">Solarized</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/tpenguinltgs-windows-classic-hybrid-dark.css`)" title="A dark remix of the Windows 98 colours">Windows Hybrid Dark</button>
 								</div>
 							</div>
 						</div>
@@ -473,19 +453,23 @@
 							
 							<div class="col-xs-12">
 								<div class="btn-group btn-group-justified btn-group-vertical-s">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-air.css`)">Air</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-gmm-transparency.css`)">Glass My Experience</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-hannah-montana-linux.css`)">Hannah Montana Linux</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-air.css`)" title="Breathe some fresh air into your experience here">Air</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-blue-and-gold.css`)" title="">Blue and Gold</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-gmm-transparency.css`)" title="Didn't turn out as expected.  Looks cool with transparent iframes though">Glass My Experience</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-hannah-montana-linux.css`)" title="Oh yeah / Boot up">Hannah Montana Linux</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-lighthearted.css`)">Lighthearted</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-little-sur.css`)">Little Sur</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-rose.css`)">Rose</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-shady-blue.css`)">Shady</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-system-colours.css`)">System Colours</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-red-and-gold.css`)" title="">Red and Gold</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-rose.css`)" title="Heeeey, Soooooooonic!!">Rose</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-royalist.css`)" title="">Royalist</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-shady-blue.css`)" title="Two low-contrast shades of blue">Shady - Blue</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-shady-orange.css`)" title="Two low-contrast shades of orange">Shady - Orange</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-system-colours.css`)" title="CSS system colours are kinda risky.  Also this uses CSS2 system colours, which have since been deprecated.">System Colours</button>
 								</div>
 								<div class="btn-group btn-group-justified btn-group-vertical-s">
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-cold-steel.css`)">Cold Steel</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-cold-steel.css`)" title="Shhh... nothin personnel... kid">Cold Steel</button>
 									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-dark-increased-contrast.css`)">Increased Contrast Dark</button>
-									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-neon.css`)">Neon</button>
+									<button onclick="saveColorScheme(`/hydrogen-framework/colourschemes/aoz0ras-neon.css`)" title="Aoz0ra's overall favourite">Neon</button>
 								</div>
 							</div>
 						</div>
@@ -509,6 +493,23 @@
 				
 				
 				
+				
+				
+				
+				
+				
+				<!-- ####################################################### -->
+				<!-- ####################################################### -->
+				<!-- ####################################################### -->
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				<div class="col-xs-12 col-xl-6">
 					
 					<h3>Style</h3>
@@ -528,33 +529,67 @@
 						<div class="col-xs-12">
 							<h4>Aoz0ra's own</h4>
 							<div class="btn-group btn-group-justified">
-								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-lighthearted.css`)">Light&shy;hearted</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-special.css`)">Aoz0ra's Special</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-lighthearted.css`)">Lighthearted</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-sleek.css`)">Sleek</button>
 							</div>
 						</div>
 
 						
 						<div class="col-xs-12">
 							<h4>Modern Imitations</h4>
-							<div class="btn-group btn-group-justified" style="max-width: calc(100vw - var(--pagePaddingLeft) - var(--pagePaddingRight) - 36px); overflow: auto;">
+							<div class="btn-group btn-group-justified btn-group-vertical-s">
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-tenified.css`)">Tenified</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-metro.css`)">Metro</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-fluent.css`)">Fluent</button>
 								<button class="faint" onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-material.css`)">Material</button>
-								<button class="faint" onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-os-x.css`)">OS X</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-catalina.css`)">Catalina</button>
 								<button class="faint" onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-little-sur.css`)">Little Sur</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-breeze.css`)">Breeze</button>
 							</div>
 						</div>
 						
 						<div class="col-xs-12">
+							<h4>Early 'Tens</h4>
+							<div class="btn-group btn-group-justified btn-group-vertical-s">
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-seven.css`)" title="Oh, how I miss the styles of Windows 7...">Seven</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-mountain-lion.css`)">Mountain Lion</button>
+							</div>
+						</div>
+						
+						<div class="col-xs-12">
 							<h4>Reliving the Classics</h4>
-							<div class="btn-group btn-group-justified">
+							<div class="btn-group btn-group-justified btn-group-vertical-s">
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-1dot01.css`)">1dot01</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-windows-classic.css`)">Windows Classic</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-windows-classic-remix.css`)">Classic Remix</button>
 								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-experience.css`)">Experience</button>
-								<!-- <button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-platinum.css`)">Platinum</button> -->
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-classic-mac.css`)">Classic Mac</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-platinum.css`)">Platinum</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-cheetah.css`)">Cheetah</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-jaguar.css`)">Jaguar</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-panther.css`)">Panther</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-tiger.css`)">Tiger</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-aqua.css`)">Aqua (macOS 10.7)</button>
 							</div>
 						</div>
+						
+						<div class="col-xs-12">
+							<h4>Gettin' Trendy</h4>
+							<p>2020 - Neomorph:</p>
+							<div class="btn-group btn-group-justified btn-group-vertical-s">
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-neomorph-lite.css`)">Lite</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-neomorph-standard.css`)">Standard</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-neomorph-plus.css`)">Plus</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-neomorph-extreme.css`)">Extreme</button>
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-neomorph-ultimate.css`)">Ultimate</button>
+							</div>
+							<p>2021 - Glassmorph:</p>
+							<div class="btn-group btn-group-justified btn-group-vertical-s">
+								<button onclick="saveStyle(`/hydrogen-framework/styles/aoz0ras-glassmorph.css`)">Lite</button>
+							</div>
+						</div>
+
 						
 						<div class="col-xs-12">
 							<h4>Experiments</h4>
@@ -578,11 +613,9 @@
 						</div>
 						
 						
-						<div class="col-xs-12">
-							<span>Font:</span>
-							<input id="customFont">
-							<button onclick="saveColor(`--sansSerifFont`, getInputValue(`customFont`))">Apply</button>
-						</div>
+						<span>Font:</span>
+						<input id="customFont">
+						<button onclick="saveColor(`--sansSerifFont`, getInputValue(`customFont`))">Apply</button>
 					</div>
 				</div>
 			</div>
@@ -601,7 +634,7 @@
 					
 					<h2>Accessibility</h2>
 
-					<p>Some users may find these setting useful, even if they don't need to use them for accessibility reasons.  Feel free to experiment!</p>
+					<p>Some users may find these settings useful, even if they don't need to use them for accessibility reasons.  Feel free to experiment!</p>
 					
 					<input type="checkbox" id="idLikeAnimations">
 					<label for="idLikeAnimations">Enable animations</label>
@@ -680,6 +713,11 @@
 					<p class="faint small">Use layouts that have one column</p>
 					<p class="faint small">Use cases: Dyslexia or other reading issues</p>
 					<br>
+
+					<input type="checkbox" id="prefersHeaderNumbers" />
+					<label for="prefersHeaderNumbers">Add header numbers</label>
+					<p class="faint small"></p>
+					<br>
 					
 					<div class="btn-group btn-group-justified">
 						<span>Font size:</span>
@@ -707,7 +745,7 @@
 						<input id="lineHeightInput" type=number min="1" max="3" step="0.05">
 						<button onclick="saveColor(`--lineHeight`, `${getInputValue(`lineHeightInput`)}em` )">Apply</button>
 					</div>
-					<p class="faint small">Use cases: Dyslexia or other reading issues</p>
+					<p class="faint small">Use cases: Dyslexia or other reading issues; personal preference</p>
 				</div>
 			</div>
 
@@ -860,6 +898,7 @@
 		setUpCheckbox(`prefersBoldFonts`)
 		setUpCheckbox(`prefersHiddenImages`)
 		setUpCheckbox(`prefersSingleColumn`)
+		setUpCheckbox(`prefersHeaderNumbers`)
 		
 		
 		
