@@ -821,6 +821,9 @@ setUpColor(`--purpleFaint`);
 setUpColor(`--pinkFaint`);
 setUpColor(`--hotpinkFaint`);
 
+setUpColor(`--hcLight`);
+setUpColor(`--hcDark`);
+
 setUpColor(`--DEFAULT_ACCENT`);
 setUpColor(`--DEFAULT_ACCENT_HILIGHT`);
 setUpColor(`--DEFAULT_HILIGHT`);
