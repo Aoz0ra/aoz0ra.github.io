@@ -322,6 +322,9 @@ var extraStyles = ``;
 
 function doAccessibilitySettings() {
 	
+	colourFiltersToApply = ``;
+	extraStyles = ``;
+	
 	// COLOURS
 	
 	// Some people can't stand highly-saturated colours
