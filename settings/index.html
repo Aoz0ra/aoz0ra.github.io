@@ -140,6 +140,12 @@
 					</div>
 		  			
 				</div> -->
+				
+				
+
+				<input type="checkbox" id="prefersSwitchCheckboxes" />
+				<label for="prefersSwitchCheckboxes">Use switches for checkboxes</label>
+				<p class="faint small"></p>
 			</div>
 			
 			<!--            </GENERAL SETTINGS>          -->
@@ -664,6 +670,9 @@
 
 					<p>Some users may find these settings useful, even if they don't need to use them for accessibility reasons.  Feel free to experiment!</p>
 					
+					
+					<h3>Colours</h3>
+					
 					<input type="checkbox" id="idLikeAnimations">
 					<label for="idLikeAnimations">Enable animations</label>
 					<p class="faint small">Animations may be resource-intensive.</p>
@@ -710,6 +719,9 @@
 					<p class="faint small">Use cases: Sensitive eyes</p>
 					<br>
 					
+					
+					<h3>Reading</h3>
+					
 					<input type="checkbox" id="prefersHilightedHeaders" />
 					<label for="prefersHilightedHeaders">Highlight headers</label>
 					<p class="faint small"></p>
@@ -720,14 +732,13 @@
 					<p class="faint small"></p>
 					<br>
 					
-					<input type="checkbox" id="prefersReachableTargets" />
-					<label for="prefersReachableTargets">Reachable targets</label>
-					<p class="faint small">Make click targets larger, and thus easier to click on</p>
-					<p class="faint small">Use cases: Motor issues</p>
-					<br>
-					
 					<input type="checkbox" id="prefersBoldFonts" />
 					<label for="prefersBoldFonts">Bold text</label>
+					<p class="faint small"></p>
+					<br>
+
+					<input type="checkbox" id="prefersHeaderNumbers" />
+					<label for="prefersHeaderNumbers">Add header numbers</label>
 					<p class="faint small"></p>
 					<br>
 					
@@ -735,16 +746,25 @@
 					<label for="prefersHiddenImages">Hide images</label>
 					<p class="faint small">There aren't many images on this site, but just in case</p>
 					<br>
+
+					<input type="checkbox" id="prefersParagraphBackgrounds" />
+					<label for="prefersParagraphBackgrounds">Shade every other paragraph</label>
+					<p class="faint small"></p>
+					<br>
 					
 					<input type="checkbox" id="prefersSingleColumn" />
 					<label for="prefersSingleColumn">Single-column layouts</label>
 					<p class="faint small">Use layouts that have one column</p>
 					<p class="faint small">Use cases: Dyslexia or other reading issues</p>
 					<br>
-
-					<input type="checkbox" id="prefersHeaderNumbers" />
-					<label for="prefersHeaderNumbers">Add header numbers</label>
-					<p class="faint small"></p>
+					
+					
+					<h3>Using</h3>
+					
+					<input type="checkbox" id="prefersReachableTargets" />
+					<label for="prefersReachableTargets">Reachable targets</label>
+					<p class="faint small">Make click targets larger, and thus easier to click on</p>
+					<p class="faint small">Use cases: Motor issues</p>
 					<br>
 					
 					<div class="btn-group btn-group-justified">
@@ -894,7 +914,7 @@
 		function saveAccessibilitySetting(settingToUse, valueToSave) {
 			localStorage.setItem(settingToUse, valueToSave)
 			
-			// will expand later.  for now, you have to reload
+			doAccessibilitySettings();
 		}
 		function setUpCheckbox(elementID) {
 			if (localStorage[elementID] == `true`) {
@@ -914,19 +934,25 @@
 		}
 		
 		
+		setUpCheckbox(`prefersSwitchCheckboxes`)
+		
 		setUpCheckbox(`prefersDesaturatedColours`)
 		setUpCheckbox(`prefersGreyscale`)
 		setUpCheckbox(`prefersExtraSaturation`)
 		setUpCheckbox(`prefersWarmerColours`)
 		setUpCheckbox(`prefersIncreasedContrast`)
 		setUpCheckbox(`prefersDecreasedContrast`)
+		
 		setUpCheckbox(`prefersHilightedHeaders`)
 		setUpCheckbox(`prefersHilightedLinks`)
-		setUpCheckbox(`prefersReachableTargets`)
+
 		setUpCheckbox(`prefersBoldFonts`)
-		setUpCheckbox(`prefersHiddenImages`)
-		setUpCheckbox(`prefersSingleColumn`)
 		setUpCheckbox(`prefersHeaderNumbers`)
+		setUpCheckbox(`prefersHiddenImages`)
+		setUpCheckbox(`prefersParagraphBackgrounds`)
+		setUpCheckbox(`prefersSingleColumn`)
+		
+		setUpCheckbox(`prefersReachableTargets`)
 		
 		
 		
